@@ -274,7 +274,7 @@
             "buildsystem": "cmake-ninja",
             "build-options" : {
                 "prepend-path": "/run/build/mcpelauncher-client/bin",
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DCMAKE_C_FLAGS=-DNDEBUG", "-DCMAKE_CXX_FLAGS=-DNDEBUG", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF" ],
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DCMAKE_C_FLAGS=-DNDEBUG", "-DCMAKE_CXX_FLAGS=-DNDEBUG", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ],
                 "env": {
                     "CC": "clang",
                     "CXX": "clang++"
@@ -290,7 +290,34 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "9a2ebde28d5ef2b95aebe233c6c8d632c56bbdc5"
+                    "commit": "87aa068ff00b88ebc5817d8828c3613fc6bd3850"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/minecraft-linux/glfw/archive/37204ede828296f8b6fe068851f3c7841bf20161.zip",
+                    "sha512": "dcc083cd5b805d41fc7b4c59187977cd8e2f45dffcc35c47579170ec2433df66b91ba603eebef3f994c02058869b0bbb1aa18d79f61e66f3d83cbe6201fb29bc",
+                    "dest-filename": "glfw3_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir glfw3_ext",
+                        "cd glfw3_ext && unzip ../glfw3_ext.zip",
+                        "mv glfw3_ext/*/* glfw3_ext/"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
+                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
+                    "dest-filename": "nlohmann_json_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir nlohmann_json_ext",
+                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
                 }
             ]
         },
