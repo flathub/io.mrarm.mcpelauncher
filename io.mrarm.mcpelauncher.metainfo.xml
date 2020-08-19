@@ -42,6 +42,13 @@
     </content_rating>
 
     <releases>
+        <release version="0.0.4" date="2020-08-19">
+            <description>
+                <p>
+                    1.16.20.03 now supported, new xbox live implementation, only for x86_64
+                </p>
+            </description>
+        </release>
         <release version="0.0.3" date="2020-06-29">
             <description>
                 <p>
