@@ -212,13 +212,26 @@
             "name": "msa-manifest",
             "buildsystem": "cmake-ninja",
             "build-options" : {
-                "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF" ]
+                "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext" ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "cf50cca29ac382c252f6ad039fac5351e5fb6be7"
+                    "commit": "5516aa111c335c28b09724280522b0f9624aa38e"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
+                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
+                    "dest-filename": "nlohmann_json_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir nlohmann_json_ext",
+                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
                 }
             ]
         },
@@ -290,7 +303,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "87aa068ff00b88ebc5817d8828c3613fc6bd3850"
+                    "commit": "eb5b3bc94c41143a970c9b6cf4732d617074c7b5"
                 },
                 {
                     "type": "file",
