@@ -1,10 +1,10 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.14",
+    "runtime-version": "5.15",
     "sdk": "org.kde.Sdk",
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.14",
+    "base-version": "5.15",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -158,22 +158,6 @@
             ]
         },
         {
-            "name": "libtinfo-clang9.0.0-release",
-            "config-opts": [ "--with-shared", "--without-normal", "--without-debug", "--without-ada", "--enable-widec", "--disable-pc-files", "--with-versioned-syms", "--with-abi-version=5" ],
-            "only-arches": [ "x86_64" ],
-            "post-install": [
-                "ln -s /app/lib/libncursesw.so.5 /app/lib/libtinfo.so.5"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://ncurses.scripts.mit.edu/ncurses.git",
-                    "tag": "v6.2",
-                    "commit": "47d2fb4537d9ad5bb14f4810561a327930ca4280"
-                }
-            ]
-        },
-        {
             "name": "protobuf",
             "sources": [
                 {
@@ -286,7 +270,6 @@
             "name": "mcpelauncher-client",
             "buildsystem": "cmake-ninja",
             "build-options" : {
-                "prepend-path": "/run/build/mcpelauncher-client/bin",
                 "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DCMAKE_C_FLAGS=-DNDEBUG", "-DCMAKE_CXX_FLAGS=-DNDEBUG", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ],
                 "env": {
                     "CC": "clang",
@@ -295,11 +278,6 @@
             },
             "only-arches": [ "x86_64" ],
             "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://releases.llvm.org/9.0.0/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz",
-                    "sha512": "860669cb0054c376e7ca5a8fbb8c5e2f44d1075b7e3049efd02daaf61d4f6cb4a1c4c2902ebe4c1fe38f6aeffc5ead17a8ba0c9a4aeaa983b73e2b43afe99be2"
-                },
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
