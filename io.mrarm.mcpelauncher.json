@@ -202,7 +202,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "5516aa111c335c28b09724280522b0f9624aa38e"
+                    "commit": "41a6425d36b4e4ee1863b1cd19bb143087183805"
                 },
                 {
                     "type": "file",
