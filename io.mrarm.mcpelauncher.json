@@ -225,12 +225,12 @@
             "build-options" : {
                 "arch": {
                     "x86_64": {
-                        "cflags": "-DDISABLE_32BIT=1",
-                        "cxxflags": "-DDISABLE_32BIT=1"
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     },
                     "aarch64": {
-                        "cflags": "-DDISABLE_32BIT=1",
-                        "cxxflags": "-DDISABLE_32BIT=1"
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 }
             },
@@ -238,7 +238,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "e5f7e884fd8cf3af8afdc3de357d689c63de321c"
+                    "commit": "e2afc7490a54a9feeb91642927ddb1f02b934c5d"
                 }
             ]
         },        
@@ -276,12 +276,12 @@
                     "CXX": "clang++"
                 }
             },
-            "only-arches": [ "x86_64" ],
+            "only-arches": [ "x86_64", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "eb5b3bc94c41143a970c9b6cf4732d617074c7b5"
+                    "commit": "8a4f9a50e12d756c56d77c1b0f428fa8deb67cd4"
                 },
                 {
                     "type": "file",
