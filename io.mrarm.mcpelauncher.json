@@ -270,18 +270,24 @@
             "name": "mcpelauncher-client",
             "buildsystem": "cmake-ninja",
             "build-options" : {
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DCMAKE_C_FLAGS=-DNDEBUG", "-DCMAKE_CXX_FLAGS=-DNDEBUG", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ],
-                "env": {
-                    "CC": "clang",
-                    "CXX": "clang++"
-                }
+                "arch": {
+                    "x86_64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "aarch64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    }
+                },
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ]
             },
             "only-arches": [ "x86_64", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "8a4f9a50e12d756c56d77c1b0f428fa8deb67cd4"
+                    "commit": "c9e73a80b464a7e711240999c8a26f3832a6fecc"
                 },
                 {
                     "type": "file",
