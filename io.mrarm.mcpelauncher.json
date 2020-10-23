@@ -194,7 +194,7 @@
         },
         {
             "name": "msa-manifest",
-            "buildsystem": "cmake-ninja",
+            "buildsystem": "cmake",
             "build-options" : {
                 "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext" ]
             },
