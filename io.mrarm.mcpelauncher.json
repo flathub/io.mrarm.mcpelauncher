@@ -232,7 +232,8 @@
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
                         "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
-                }
+                },
+                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF" ]
             },
             "sources": [
                 {
