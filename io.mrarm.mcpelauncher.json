@@ -252,6 +252,14 @@
                         "cflags": "-DNDEBUG",
                         "cxxflags": "-DNDEBUG"
                     },
+                    "arm": {
+                        "cflags": "-DNDEBUG -mfpu=neon",
+                        "cxxflags": "-DNDEBUG -mfpu=neon"
+                    },
+                    "x86": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
                     "aarch64": {
                         "cflags": "-DNDEBUG",
                         "cxxflags": "-DNDEBUG"
