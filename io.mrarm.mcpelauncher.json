@@ -251,7 +251,7 @@
                         "cflags": "-DNDEBUG -mfpu=neon",
                         "cxxflags": "-DNDEBUG -mfpu=neon"
                     },
-                    "x86": {
+                    "i386": {
                         "cflags": "-DNDEBUG",
                         "cxxflags": "-DNDEBUG"
                     },
