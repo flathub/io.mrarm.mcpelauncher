@@ -158,22 +158,6 @@
             ]
         },
         {
-            "name": "libtinfo-clang9.0.0-release",
-            "config-opts": [ "--with-shared", "--without-normal", "--without-debug", "--without-ada", "--enable-widec", "--disable-pc-files", "--with-versioned-syms", "--with-abi-version=5" ],
-            "only-arches": [ "x86_64" ],
-            "post-install": [
-                "ln -s /app/lib/libncursesw.so.5 /app/lib/libtinfo.so.5"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://ncurses.scripts.mit.edu/ncurses.git",
-                    "tag": "v6.2",
-                    "commit": "47d2fb4537d9ad5bb14f4810561a327930ca4280"
-                }
-            ]
-        },
-        {
             "name": "protobuf",
             "sources": [
                 {
@@ -210,7 +194,7 @@
         },
         {
             "name": "msa-manifest",
-            "buildsystem": "cmake-ninja",
+            "buildsystem": "cmake",
             "build-options" : {
                 "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext" ]
             },
@@ -237,48 +221,25 @@
         },
         {
             "name": "mcpelauncher-ui-manifest",
-            "buildsystem": "cmake-ninja",
+            "buildsystem": "cmake",
             "build-options" : {
                 "arch": {
                     "x86_64": {
-                        "cflags": "-DDISABLE_32BIT=1",
-                        "cxxflags": "-DDISABLE_32BIT=1"
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     },
                     "aarch64": {
-                        "cflags": "-DDISABLE_32BIT=1",
-                        "cxxflags": "-DDISABLE_32BIT=1"
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
-                }
+                },
+                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF" ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "e5f7e884fd8cf3af8afdc3de357d689c63de321c"
-                }
-            ]
-        },        
-        {
-            "name": "mcpelauncher-client32",
-            "buildsystem": "cmake-ninja",
-            "build-options" : {
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW" ]
-            },
-            "only-arches": [ "i386", "arm" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/ChristopherHX/mcpelauncher-manifest.git",
-                    "commit": "7748f5a37f82b8616095c024a0d254d3f61ae5f1",
-                    "disable-shallow-clone": true
-                },
-                {
-                    "type": "shell",
-                    "only-arches": [ "arm" ],
-                    "commands": [
-                        "cd mcpelauncher-linux-bin && git checkout 148bf7f22ed6caddeebdc1412affcb64db4dd7f9",
-                        "cd minecraft-symbols/tools && python3 ./process_headers.py --armhf"
-                    ]
+                    "commit": "f8b250ddc091a21270612ddde2980aefea996981"
                 }
             ]
         },
@@ -286,24 +247,27 @@
             "name": "mcpelauncher-client",
             "buildsystem": "cmake-ninja",
             "build-options" : {
-                "prepend-path": "/run/build/mcpelauncher-client/bin",
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DCMAKE_C_FLAGS=-DNDEBUG", "-DCMAKE_CXX_FLAGS=-DNDEBUG", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ],
+                "arch": {
+                    "x86_64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "aarch64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    }
+                },
                 "env": {
                     "CC": "clang",
                     "CXX": "clang++"
-                }
+                },
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON" ]
             },
-            "only-arches": [ "x86_64" ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://releases.llvm.org/9.0.0/clang+llvm-9.0.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz",
-                    "sha512": "860669cb0054c376e7ca5a8fbb8c5e2f44d1075b7e3049efd02daaf61d4f6cb4a1c4c2902ebe4c1fe38f6aeffc5ead17a8ba0c9a4aeaa983b73e2b43afe99be2"
-                },
-                {
                     "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "eb5b3bc94c41143a970c9b6cf4732d617074c7b5"
+                    "url": "https://github.com/ChristopherHX/mcpelauncher-manifest.git",
+                    "commit": "19d1f4f49ea97954a1643b5bb41d1277db26890f"
                 },
                 {
                     "type": "file",
