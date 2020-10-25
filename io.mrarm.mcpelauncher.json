@@ -248,8 +248,8 @@
                         "cxxflags": "-DNDEBUG"
                     },
                     "arm": {
-                        "cflags": "-DNDEBUG -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -mfpu=neon"
+                        "cflags": "-DNDEBUG --target=armv7-unknown-linux-gnueabihf -mfpu=neon -mfloat-abi=hard",
+                        "cxxflags": "-DNDEBUG --target=armv7-unknown-linux-gnueabihf -mfpu=neon -mfloat-abi=hard"
                     },
                     "i386": {
                         "cflags": "-DNDEBUG",
