@@ -239,7 +239,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "ce6d656f44b45d1797c75d8b2825dc5f9d9e1cb4"
+                    "commit": "f8b250ddc091a21270612ddde2980aefea996981"
                 }
             ]
         },        
