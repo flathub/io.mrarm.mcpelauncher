@@ -45,11 +45,6 @@
         "--device=all"
     ],
     "add-build-extensions": {
-        "org.freedesktop.Sdk.Extension.toolchain-i386": {
-            "directory": "lib/sdk/toolchain-i386",
-            "remove-after-build": true,
-            "version": "20.08"
-        },
         "org.freedesktop.Sdk.Extension.toolchain-arm": {
             "directory": "lib/sdk/toolchain-arm",
             "remove-after-build": true,
@@ -71,7 +66,7 @@
             "name": "aarch64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE"
+                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE"
             ],
             "only-arches": ["aarch64"],
             "sources": [
@@ -86,8 +81,8 @@
             "name": "x86_64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ARCHIVE=$PWD/i386-linux-gnu.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE",
-                "ARCHIVE=$PWD/toolchain-i386.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE"
+                "ARCHIVE=$PWD/i386-linux-gnu.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE",
+                "ARCHIVE=$PWD/toolchain-i386.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE"
             ],
             "only-arches": ["x86_64"],
             "sources": [
