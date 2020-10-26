@@ -5,7 +5,7 @@
     "sdk": "org.kde.Sdk",
     "base": "io.qt.qtwebengine.BaseApp",
     "base-version": "5.15",
-    "command": "mcpelauncher-ui-qt",
+    "command": "mcpelauncher-client",
     "cleanup": [
         "*.a",
         "*.la",
