@@ -66,7 +66,7 @@
             "name": "aarch64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE"
+                "mkdir -p /app/lib/sdk/ && tar --no-same-owner -xf $PWD/arm-linux-gnueabihf.tar.xz -C /app/lib/sdk/"
             ],
             "only-arches": ["aarch64"],
             "sources": [
@@ -81,8 +81,8 @@
             "name": "x86_64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ARCHIVE=$PWD/i386-linux-gnu.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE",
-                "ARCHIVE=$PWD/toolchain-i386.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar --no-same-owner -xf $ARCHIVE"
+                "mkdir -p /app/lib/sdk && tar --no-same-owner -xf $PWD/i386-linux-gnu.tar.xz -C /app/lib/sdk",
+                "mkdir -p /app/lib/sdk && tar --no-same-owner -xf $PWD/toolchain-i386.tar.xz -C /app/lib/sdk"
             ],
             "only-arches": ["x86_64"],
             "sources": [
