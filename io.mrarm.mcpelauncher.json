@@ -71,12 +71,12 @@
             "name": "aarch64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ln -s $PWD/arm-linux-gnueabihf /app/lib/sdk/arm-linux-gnueabihf"
+                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE",
             ],
             "only-arches": ["aarch64"],
             "sources": [
                 {
-                    "type": "archive",
+                    "type": "file",
                     "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/arm-linux-gnueabihf.tar.xz",
                     "sha512": "ec17d1c7d473823a228668e00fc9118f5ab13d7396ee53df03fe0a0791af2dd0f0fc61e9f2fe0882b4a3ca29c7b09257e0e17c03560bb7211f0dbca0ef4e0396"
                 }
@@ -86,14 +86,20 @@
             "name": "x86_64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ln -s $PWD/i386-linux-gnu /app/lib/sdk/i386-linux-gnu"
+                "ARCHIVE=$PWD/i386-linux-gnu.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE",
+                "ARCHIVE=$PWD/toolchain-i386.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE"
             ],
             "only-arches": ["x86_64"],
             "sources": [
                 {
-                    "type": "archive",
+                    "type": "file",
                     "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/i386-linux-gnu.tar.xz",
                     "sha512": "11e11ebe9a1a33d006b9c41259ef99e964c09c3db7b7c8234716923b708499ae5b19cab063f356afa1359023954650f4ceea2743ab6ae7a4f6db31de78082c1c"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/toolchain-i386.tar.xz",
+                    "sha512": "db0241645d3247b70c9b1cd4f61a7f0f9334e0c2728b9373891cc9e25b9141ebfe14d61e0abdc2d615a121bedef9d2f8df3df9612a93286efe19c34a1e994c11"
                 }
             ]
         },
