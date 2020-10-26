@@ -81,8 +81,11 @@
             "name": "x86_64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "mkdir -p /app/lib/sdk && tar --no-same-owner -xf $PWD/i386-linux-gnu.tar.xz -C /app/lib/sdk",
-                "mkdir -p /app/lib/sdk && tar --no-same-owner -xf $PWD/toolchain-i386.tar.xz -C /app/lib/sdk"
+                "mkdir -p /app/lib/ && tar --no-same-owner -xf $PWD/i386-linux-gnu.tar.xz -C /app/lib",
+                "mkdir -p /app/lib/ && tar --no-same-owner -xf $PWD/toolchain-i386.tar.xz -C /app/lib",
+                "cd /app/lib && ln -s i386-linux-gnu/ld-linux.so.2 ld-linux.so.2",
+                "mkdir -p /app/usr/lib && cd /app/usr/lib && ln -s ../../lib/i386-linux-gnu/ i386-linux-gnu",
+                "mkdir -p /app/usr && cd /app/usr && ln -s /usr/include/ include"
             ],
             "only-arches": ["x86_64"],
             "sources": [
@@ -104,14 +107,14 @@
             "build-options" : {
                 "arch": {
                     "x86_64": {
-                        "cflags": "-DNDEBUG -m32 -I/usr/include -L/app/lib/i386-linux-gnu -L/app/lib/sdk/i386-linux-gnu -fuse-ld=lld -nostdlib -I/app/lib/sdk/i386-linux-gnu/include",
-                        "cxxflags": "-DNDEBUG -m32  -L/app/lib/i386-linux-gnu -L/app/lib/sdk/i386-linux-gnu -fuse-ld=lld -nostdlib -I/app/lib/sdk/i386-linux-gnu/include -I/app/lib/sdk/toolchain-i386/i686-unknown-linux-gnu/include/c++/10.2.0/ -I/app/lib/sdk/toolchain-i386/i686-unknown-linux-gnu/include/c++/10.2.0/i686-unknown-linux-gnu",
-                        "prepend-pkg-config-path": "/app/lib/sdk/i386-linux-gnu/pkgconfig:/app/lib/i386-linux-gnu/pkgconfig",
-                        "config-opts": [ "-DZLIB_LIBRARY=/app/lib/sdk/i386-linux-gnu/libz.so", "-DPNG_LIBRARY=/app/lib/sdk/i386-linux-gnu/libpng.so", "-DPNG_PNG_INCLUDE_DIR=/usr/include/libpng", "-DX11_X11_LIB=/app/lib/sdk/i386-linux-gnu/libX11.so", "-DCURL_LIBRARY=/app/lib/sdk/i386-linux-gnu/libcurl.so", "-DOPENSSL_INCLUDE_DIR=/app/lib/sdk/i386-linux-gnu/include", "-DOPENSSL_SSL_LIBRARY=/app/lib/sdk/i386-linux-gnu/libcrypto.so", "-DOPENSSL_CRYPTO_LIBRARY=/app/lib/sdk/i386-linux-gnu/libcrypto.so", "-DPULSEAUDIO_LIBRARIES=/app/lib/sdk/i386-linux-gnu/libpulse.so", "-DPULSEAUDIOSIMPLE_LIBRARIES=/app/lib/sdk/i386-linux-gnu/libpulse-simple.so" ]
+                        "cflags": "-DNDEBUG --target=i686-unknown-linux-gnu --sysroot=/app -gcc-toolchain /app/lib/toolchain-i386/ -I/app/lib/i386-linux-gnu/include/",
+                        "cxxflags": "-DNDEBUG --target=i686-unknown-linux-gnu --sysroot=/app -gcc-toolchain /app/lib/toolchain-i386/ -I/app/lib/i386-linux-gnu/include/",
+                        "prepend-pkg-config-path": "/app/lib/i386-linux-gnu/pkgconfig:/app/lib/i386-linux-gnu/pkgconfig",
+                        "config-opts": [ "-DZLIB_LIBRARY=/app/lib/i386-linux-gnu/libz.so", "-DPNG_LIBRARY=/app/lib/i386-linux-gnu/libpng.so", "-DPNG_PNG_INCLUDE_DIR=/usr/include/libpng", "-DX11_X11_LIB=/app/lib/i386-linux-gnu/libX11.so", "-DCURL_LIBRARY=/app/lib/i386-linux-gnu/libcurl.so", "-DOPENSSL_INCLUDE_DIR=/app/lib/i386-linux-gnu/include", "-DOPENSSL_SSL_LIBRARY=/app/lib/i386-linux-gnu/libcrypto.so", "-DOPENSSL_CRYPTO_LIBRARY=/app/lib/i386-linux-gnu/libcrypto.so", "-DPULSEAUDIO_LIBRARIES=/app/lib/i386-linux-gnu/libpulse.so", "-DPULSEAUDIOSIMPLE_LIBRARIES=/app/lib/i386-linux-gnu/libpulse-simple.so" ]
                     },
                     "aarch64": {
-                        "cflags": "-DNDEBUG -m32 -I/usr/include -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -nostdlib -I/app/lib/sdk/arm-linux-gnueabihf/include",
-                        "cxxflags": "-DNDEBUG -m32  -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -nostdlib -I/app/lib/sdk/arm-linux-gnueabihf/include -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/ -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/arm-unknown-linux-gnueabihf",
+                        "cflags": "-DNDEBUG -m32 -I/usr/include -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -I/app/lib/sdk/arm-linux-gnueabihf/include",
+                        "cxxflags": "-DNDEBUG -m32  -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -I/app/lib/sdk/arm-linux-gnueabihf/include -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/ -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/arm-unknown-linux-gnueabihf",
                         "prepend-pkg-config-path": "/app/lib/sdk/arm-linux-gnueabihf/pkgconfig:/app/lib/arm-linux-gnueabihf/pkgconfig",
                         "config-opts": [ "-DZLIB_LIBRARY=/app/lib/sdk/arm-linux-gnueabihf/libz.so", "-DPNG_LIBRARY=/app/lib/sdk/arm-linux-gnueabihf/libpng.so", "-DPNG_PNG_INCLUDE_DIR=/usr/include/libpng", "-DX11_X11_LIB=/app/lib/sdk/arm-linux-gnueabihf/libX11.so", "-DCURL_LIBRARY=/app/lib/sdk/arm-linux-gnueabihf/libcurl.so", "-DOPENSSL_INCLUDE_DIR=/app/lib/sdk/arm-linux-gnueabihf/include", "-DOPENSSL_SSL_LIBRARY=/app/lib/sdk/arm-linux-gnueabihf/libcrypto.so", "-DOPENSSL_CRYPTO_LIBRARY=/app/lib/sdk/arm-linux-gnueabihf/libcrypto.so", "-DPULSEAUDIO_LIBRARIES=/app/lib/sdk/arm-linux-gnueabihf/libpulse.so", "-DPULSEAUDIOSIMPLE_LIBRARIES=/app/lib/sdk/arm-linux-gnueabihf/libpulse-simple.so" ]
                     }
