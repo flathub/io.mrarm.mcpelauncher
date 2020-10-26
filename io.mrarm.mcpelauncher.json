@@ -73,7 +73,7 @@
     },
     "modules": [
         {
-            "name": "aarch64-multlib workaround",
+            "name": "aarch64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
                 "ln -s $PWD/arm-linux-gnueabihf /app/lib/sdk/arm-linux-gnueabihf"
@@ -83,8 +83,22 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/arm-linux-gnueabihf.tar.xz",
-                    "sha512": "ec17d1c7d473823a228668e00fc9118f5ab13d7396ee53df03fe0a0791af2dd0f0fc61e9f2fe0882b4a3ca29c7b09257e0e17c03560bb7211f0dbca0ef4e0396",
-                    "only-arches": ["aarch64"]
+                    "sha512": "ec17d1c7d473823a228668e00fc9118f5ab13d7396ee53df03fe0a0791af2dd0f0fc61e9f2fe0882b4a3ca29c7b09257e0e17c03560bb7211f0dbca0ef4e0396"
+                }
+            ]
+        },
+        {
+            "name": "x86_64-multlib-workaround",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ln -s $PWD/i386-linux-gnu /app/lib/sdk/i386-linux-gnu"
+            ],
+            "only-arches": ["x86_64"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/i386-linux-gnu.tar.xz",
+                    "sha512": "11e11ebe9a1a33d006b9c41259ef99e964c09c3db7b7c8234716923b708499ae5b19cab063f356afa1359023954650f4ceea2743ab6ae7a4f6db31de78082c1c"
                 }
             ]
         },
