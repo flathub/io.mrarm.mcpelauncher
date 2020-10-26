@@ -55,9 +55,25 @@
             "remove-after-build": true,
             "version": "20.08"
         },
+        "org.freedesktop.Sdk.Compat.arm": {
+            "directory": "lib/sdk/arm-linux-gnueabihf",
+            "remove-after-build": true,
+            "version": "19.08"
+        },
+        "org.freedesktop.Sdk.Extension.toolchain-arm": {
+            "directory": "lib/sdk/toolchain-arm",
+            "remove-after-build": true,
+            "version": "19.08"
+        }
+    },
+    "add-extensions": {
         "org.freedesktop.Platform.Compat.i386": {
             "directory": "lib/i386-linux-gnu",
             "version": "20.08"
+        },
+        "org.freedesktop.Platform.Compat.arm": {
+            "directory": "lib/arm-linux-gnueabihf",
+            "version": "19.08"
         }
     },
     "modules": [
@@ -72,8 +88,9 @@
                         "prepend-pkg-config-path": "/app/lib/sdk/i386-linux-gnu/pkgconfig:/app/lib/i386-linux-gnu/pkgconfig"
                     },
                     "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
+                        "cflags": "-DNDEBUG -m32 -I/usr/include -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -nostdlib -I/app/lib/sdk/arm-linux-gnueabihf/include",
+                        "cxxflags": "-DNDEBUG -m32  -L/app/lib/arm-linux-gnueabihf -L/app/lib/sdk/arm-linux-gnueabihf -fuse-ld=lld -nostdlib -I/app/lib/sdk/arm-linux-gnueabihf/include -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/ -I/app/lib/sdk/toolchain-arm/arm-unknown-linux-gnueabihf/include/c++/9.3.0/arm-unknown-linux-gnueabihf",
+                        "prepend-pkg-config-path": "/app/lib/sdk/arm-linux-gnueabihf/pkgconfig:/app/lib/arm-linux-gnueabihf/pkgconfig"
                     }
                 },
                 "env": {
