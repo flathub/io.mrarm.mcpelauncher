@@ -76,7 +76,7 @@
                 {
                     "type": "file",
                     "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/arm-linux-gnueabihf.tar.xz",
-                    "sha512": "ec17d1c7d473823a228668e00fc9118f5ab13d7396ee53df03fe0a0791af2dd0f0fc61e9f2fe0882b4a3ca29c7b09257e0e17c03560bb7211f0dbca0ef4e0396"
+                    "sha512": "95cfe3c6357ecfc409a8d6bd5d7e12aac146748c76bac94f830b80b96240a6d76da3d8c30816bfa6f38565bfd06238a9177bc221df3b44587ec2cc36b71a3afc"
                 }
             ]
         },
