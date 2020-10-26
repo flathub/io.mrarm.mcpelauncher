@@ -71,7 +71,7 @@
             "name": "aarch64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
-                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE",
+                "ARCHIVE=$PWD/arm-linux-gnueabihf.tar.xz mkdir -p /app/lib/sdk/ && cd /app/lib/sdk/ && tar -xf --no-same-owner $ARCHIVE"
             ],
             "only-arches": ["aarch64"],
             "sources": [
