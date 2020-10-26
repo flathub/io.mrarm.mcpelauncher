@@ -55,11 +55,6 @@
             "remove-after-build": true,
             "version": "20.08"
         },
-        "org.freedesktop.Sdk.Compat.arm": {
-            "directory": "lib/sdk/arm-linux-gnueabihf",
-            "remove-after-build": true,
-            "version": "19.08"
-        },
         "org.freedesktop.Sdk.Extension.toolchain-arm": {
             "directory": "lib/sdk/toolchain-arm",
             "remove-after-build": true,
@@ -77,6 +72,21 @@
         }
     },
     "modules": [
+        {
+            "name": "aarch64-multlib workaround",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ln -s $PWD/arm-linux-gnueabihf /app/lib/sdk/arm-linux-gnueabihf"
+            ],
+            "only-arches": ["aarch64"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/flathub/io.mrarm.mcpelauncher/releases/download/0.0.5-multiarchsupport/arm-linux-gnueabihf.tar.xz",
+                    "only-arches": ["aarch64"]
+                }
+            ]
+        },
         {
             "name": "mcpelauncher-client32",
             "buildsystem": "cmake",
