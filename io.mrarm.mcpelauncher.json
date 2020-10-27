@@ -85,7 +85,7 @@
             "buildsystem": "cmake",
             "only-arches": ["aarch64"],
             "build-options" : {
-                "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=X86;AArch64;ARM", "-DLLVM_ENABLE_PROJECTS=clang;lld", "-DLLVM_BUILD_TOOLS=False", "-DLLVM_INCLUDE_TOOLS=False", "-DLLVM_INCLUDE_EXAMPLES=False", "-DLLVM_INCLUDE_TESTS=False" ]
+                "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=X86;AArch64;ARM", "-DLLVM_ENABLE_PROJECTS=clang;lld", "-DLLVM_BUILD_TOOLS=True", "-DLLVM_INCLUDE_TOOLS=True", "-DLLVM_INCLUDE_EXAMPLES=True", "-DLLVM_INCLUDE_TESTS=True" ]
             },
             "subdir": "llvm",
             "builddir": true,
