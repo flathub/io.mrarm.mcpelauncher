@@ -81,6 +81,21 @@
             ]
         },
         {
+            "name": "aarch64-multlib-workaround-clang",
+            "buildsystem": "cmake",
+            "only-arches": ["aarch64"],
+            "build-options" : {
+                "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=X86;AArch64;ARM", "-DLLVM_ENABLE_PROJECTS=clang;lld", "-DLLVM_BUILD_TOOLS=False", "-DLLVM_INCLUDE_TOOLS=False", "-DLLVM_INCLUDE_EXAMPLES=False", "-DLLVM_INCLUDE_TESTS=False" ]
+            },
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/llvm/llvm-project.git",
+                    "commit": "b59b6b662bb987955f1516c9a47e96c7ab443ac6"
+                }
+            ]
+        },
+        {
             "name": "x86_64-multlib-workaround",
             "buildsystem": "simple",
             "build-commands": [
@@ -117,8 +132,11 @@
                         "ldflags": "-L/app/lib/i386-linux-gnu -v"
                     },
                     "aarch64": {
+                        "prepend-path": "/app/bin",
                         "cflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
+                        "cflags-override": true,
                         "cxxflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
+                        "cxxflags-override": true,
                         "prepend-pkg-config-path": "/app/lib/sdk/arm-linux-gnueabihf/pkgconfig:/app/lib/arm-linux-gnueabihf/pkgconfig",
                         "prepend-ld-library-path": "/app/lib/arm-linux-gnueabihf:",
                         "ldflags": "-L/app/lib/arm-linux-gnueabihf -v"
