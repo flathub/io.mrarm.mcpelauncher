@@ -87,6 +87,8 @@
             "build-options" : {
                 "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=X86;AArch64;ARM", "-DLLVM_ENABLE_PROJECTS=clang;lld", "-DLLVM_BUILD_TOOLS=False", "-DLLVM_INCLUDE_TOOLS=False", "-DLLVM_INCLUDE_EXAMPLES=False", "-DLLVM_INCLUDE_TESTS=False" ]
             },
+            "subdir": "llvm",
+            "builddir": true,
             "sources": [
                 {
                     "type": "git",
