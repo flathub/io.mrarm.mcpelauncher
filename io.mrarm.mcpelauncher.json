@@ -46,7 +46,7 @@
     ],
     "add-build-extensions": {
         "org.freedesktop.Sdk.Extension.toolchain-arm": {
-            "directory": "lib/sdk/toolchain-arm",
+            "directory": "lib/toolchain-arm",
             "remove-after-build": true,
             "version": "19.08"
         }
