@@ -72,7 +72,7 @@
                 "mkdir -p /app/usr/lib && cd /app/usr/lib && ln -s ../../lib/arm-linux-gnueabihf/ arm-linux-gnueabihf",
                 "mkdir -p /app/usr && cd /app/usr && ln -s /usr/include/ include"
             ],
-            "only-arches": ["x86_64"],
+            "only-arches": ["aarch64"],
             "sources": [
                 {
                     "type": "file",
