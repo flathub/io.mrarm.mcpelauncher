@@ -86,7 +86,7 @@
             "buildsystem": "cmake",
             "only-arches": ["aarch64"],
             "build-options" : {
-                "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=ARM", "-DLLVM_ENABLE_PROJECTS=clang", "-DLLVM_BUILD_TOOLS=False", "-DLLVM_INCLUDE_TOOLS=True", "-DLLVM_INCLUDE_EXAMPLES=False", "-DLLVM_INCLUDE_TESTS=False", "-DLLVM_INCLUDE_DOCS=False", "-DLLVM_ENABLE_OCAMLDOC=False", "-DLLVM_INSTALL_TOOLCHAIN_ONLY=ON" ],
+                "config-opts": [ "-DCMAKE_BUILD_TYPE=Release", "-DLLVM_TARGETS_TO_BUILD=ARM", "-DLLVM_ENABLE_PROJECTS=clang;lld", "-DLLVM_BUILD_TOOLS=False", "-DLLVM_INCLUDE_TOOLS=True", "-DLLVM_INCLUDE_EXAMPLES=False", "-DLLVM_INCLUDE_TESTS=False", "-DLLVM_INCLUDE_DOCS=False", "-DLLVM_ENABLE_OCAMLDOC=False", "-DLLVM_INSTALL_TOOLCHAIN_ONLY=ON" ],
                 "no-debuginfo": true,
                 "strip": false
             },
@@ -138,9 +138,9 @@
                     },
                     "aarch64": {
                         "prepend-path": "/app/bin",
-                        "cflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
+                        "cflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon -fuse-ld=lld --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
                         "cflags-override": true,
-                        "cxxflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
+                        "cxxflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon -fuse-ld=lld --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
                         "cxxflags-override": true,
                         "prepend-pkg-config-path": "/app/lib/sdk/arm-linux-gnueabihf/pkgconfig:/app/lib/arm-linux-gnueabihf/pkgconfig",
                         "prepend-ld-library-path": "/app/lib/arm-linux-gnueabihf:",
