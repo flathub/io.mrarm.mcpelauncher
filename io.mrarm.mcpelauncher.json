@@ -134,7 +134,8 @@
                         "cxxflags": "-DNDEBUG --target=i686-unknown-linux-gnu --sysroot=/app -gcc-toolchain /app/lib/toolchain-i386/ -I/app/lib/i386-linux-gnu/include/",
                         "prepend-pkg-config-path": "/app/lib/i386-linux-gnu/pkgconfig:",
                         "prepend-ld-library-path": "/app/lib/i386-linux-gnu:",
-                        "ldflags": "-L/app/lib/i386-linux-gnu -v"
+                        "ldflags": "-L/app/lib/i386-linux-gnu -v",
+                        "config-opts": [ "-DCMAKE_CXX_COMPILER_TARGET=i686-linux-gnu" ]
                     },
                     "aarch64": {
                         "prepend-path": "/app/bin",
@@ -144,14 +145,15 @@
                         "cxxflags-override": true,
                         "prepend-pkg-config-path": "/app/lib/arm-linux-gnueabihf/pkgconfig:",
                         "prepend-ld-library-path": "/app/lib/arm-linux-gnueabihf:",
-                        "ldflags": "-L/app/lib/arm-linux-gnueabihf -v"
+                        "ldflags": "-L/app/lib/arm-linux-gnueabihf -v",
+                        "config-opts": [ "-DCMAKE_CXX_COMPILER_TARGET=arm-linux-gnueabihf" ]
                     }
                 },
                 "env": {
                     "CC": "clang",
                     "CXX": "clang++"
                 },
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DBUILD_WEBVIEW=OFF", "-DCMAKE_CXX_COMPILER_TARGET=i686-linux-gnu" ]
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DBUILD_WEBVIEW=OFF" ]
             },
             "only-arches": [ "x86_64", "aarch64" ],
             "sources": [
