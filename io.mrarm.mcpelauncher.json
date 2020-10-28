@@ -132,7 +132,7 @@
                     "x86_64": {
                         "cflags": "-DNDEBUG --target=i686-unknown-linux-gnu --sysroot=/app -gcc-toolchain /app/lib/toolchain-i386/ -I/app/lib/i386-linux-gnu/include/",
                         "cxxflags": "-DNDEBUG --target=i686-unknown-linux-gnu --sysroot=/app -gcc-toolchain /app/lib/toolchain-i386/ -I/app/lib/i386-linux-gnu/include/",
-                        "prepend-pkg-config-path": "/app/lib/i386-linux-gnu/pkgconfig:/app/lib/i386-linux-gnu/pkgconfig",
+                        "prepend-pkg-config-path": "/app/lib/i386-linux-gnu/pkgconfig:",
                         "prepend-ld-library-path": "/app/lib/i386-linux-gnu:",
                         "ldflags": "-L/app/lib/i386-linux-gnu -v"
                     },
@@ -142,7 +142,7 @@
                         "cflags-override": true,
                         "cxxflags": "-DNDEBUG --target=arm-unknown-linux-gnueabihf -march=armv7 -mfpu=neon -fuse-ld=lld --sysroot=/app -gcc-toolchain /app/lib/toolchain-arm/ -I/app/lib/arm-linux-gnueabihf/include",
                         "cxxflags-override": true,
-                        "prepend-pkg-config-path": "/app/lib/sdk/arm-linux-gnueabihf/pkgconfig:/app/lib/arm-linux-gnueabihf/pkgconfig",
+                        "prepend-pkg-config-path": "/app/lib/arm-linux-gnueabihf/pkgconfig:",
                         "prepend-ld-library-path": "/app/lib/arm-linux-gnueabihf:",
                         "ldflags": "-L/app/lib/arm-linux-gnueabihf -v"
                     }
