@@ -42,7 +42,8 @@
         "--share=network",
         "--device=dri",
         "--socket=pulseaudio",
-        "--device=all"
+        "--device=all",
+        "--allow=multiarch"
     ],
     "add-build-extensions": {
         "org.freedesktop.Sdk.Extension.toolchain-arm": {
