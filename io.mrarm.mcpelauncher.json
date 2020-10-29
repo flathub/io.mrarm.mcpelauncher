@@ -126,7 +126,7 @@
         },
         {
             "name": "mcpelauncher-client32",
-            "buildsystem": "cmake",
+            "buildsystem": "simple",
             "build-options" : {
                 "arch": {
                     "x86_64": {
@@ -155,7 +155,10 @@
                 },
                 "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DBUILD_WEBVIEW=OFF" ]
             },
-            "only-arches": [ "x86_64" ],
+            "build-commands": [
+                "cmake . -DGAMEWINDOW_SYSTEM=GLFW -DENABLE_DEV_PATHS=OFF -DBUILD_FAKE_JNI_TESTS=OFF -DBUILD_FAKE_JNI_EXAMPLES=OFF -DBUILD_BARON_EXAMPLES=OFF -DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext -DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext -DBUILD_WEBVIEW=OFF || (cat CMakeFiles/CMakeError.log && cat CMakeFiles/CMakeOutput.log)"
+            ],
+            "only-arches": [ "x86_64", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
