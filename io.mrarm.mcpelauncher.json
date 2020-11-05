@@ -239,6 +239,30 @@
             ]
         },
         {
+            "name": "mcpelauncher-client32",
+            "buildsystem": "cmake-ninja",
+            "build-options" : {
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW" ]
+            },
+            "only-arches": [ "arm" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/ChristopherHX/mcpelauncher-manifest.git",
+                    "commit": "7748f5a37f82b8616095c024a0d254d3f61ae5f1",
+                    "disable-shallow-clone": true
+                },
+                {
+                    "type": "shell",
+                    "only-arches": [ "arm" ],
+                    "commands": [
+                        "cd mcpelauncher-linux-bin && git checkout 148bf7f22ed6caddeebdc1412affcb64db4dd7f9",
+                        "cd minecraft-symbols/tools && python3 ./process_headers.py --armhf"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "mcpelauncher-client",
             "buildsystem": "cmake-ninja",
             "build-options" : {
@@ -266,6 +290,7 @@
                 },
                 "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON" ]
             },
+            "only-arches": [ "i386", "x86_64", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
