@@ -42,6 +42,14 @@
     </content_rating>
 
     <releases>
+        <release version="0.0.5" date="2020-11-17">
+            <description>
+                <p>
+                    1.16.100 now supported on arm, aarch64 and x86_64
+                    arm is now deprecated and might get removed
+                </p>
+            </description>
+        </release>
         <release version="0.0.4" date="2020-08-19">
             <description>
                 <p>
