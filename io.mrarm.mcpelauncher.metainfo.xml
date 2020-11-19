@@ -45,8 +45,10 @@
         <release version="0.0.6" date="2020-11-19">
             <description>
                 <p>
-                    Fix arm32 native launchername, results in mcpelauncher-client32 not found (0.0.5)<br/>
-                    Fixed saving gamedata in Internal or Application Storage (since 0.0.5). Please revert the previous workaround, if manually applied with 'flatpak --user --reset io.mrarm.mcpelauncher' or 'sudo flatpak --reset io.mrarm.mcpelauncher', then merge the created '~/data/data/com.mojang.minecraftpe' folder with '~/.var/app/io.mrarm.mcpelauncher/data/mcpelauncher'
+                    Fix arm32 native launchername, results in mcpelauncher-client32 not found (0.0.5)
+                </p>
+                <p>
+                    Fixed saving gamedata in Internal or Application Storage (since 0.0.5). Please revert the previous workaround, if manually applied with &quot;flatpak --user --reset io.mrarm.mcpelauncher&quot; or &quot;sudo flatpak --reset io.mrarm.mcpelauncher&quot;, then merge the created &quot;~/data/data/com.mojang.minecraftpe&quot; folder with &quot;~/.var/app/io.mrarm.mcpelauncher/data/mcpelauncher&quot;
                 </p>
             </description>
         </release>
