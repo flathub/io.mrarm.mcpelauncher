@@ -168,7 +168,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "7905f76f94b5f54b65d8b9ba72ebeff5ad06e98f"
+                    "commit": "640cfc8dd1254b1c41445379f64b645745c49ce7"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
+                    "commit": "5de6aa0a1d1a9249a272843e7aba8cdbd601e188",
+                    "dest": "gamecontrollerdb"
                 },
                 {
                     "type": "file",
