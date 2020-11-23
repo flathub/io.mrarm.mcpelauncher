@@ -179,7 +179,7 @@
                 {
                     "type": "file",
                     "url": "https://github.com/minecraft-linux/glfw/archive/4922d3d47f3667b914c8c2262b55475defc16f32.zip",
-                    "sha256": "DF68373C83AEED9E521D09F9C9BDEC0EEDB97FB52BE7C3846AE9C48403D734E6",
+                    "sha256": "7be9390c490ba43a0606edbb9603a22eeaccedb8ef7714ac9006e7c97e2c7784",
                     "dest-filename": "glfw3_ext.zip"
                 },
                 {
