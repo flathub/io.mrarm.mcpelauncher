@@ -38,7 +38,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
-        "--socket=x11",
+        "--socket=wayland",
         "--share=network",
         "--device=dri",
         "--socket=pulseaudio",
@@ -161,14 +161,14 @@
                     "CC": "clang",
                     "CXX": "clang++"
                 },
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON" ]
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DGLFW_USE_WAYLAND=ON", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON" ]
             },
             "only-arches": [ "i386", "x86_64", "arm", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "640cfc8dd1254b1c41445379f64b645745c49ce7"
+                    "commit": "3751514fa62a9490d287e2274457708442749117"
                 },
                 {
                     "type": "git",
@@ -178,8 +178,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/minecraft-linux/glfw/archive/37204ede828296f8b6fe068851f3c7841bf20161.zip",
-                    "sha512": "dcc083cd5b805d41fc7b4c59187977cd8e2f45dffcc35c47579170ec2433df66b91ba603eebef3f994c02058869b0bbb1aa18d79f61e66f3d83cbe6201fb29bc",
+                    "url": "https://github.com/minecraft-linux/glfw/archive/4922d3d47f3667b914c8c2262b55475defc16f32.zip",
+                    "sha256": "DF68373C83AEED9E521D09F9C9BDEC0EEDB97FB52BE7C3846AE9C48403D734E6",
                     "dest-filename": "glfw3_ext.zip"
                 },
                 {
