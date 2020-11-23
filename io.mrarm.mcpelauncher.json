@@ -168,7 +168,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "3751514fa62a9490d287e2274457708442749117"
+                    "commit": "5b77b57132227483426d1fde1d63844f2374efdd"
                 },
                 {
                     "type": "git",
