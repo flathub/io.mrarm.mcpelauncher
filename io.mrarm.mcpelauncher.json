@@ -131,7 +131,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "2d536f1b78cc9a666445f9ba43d7ee3d7d946945"
+                    "commit": "0f0aee23c8815081567a3e8bb71e09a35032bb32"
                 }
             ]
         },
@@ -161,14 +161,14 @@
                     "CC": "clang",
                     "CXX": "clang++"
                 },
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON" ]
+                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON", "-DQt5QuickCompiler_FOUND=OFF" ]
             },
             "only-arches": [ "i386", "x86_64", "arm", "aarch64" ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "640cfc8dd1254b1c41445379f64b645745c49ce7"
+                    "commit": "93e2273dae628b5124b8f1666bbdd0d398ca1682"
                 },
                 {
                     "type": "git",
