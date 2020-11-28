@@ -48,6 +48,28 @@
     </content_rating>
 
     <releases>
+        <release version="0.0.8" date="2020-11-28">
+            <description>
+                <p>
+                    No longer crash if pulseaudio is not working on arm, you will get a warning message.
+                </p>
+                <p>
+                    No longer crash if zenity is not installed and try to change skin (AppImage), you will get a warning message.
+                </p>
+                <p>
+                    No longer ignore invalid keys, results in a warning message and try to remap to other keys.
+                </p>
+                <p>
+                    No longer ignore invalid mouse buttons, results in a warning message and try to remap to keys.
+                </p>
+                <p>
+                    No longer ignore unknown Gamepads, create a dummy mapping. Results in a warning message.
+                </p>
+                <p>
+                    Importing Google Play apks from the Internet is deprecated, login to Google Play within the launcher.
+                </p>
+            </description>
+        </release>
         <release version="0.0.7" date="2020-11-19">
             <description>
                 <p>
