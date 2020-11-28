@@ -11,7 +11,7 @@
             To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game.
         </p>
         <p>
-            This version is work in progress. Please report all reproducible crashs and attach full crashlogs. For sound you will have to install pulseaudio on your host system, the arm version will crash otherwise or the game will be silent.
+            This version is work in progress. Please report all reproducible crashs and attach full crashlogs. For sound you will have to install pulseaudio on your host system, otherwise the game will be silent.
         </p>
         <p>
             The project runs the native libraries from the Android version directly on your computer. This is accomplished by fixing the incompatibilities between the libc used on Android and the one used on desktop Linux or OS X (Android - Bionic; Linux - glibc). This is a simple compatibility layer which doesn’t impact performance in any significant way; it’s similar to Wine, but much more lightweight and simple. Aditionally, all Android-specific code has been rewritten to run on Linux (AppPlatform, Store, Xbox Live, etc.).
@@ -48,6 +48,28 @@
     </content_rating>
 
     <releases>
+        <release version="0.0.8" date="2020-11-28">
+            <description>
+                <p>
+                    No longer crash if pulseaudio is not working on arm, you will get a warning message.
+                </p>
+                <p>
+                    No longer crash if zenity is not installed and try to change skin (AppImage), you will get a warning message.
+                </p>
+                <p>
+                    No longer ignore invalid keys, results in a warning message and try to remap to other keys.
+                </p>
+                <p>
+                    No longer ignore invalid mouse buttons, results in a warning message and try to remap to keys.
+                </p>
+                <p>
+                    No longer ignore unknown Gamepads, create a dummy mapping. Results in a warning message.
+                </p>
+                <p>
+                    Importing Google Play apks from the Internet is deprecated, login to Google Play within the launcher.
+                </p>
+            </description>
+        </release>
         <release version="0.0.7" date="2020-11-19">
             <description>
                 <p>
