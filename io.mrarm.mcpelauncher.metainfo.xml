@@ -8,7 +8,7 @@
 
     <description>
         <p>
-            To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game.
+            To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game. Otherwise you will get an license error while launching the google play apk.
         </p>
         <p>
             This version is work in progress. Please report all reproducible crashs and attach full crashlogs. For sound you will have to install pulseaudio on your host system, otherwise the game will be silent.
@@ -48,6 +48,25 @@
     </content_rating>
 
     <releases>
+        <release version="0.0.9" date="2021-01-04">
+            <description>
+                <p>
+                    Revert Gamepad detection, some mouse and touchpads was detected as joystick
+                </p>
+                <p>
+                    Fix news loading
+                </p>
+                <p>
+                    Changed middle mouse button to get the old button number again
+                </p>
+                <p>
+                    No crash if loading a game version without working vtable patching
+                </p>
+                <p>
+                    Ask for Google Terms of services again, otherwise only old players or who got an old version could use this version of the Launcher
+                </p>
+            </description>
+        </release>
         <release version="0.0.8" date="2020-11-28">
             <description>
                 <p>
