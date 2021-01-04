@@ -42,7 +42,8 @@
         "--share=network",
         "--device=dri",
         "--socket=pulseaudio",
-        "--device=all"
+        "--device=all",
+        "--env=ALSA_CONFIG_PATH="
     ],
     "modules": [
         {
@@ -131,7 +132,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "0f0aee23c8815081567a3e8bb71e09a35032bb32"
+                    "commit": "143d24017c0ab4ea55dcb974867ea7421d32ba41"
                 }
             ]
         },
@@ -168,7 +169,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "93e2273dae628b5124b8f1666bbdd0d398ca1682"
+                    "commit": "592d02d8f82b5abf0769ee6fc0ebbd7ae6bb5926"
                 },
                 {
                     "type": "git",
