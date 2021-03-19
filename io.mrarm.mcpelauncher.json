@@ -84,14 +84,18 @@
         {
             "name": "msa-manifest",
             "buildsystem": "cmake",
-            "build-options" : {
-                "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext" ]
+            "build-options": {
+                "config-opts": [
+                    "-DENABLE_MSA_QT_UI=ON",
+                    "-DMSA_UI_PATH_DEV=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext"
+                ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "5516aa111c335c28b09724280522b0f9624aa38e"
+                    "commit": "c26b87a392907897b4f983262e3de0870ce1a9da"
                 },
                 {
                     "type": "file",
@@ -111,7 +115,7 @@
         {
             "name": "mcpelauncher-ui-manifest",
             "buildsystem": "cmake",
-            "build-options" : {
+            "build-options": {
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
@@ -126,25 +130,32 @@
                         "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
-                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF", "-DLAUNCHER_VERSIONDB_PATH=." ]
+                "config-opts": [
+                    "-DQt5QuickCompiler_FOUND=OFF",
+                    "-DLAUNCHER_VERSIONDB_PATH=.",
+                    "-DLAUNCHER_VERSION_NAME=v0.1-beta-17",
+                    "-DLAUNCHER_VERSION_CODE=11",
+                    "-DLAUNCHER_CHANGE_LOG=Just a test<br/>Another line<br/>Another line2",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/283a95d1bf61e83f06ee0eaff9b616fe34e546b2/"
+                ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "143d24017c0ab4ea55dcb974867ea7421d32ba41"
+                    "commit": "c899c580efeb493aea2a50237731bf9b6c85a59f"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "7cb9ce28d77135b772ee9421243ae4ecfc557002"
+                    "commit": "283a95d1bf61e83f06ee0eaff9b616fe34e546b2"
                 }
             ]
         },
         {
             "name": "mcpelauncher-client",
             "buildsystem": "cmake-ninja",
-            "build-options" : {
+            "build-options": {
                 "arch": {
                     "x86_64": {
                         "cflags": "-DNDEBUG",
@@ -167,9 +178,24 @@
                     "CC": "clang",
                     "CXX": "clang++"
                 },
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext", "-DJNI_USE_JNIVM=ON", "-DQt5QuickCompiler_FOUND=OFF" ]
+                "config-opts": [
+                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DENABLE_DEV_PATHS=OFF",
+                    "-DBUILD_FAKE_JNI_TESTS=OFF",
+                    "-DBUILD_FAKE_JNI_EXAMPLES=OFF",
+                    "-DBUILD_BARON_EXAMPLES=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DJNI_USE_JNIVM=ON",
+                    "-DQt5QuickCompiler_FOUND=OFF"
+                ]
             },
-            "only-arches": [ "i386", "x86_64", "arm", "aarch64" ],
+            "only-arches": [
+                "i386",
+                "x86_64",
+                "arm",
+                "aarch64"
+            ],
             "sources": [
                 {
                     "type": "git",
