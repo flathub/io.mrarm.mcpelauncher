@@ -126,13 +126,18 @@
                         "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
-                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF" ]
+                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF", "-DLAUNCHER_VERSIONDB_PATH=." ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
                     "commit": "143d24017c0ab4ea55dcb974867ea7421d32ba41"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
+                    "commit": "7cb9ce28d77135b772ee9421243ae4ecfc557002"
                 }
             ]
         },
