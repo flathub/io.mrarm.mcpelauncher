@@ -120,7 +120,7 @@
                 "install -Dm644 versions.armeabi-v7a.json.min /app/share/versiondb/versions.armeabi-v7a.json.min",
                 "install -Dm644 versions.x86.json.min /app/share/versiondb/versions.x86.json.min",
                 "install -Dm644 versions.arm64-v8a.json.min /app/share/versiondb/versions.arm64-v8a.json.min",
-                "install -Dm644 versions.versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
+                "install -Dm644 versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
             ],
             "sources": [
                 {
