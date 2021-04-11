@@ -43,6 +43,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.1-beta-22" date="2021-04-11">
+            <description>
+                <p>Feature Update for 1.16.220. Fixed several incompatibilities with 1.16.220 and 1.16.230</p>
+            </description>
+        </release>
         <release version="v0.1-beta-21" date="2021-03-20">
             <description>
                 <p>Ui Fixes</p>
