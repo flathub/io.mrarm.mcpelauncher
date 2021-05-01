@@ -43,6 +43,13 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.2.0" date="2021-05-01">
+            <description>
+                <p>Disable use .apk from launcher login</p>
+                <p>Add workaround for texture off by one 1.16.210-1.17.0.52 and beyond</p>
+                <p>Test a new 1.16.230+ workaround due to stack corruption</p>
+            </description>
+        </release>
         <release version="v0.1-beta-24" date="2021-04-12">
             <description>
                 <p>Realms might work time to time, but is unsupported and not tested by maintainers</p>
