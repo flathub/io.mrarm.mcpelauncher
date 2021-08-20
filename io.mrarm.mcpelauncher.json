@@ -32,7 +32,8 @@
         "/lib/libformw*",
         "/lib/libtinfo.so.5",
         "/lib/terminfo",
-        "/lib/libmenu*"
+        "/lib/libmenu*",
+        "/app/share/versiondb/*"
     ],
     "cleanup-commands": [
         "/app/cleanup-BaseApp.sh"
@@ -42,121 +43,10 @@
         "--share=network",
         "--device=dri",
         "--socket=pulseaudio",
-        "--device=all"
+        "--device=all",
+        "--env=ALSA_CONFIG_PATH="
     ],
     "modules": [
-        {
-            "name": "pydeps",
-            "buildsystem": "simple",
-            "build-commands": [],
-            "only-arches": [ "arm" ],
-            "modules": [
-                {
-                    "name": "python3-biplist",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} biplist==1.0.3"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/3e/56/2db170a498c9c6545cda16e93c2f2ef9302da44802787b45a8a520d01bdb/biplist-1.0.3.tar.gz",
-                            "sha256": "4c0549764c5fe50b28042ec21aa2e14fe1a2224e239a1dae77d9e7f3932aa4c6"
-                        }
-                    ]
-                },
-                {
-                    "name": "python3-ds-store",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} ds-store==1.1.2"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/42/19/cabae650ad5f97367796495c8748ca748cfde6a05c10ead0382f369075d3/mac_alias-2.0.7.tar.gz",
-                            "sha256": "c485e3eb9d600208cc0aa906282f0d575a535395306289bcdb4096599189e223"
-                        },
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/7a/58/e3caf42daddef72a7c92778dba181ff37edd04fb64869eea504ee6b6ea8f/ds_store-1.1.2.tar.gz",
-                            "sha256": "f569659cfd66b21273c5a2405d5e1e0f54fddebf627130329f01404f271a074c"
-                        },
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/3e/56/2db170a498c9c6545cda16e93c2f2ef9302da44802787b45a8a520d01bdb/biplist-1.0.3.tar.gz",
-                            "sha256": "4c0549764c5fe50b28042ec21aa2e14fe1a2224e239a1dae77d9e7f3932aa4c6"
-                        }
-                    ]
-                },
-                {
-                    "name": "python3-Jinja2",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} Jinja2==2.11.2"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/64/a7/45e11eebf2f15bf987c3bc11d37dcc838d9dc81250e67e4c5968f6008b6c/Jinja2-2.11.2.tar.gz",
-                            "sha256": "89aab215427ef59c34ad58735269eb58b1a5808103067f7bb9d5836c651b3bb0"
-                        },
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/30/9e/f663a2aa66a09d838042ae1a2c5659828bb9b41ea3a6efa20a20fd92b121/Jinja2-2.11.2-py2.py3-none-any.whl",
-                            "sha256": "f0a4641d3cf955324a89c04f3d94663aa4d638abe8f733ecd3582848e1c37035"
-                        },
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz",
-                            "sha256": "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
-                        }
-                    ]
-                },
-                {
-                    "name": "python3-mac-alias",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} mac-alias==2.0.7"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/42/19/cabae650ad5f97367796495c8748ca748cfde6a05c10ead0382f369075d3/mac_alias-2.0.7.tar.gz",
-                            "sha256": "c485e3eb9d600208cc0aa906282f0d575a535395306289bcdb4096599189e223"
-                        }
-                    ]
-                },
-                {
-                    "name": "python3-MarkupSafe",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} MarkupSafe==1.1.1"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/b9/2e/64db92e53b86efccfaea71321f597fa2e1b2bd3853d8ce658568f7a13094/MarkupSafe-1.1.1.tar.gz",
-                            "sha256": "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
-                        }
-                    ]
-                },
-                {
-                    "name": "python3-ply",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} ply==3.11"
-                    ],
-                    "sources": [
-                        {
-                            "type": "file",
-                            "url": "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl",
-                            "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "name": "protobuf",
             "sources": [
@@ -195,14 +85,18 @@
         {
             "name": "msa-manifest",
             "buildsystem": "cmake",
-            "build-options" : {
-                "config-opts": [ "-DENABLE_MSA_QT_UI=ON", "-DMSA_UI_PATH_DEV=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext" ]
+            "build-options": {
+                "config-opts": [
+                    "-DENABLE_MSA_QT_UI=ON",
+                    "-DMSA_UI_PATH_DEV=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext"
+                ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "41a6425d36b4e4ee1863b1cd19bb143087183805"
+                    "commit": "e830ebefc90006d459210ac8c0b9726402fead2e"
                 },
                 {
                     "type": "file",
@@ -220,59 +114,73 @@
             ]
         },
         {
+            "name": "mcpelauncher-versiondb",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 versions.armeabi-v7a.json.min /app/share/versiondb/versions.armeabi-v7a.json.min",
+                "install -Dm644 versions.x86.json.min /app/share/versiondb/versions.x86.json.min",
+                "install -Dm644 versions.arm64-v8a.json.min /app/share/versiondb/versions.arm64-v8a.json.min",
+                "install -Dm644 versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
+                    "commit": "1ce7a2a782dd4015ae69ea165a46b4dbdc39a51a"
+                }
+            ]
+        },
+        {
             "name": "mcpelauncher-ui-manifest",
             "buildsystem": "cmake",
-            "build-options" : {
+            "build-options": {
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
                         "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+                    },
+                    "arm": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
                     },
                     "aarch64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
                         "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
-                "config-opts": [ "-DQt5QuickCompiler_FOUND=OFF" ]
+                "config-opts": [
+                    "-DQt5QuickCompiler_FOUND=OFF",
+                    "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
+                    "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
+                    "-DLAUNCHER_DISABLE_DEV_MODE=ON",
+                    "-DLAUNCHER_VERSION_NAME=v0.2.3",
+                    "-DLAUNCHER_VERSION_CODE=28",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Use this very unstable launcher at your own risk, backup your worlds including realms.You may be banned by featured servers.</p><p>Allow to disable the texture patch</p><p>Added Game storage buttons in settings</p><p>Fix a startup crash on macOS 10.10-10.12 for 1.17</p><p>Fix a startup crash while gamepads are connected for 1.16.210 and later</p><p>Added a warning to google play sign in</p><p>Fixed an xbox sign in issue after creating an account</p><p>Fix some qt ui glitches</p><p>Version v0.2.2 skipped due to a bug</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0"
+                ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "f8b250ddc091a21270612ddde2980aefea996981"
-                }
-            ]
-        },        
-        {
-            "name": "mcpelauncher-client32",
-            "buildsystem": "cmake-ninja",
-            "build-options" : {
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW" ]
-            },
-            "only-arches": [ "i386", "arm" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/ChristopherHX/mcpelauncher-manifest.git",
-                    "commit": "7748f5a37f82b8616095c024a0d254d3f61ae5f1",
-                    "disable-shallow-clone": true
-                },
-                {
-                    "type": "shell",
-                    "only-arches": [ "arm" ],
-                    "commands": [
-                        "cd mcpelauncher-linux-bin && git checkout 148bf7f22ed6caddeebdc1412affcb64db4dd7f9",
-                        "cd minecraft-symbols/tools && python3 ./process_headers.py --armhf"
-                    ]
+                    "commit": "a9ad7fe0fb2283de31f5c618f56e3846f132df6c"
                 }
             ]
         },
         {
             "name": "mcpelauncher-client",
-            "buildsystem": "cmake",
-            "build-options" : {
+            "buildsystem": "cmake-ninja",
+            "build-options": {
                 "arch": {
                     "x86_64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "arm": {
+                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
+                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
+                    },
+                    "i386": {
                         "cflags": "-DNDEBUG",
                         "cxxflags": "-DNDEBUG"
                     },
@@ -285,14 +193,35 @@
                     "CC": "clang",
                     "CXX": "clang++"
                 },
-                "config-opts": [ "-DGAMEWINDOW_SYSTEM=GLFW", "-DENABLE_DEV_PATHS=OFF", "-DBUILD_FAKE_JNI_TESTS=OFF", "-DBUILD_FAKE_JNI_EXAMPLES=OFF", "-DBUILD_BARON_EXAMPLES=OFF", "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext", "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext" ]
+                "config-opts": [
+                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DENABLE_DEV_PATHS=OFF",
+                    "-DBUILD_FAKE_JNI_TESTS=OFF",
+                    "-DBUILD_FAKE_JNI_EXAMPLES=OFF",
+                    "-DBUILD_BARON_EXAMPLES=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DJNI_USE_JNIVM=ON",
+                    "-DQt5QuickCompiler_FOUND=OFF"
+                ]
             },
-            "only-arches": [ "x86_64", "aarch64" ],
+            "only-arches": [
+                "i386",
+                "x86_64",
+                "arm",
+                "aarch64"
+            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "775225d230b666315b0fd40d0b347c1dfdf3f8ab"
+                    "commit": "b707b7cd12a4ec1e394b29da53ba35f2bbc4c5b3"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
+                    "commit": "5de6aa0a1d1a9249a272843e7aba8cdbd601e188",
+                    "dest": "gamecontrollerdb"
                 },
                 {
                     "type": "file",
