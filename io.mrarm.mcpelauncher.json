@@ -126,7 +126,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "1ce7a2a782dd4015ae69ea165a46b4dbdc39a51a"
+                    "commit": "b27708e790db7ba203b6008b4eaf61edabe2e388"
                 }
             ]
         },
@@ -153,17 +153,17 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
-                    "-DLAUNCHER_VERSION_NAME=v0.2.3",
-                    "-DLAUNCHER_VERSION_CODE=28",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Use this very unstable launcher at your own risk, backup your worlds including realms.You may be banned by featured servers.</p><p>Allow to disable the texture patch</p><p>Added Game storage buttons in settings</p><p>Fix a startup crash on macOS 10.10-10.12 for 1.17</p><p>Fix a startup crash while gamepads are connected for 1.16.210 and later</p><p>Added a warning to google play sign in</p><p>Fixed an xbox sign in issue after creating an account</p><p>Fix some qt ui glitches</p><p>Version v0.2.2 skipped due to a bug</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0"
+                    "-DLAUNCHER_VERSION_NAME=v0.3.0-rc1",
+                    "-DLAUNCHER_VERSION_CODE=30",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Introduce improved modding support</p><p>You can now resolve undefined symbols via mods as updates</p><p>Input system has now input mode switch for touch, mouse/keyboard and gamepad</p><p>Now are you able to ungrab you mouse by moving it  while not in mouse input mode, useful for gamepads</p><p>eglut: possible improved keybinding, needs further tests</p><p>If you have mouse emulation enabled on linux, you might now see less glitches</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "a9ad7fe0fb2283de31f5c618f56e3846f132df6c"
+                    "commit": "89b2dc87753e6a65e32b33a7e8b3683554772329"
                 }
             ]
         },
@@ -215,7 +215,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "b707b7cd12a4ec1e394b29da53ba35f2bbc4c5b3"
+                    "commit": "36145ad6d4e4afae1a647394f3bdfff2856ac09f"
                 },
                 {
                     "type": "git",
