@@ -169,7 +169,7 @@
         },
         {
             "name": "mcpelauncher-client",
-            "buildsystem": "cmake-ninja",
+            "buildsystem": "cmake",
             "build-options": {
                 "arch": {
                     "x86_64": {
