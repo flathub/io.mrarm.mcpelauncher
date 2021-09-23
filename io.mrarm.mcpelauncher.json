@@ -77,7 +77,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/curl/curl.git",
-                    "tag": "curl-7_79_1",
+                    "tag": "curl-7_67_0",
                     "commit": "c7aef0a945f9b6fb6d3f91716a21dfe2f4ea635f"
                 }
             ]
