@@ -169,7 +169,7 @@
         },
         {
             "name": "mcpelauncher-client",
-            "buildsystem": "cmake-ninja",
+            "buildsystem": "cmake",
             "build-options": {
                 "arch": {
                     "x86_64": {
@@ -202,8 +202,7 @@
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
-                    "-DQt5QuickCompiler_FOUND=OFF",
-                    "-DQt5LinguistTools_FOUND=OFF"
+                    "-DQt5QuickCompiler_FOUND=OFF"
                 ]
             },
             "only-arches": [
