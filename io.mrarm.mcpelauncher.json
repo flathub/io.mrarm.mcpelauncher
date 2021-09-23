@@ -101,7 +101,8 @@
                 "config-opts": [
                     "-DENABLE_MSA_QT_UI=ON",
                     "-DMSA_UI_PATH_DEV=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext"
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
+                    "-DCURL_LIBRARIES=/app/lib/libcurl.so"
                 ]
             },
             "sources": [
@@ -168,7 +169,8 @@
                     "-DLAUNCHER_VERSION_NAME=v0.2.3",
                     "-DLAUNCHER_VERSION_CODE=28",
                     "-DLAUNCHER_CHANGE_LOG=<p>Use this very unstable launcher at your own risk, backup your worlds including realms.You may be banned by featured servers.</p><p>Allow to disable the texture patch</p><p>Added Game storage buttons in settings</p><p>Fix a startup crash on macOS 10.10-10.12 for 1.17</p><p>Fix a startup crash while gamepads are connected for 1.16.210 and later</p><p>Added a warning to google play sign in</p><p>Fixed an xbox sign in issue after creating an account</p><p>Fix some qt ui glitches</p><p>Version v0.2.2 skipped due to a bug</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0",
+                    "-DCURL_LIBRARIES=/app/lib/libcurl.so"
                 ]
             },
             "sources": [
@@ -214,7 +216,8 @@
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
-                    "-DQt5QuickCompiler_FOUND=OFF"
+                    "-DQt5QuickCompiler_FOUND=OFF",
+                    "-DCURL_LIBRARIES=/app/lib/libcurl.so"
                 ]
             },
             "only-arches": [
