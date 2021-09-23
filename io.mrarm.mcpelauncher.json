@@ -77,7 +77,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libuv/libuv.git",
-                    "tag": "v1.38.0",
+                    "tag": "v1.42.0",
                     "commit": "1ab9ea3790378f9f25c4e78e9e2b511c75f9c9ed"
                 }
             ]
