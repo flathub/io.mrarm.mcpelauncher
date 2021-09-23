@@ -71,6 +71,18 @@
             ]
         },
         {
+            "name": "libcurl",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/curl/curl.git",
+                    "tag": "curl-7_79_1",
+                    "commit": "c7aef0a945f9b6fb6d3f91716a21dfe2f4ea635f"
+                }
+            ]
+        },
+        {
             "name": "libuv",
             "buildsystem": "cmake-ninja",
             "sources": [
