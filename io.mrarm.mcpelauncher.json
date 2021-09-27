@@ -137,7 +137,7 @@
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USECURL"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     },
                     "arm": {
                         "cflags": "-DNDEBUG",
@@ -145,7 +145,7 @@
                     },
                     "aarch64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USECURL"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
                 "config-opts": [
@@ -162,8 +162,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "76d296b90d452393ec8f1cf1b28ec9b83713858a"
+                    "url": "https://github.com/ChristopherHX/mcpelauncher-ui-manifest.git",
+                    "commit": "4b2ad2d99bd2c40e3cafe77fe4381e4997c1abb8"
                 }
             ]
         },
