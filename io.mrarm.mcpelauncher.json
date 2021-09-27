@@ -126,7 +126,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "25e6f81845b99921cb0de8eec2dd7c60908e7a9a"
+                    "commit": "b52e9b61de88c009d3466e2ac06ecf5b1eb57e06"
                 }
             ]
         },
@@ -156,7 +156,7 @@
                     "-DLAUNCHER_VERSION_NAME=v0.2.6",
                     "-DLAUNCHER_VERSION_CODE=31",
                     "-DLAUNCHER_CHANGE_LOG=<p>Update runtime to kde sdk to 5.15</p><p>Export playapi information as environment variables</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0"
                 ]
             },
             "sources": [
@@ -215,7 +215,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "1ce7a2a782dd4015ae69ea165a46b4dbdc39a51a"
+                    "commit": "b707b7cd12a4ec1e394b29da53ba35f2bbc4c5b3"
                 },
                 {
                     "type": "git",
