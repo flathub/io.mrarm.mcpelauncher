@@ -163,7 +163,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ChristopherHX/mcpelauncher-ui-manifest.git",
-                    "commit": "4b2ad2d99bd2c40e3cafe77fe4381e4997c1abb8"
+                    "commit": "466bce74c5c06c325758e331cefc5d6f344cf097"
                 }
             ]
         },
