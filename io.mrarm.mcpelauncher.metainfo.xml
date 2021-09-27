@@ -43,6 +43,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.2.6" date="2021-09-27">
+            <description>
+                <p>Update runtime to kde sdk to 5.15</p>
+                <p>Export playapi information as environment variables</p>
+            </description>
+        </release>
         <release version="v0.2.3" date="2021-07-04">
             <description>
                 <p>Use this very unstable launcher at your own risk, backup your worlds including realms.You may be banned by featured servers.</p>
