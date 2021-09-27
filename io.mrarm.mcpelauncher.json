@@ -137,7 +137,7 @@
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
                     },
                     "arm": {
                         "cflags": "-DNDEBUG",
@@ -145,7 +145,7 @@
                     },
                     "aarch64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
                     }
                 },
                 "config-opts": [
@@ -163,7 +163,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ChristopherHX/mcpelauncher-ui-manifest.git",
-                    "commit": "466bce74c5c06c325758e331cefc5d6f344cf097"
+                    "commit": "aa10da5ea1797a187062d1371c653a9b8ad2b79d"
                 }
             ]
         },
