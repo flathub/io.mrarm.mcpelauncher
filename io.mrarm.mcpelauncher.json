@@ -126,7 +126,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "b52e9b61de88c009d3466e2ac06ecf5b1eb57e06"
+                    "commit": "96319e20a23c5e48aa3a2898fe5eda728f94eebc"
                 }
             ]
         },
@@ -215,7 +215,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "b707b7cd12a4ec1e394b29da53ba35f2bbc4c5b3"
+                    "commit": "a4856f4f754e395aa39da36fb139bdd87582b174"
                 },
                 {
                     "type": "git",
