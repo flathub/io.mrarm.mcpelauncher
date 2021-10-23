@@ -126,7 +126,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "b52e9b61de88c009d3466e2ac06ecf5b1eb57e06"
+                    "commit": "96319e20a23c5e48aa3a2898fe5eda728f94eebc"
                 }
             ]
         },
@@ -153,16 +153,16 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
-                    "-DLAUNCHER_VERSION_NAME=v0.2.6",
-                    "-DLAUNCHER_VERSION_CODE=31",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Update runtime to kde sdk to 5.15</p><p>Export playapi information as environment variables</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.2.0"
+                    "-DLAUNCHER_VERSION_NAME=v0.3.0",
+                    "-DLAUNCHER_VERSION_CODE=32",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Anti piracy update, starting 1.17.40+ currently requires an internet connection</p><p>I forget what exactly I have changed during the last months</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/ChristopherHX/mcpelauncher-ui-manifest.git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
                     "commit": "aa10da5ea1797a187062d1371c653a9b8ad2b79d"
                 }
             ]
@@ -215,12 +215,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "b707b7cd12a4ec1e394b29da53ba35f2bbc4c5b3"
+                    "commit": "50fd0e2d92f872178eb37e78390d5cb72749ac61"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "a920ab8fb25200848658b7cde4e9abfafaccaad3",
+                    "commit": "3bd4cc88bea9db7821c19257f1600362666b1e31",
                     "dest": "gamecontrollerdb"
                 },
                 {
