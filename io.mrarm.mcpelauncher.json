@@ -220,7 +220,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "a920ab8fb25200848658b7cde4e9abfafaccaad3",
+                    "commit": "3bd4cc88bea9db7821c19257f1600362666b1e31",
                     "dest": "gamecontrollerdb"
                 },
                 {
