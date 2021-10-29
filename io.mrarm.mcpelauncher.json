@@ -1,10 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15",
+    "base-version": "5.15-21.08",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -203,7 +204,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DQt5QuickCompiler_FOUND=OFF"
-                ]
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
             },
             "only-arches": [
                 "i386",
