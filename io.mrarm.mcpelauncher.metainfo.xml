@@ -10,7 +10,7 @@
             To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game. Otherwise you will get an license error while launching the google play apk.
         </p>
         <p>
-            This version is work in progress. Please report all reproducible crashs and attach full crashlogs. For sound you will have to install pulseaudio on your host system, otherwise the game will be silent.
+            For sound you will have to install pulseaudio on your host system, otherwise the game will be silent on arm based systems.
         </p>
         <p>
             The project runs the native libraries from the Android version directly on your computer. This is accomplished by fixing the incompatibilities between the libc used on Android and the one used on desktop Linux or OS X (Android - Bionic; Linux - glibc). This is a simple compatibility layer which doesn’t impact performance in any significant way; it’s similar to Wine, but much more lightweight and simple. Aditionally, all Android-specific code has been rewritten to run on Linux (AppPlatform, Store, Xbox Live, etc.).
@@ -43,6 +43,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.3.0.1" date="2021-11-03">
+            <description>
+                <p>Update flatpak sdk to kde 5.15-21.08</p>
+                <p>revert workaround of the apk downloader required for kde 5.15</p>
+            </description>
+        </release>
         <release version="v0.3.0" date="2021-10-22">
             <description>
                 <p>Anti piracy update, starting 1.17.40+ currently requires an internet connection</p>
