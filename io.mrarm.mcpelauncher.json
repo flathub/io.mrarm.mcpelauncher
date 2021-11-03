@@ -252,6 +252,12 @@
                         "mkdir nlohmann_json_ext",
                         "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
                     ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
+                    ]
                 }
             ]
         },
