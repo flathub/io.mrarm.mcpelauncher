@@ -1,10 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15",
+    "base-version": "5.15-21.08",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -137,7 +138,7 @@
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     },
                     "arm": {
                         "cflags": "-DNDEBUG",
@@ -145,7 +146,7 @@
                     },
                     "aarch64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
                 "config-opts": [
@@ -153,7 +154,7 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.3.2-flatpak-arm64",
+                    "-DLAUNCHER_VERSION_NAME=v0.3.2-flatpak-amd64",
                     "-DLAUNCHER_VERSION_CODE=34",
                     "-DLAUNCHER_CHANGE_LOG=<p>This project may no longer provide latest version support. It may take more than 12 month for a new Version to be supported.</p><p>1.13.0 - 1.18.2 are now working inclusive offline mode</p><p>The Development Mode is no longer hidden</p><p>This version cannot launch Minecraft 1.18.10.22</p><p>No longer contains proprietary launcher extensions. This Project still contains the proprietary fmod library, the arm32 laucher loads binaries extracted from the android ndk built without sourcecode</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
@@ -203,7 +204,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DQt5QuickCompiler_FOUND=OFF"
-                ]
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
             },
             "only-arches": [
                 "i386",
@@ -248,6 +251,12 @@
                     "commands": [
                         "mkdir nlohmann_json_ext",
                         "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
                     ]
                 }
             ]
