@@ -226,7 +226,7 @@
                 {
                     "type": "file",
                     "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-ui-qt/0b956a0fc816d900d5b3f2883c6a401330c50fab/Resources/mcpelauncher-icon.svg",
-                    "sha512": "bc51d588a25fb12cee32b850e7d68121bf014ec0301bb16b2d91b9fb460dac55"
+                    "sha512": "308fe0985bb1b61e908fe82f07b1a49bf7785dadd9539532f83b2ab2221d38c2d92f20be28e9511cbae347ba560540c5190641d3e2268d5d35fffb2e6a0cf6ee"
                 },
                 {
                     "type": "file",
