@@ -224,9 +224,9 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-proprietary.git",
-                    "commit": "f532839395ee2935f635ea9d356439bcf3b3ab2f"
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-ui-qt/0b956a0fc816d900d5b3f2883c6a401330c50fab/Resources/mcpelauncher-icon.svg",
+                    "sha512": "bc51d588a25fb12cee32b850e7d68121bf014ec0301bb16b2d91b9fb460dac55"
                 },
                 {
                     "type": "file",
