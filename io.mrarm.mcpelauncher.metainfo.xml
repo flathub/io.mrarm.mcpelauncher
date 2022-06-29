@@ -22,12 +22,16 @@
     <launchable type="desktop-id">io.mrarm.mcpelauncher.desktop</launchable>
     <screenshots>
         <screenshot type="default">
-            <caption>Welcome page of the Launcher</caption>
-            <image>https://user-images.githubusercontent.com/44845461/85148024-edccbd80-b24f-11ea-9a6a-0cc28dff4ff6.png</image>
+            <caption>Changelog page of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/changelogscreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Main screen of the Launcher</caption>
-            <image>https://user-images.githubusercontent.com/24195572/71060819-64f78c80-211b-11ea-8ea4-f1c2dabb9b54.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/homescreen.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Main screen of the Game</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/gamescreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Ingame ancient Nether Portal</caption>
