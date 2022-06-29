@@ -1,10 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.14",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.14",
+    "base-version": "5.15-21.08",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -71,18 +72,6 @@
             ]
         },
         {
-            "name": "libuv",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/libuv/libuv.git",
-                    "tag": "v1.38.0",
-                    "commit": "1ab9ea3790378f9f25c4e78e9e2b511c75f9c9ed"
-                }
-            ]
-        },
-        {
             "name": "msa-manifest",
             "buildsystem": "cmake",
             "build-options": {
@@ -126,7 +115,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "96319e20a23c5e48aa3a2898fe5eda728f94eebc"
+                    "commit": "62b2661758db127f21e2ec80336b45f56a6256d1"
                 }
             ]
         },
@@ -153,9 +142,9 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.3.2-flatpak-arm32",
-                    "-DLAUNCHER_VERSION_CODE=34",
-                    "-DLAUNCHER_CHANGE_LOG=<p>This project may no longer provide latest version support. It may take more than 12 month for a new Version to be supported.</p><p>1.13.0 - 1.18.2 are now working inclusive offline mode</p><p>The Development Mode is no longer hidden</p><p>This version cannot launch Minecraft 1.18.10.22</p><p>No longer contains proprietary launcher extensions. This Project still contains the proprietary fmod library, the arm32 laucher loads binaries extracted from the android ndk built without sourcecode</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.4.0-flatpak",
+                    "-DLAUNCHER_VERSION_CODE=40",
+                    "-DLAUNCHER_CHANGE_LOG=<p>New icon and logo</p><p>Fix Launcher loading bug</p><p>Fix internal storage of 1.18.10 and later</p><p>Fix xbox live achievements page</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
                 ]
             },
@@ -163,7 +152,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "6039645b3d9e5d422d4039bd8e3272dd6b2d4673"
+                    "commit": "0da9956a953fdfcf928e00a5b24e86faaa0eaed2"
                 }
             ]
         },
@@ -203,7 +192,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DQt5QuickCompiler_FOUND=OFF"
-                ]
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
             },
             "only-arches": [
                 "i386",
@@ -215,7 +206,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "1da5aa28ceb7026f2514895adea5acd1c972db65"
+                    "commit": "21b959eb01179a6c0101b5d5e2b049b9e8250e11"
                 },
                 {
                     "type": "git",
@@ -262,9 +253,9 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-proprietary.git",
-                    "commit": "f532839395ee2935f635ea9d356439bcf3b3ab2f"
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-ui-qt/0b956a0fc816d900d5b3f2883c6a401330c50fab/Resources/mcpelauncher-icon.svg",
+                    "sha512": "308fe0985bb1b61e908fe82f07b1a49bf7785dadd9539532f83b2ab2221d38c2d92f20be28e9511cbae347ba560540c5190641d3e2268d5d35fffb2e6a0cf6ee"
                 },
                 {
                     "type": "file",
