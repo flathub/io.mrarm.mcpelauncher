@@ -1,4 +1,3 @@
 {
-    "only-arches": [ "arm" ],
-    "end-of-life": "This application is no longer maintained because of unproven claims that proprietary launcher extensions would violate the GPL3 License of the launcher."
+    "only-arches": [ "x86_64" ]
 }
