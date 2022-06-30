@@ -1,10 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "6.2",
     "sdk": "org.kde.Sdk",
+    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15",
+    "base-version": "6.2",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -71,49 +72,6 @@
             ]
         },
         {
-            "name": "libuv",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/libuv/libuv.git",
-                    "tag": "v1.38.0",
-                    "commit": "1ab9ea3790378f9f25c4e78e9e2b511c75f9c9ed"
-                }
-            ]
-        },
-        {
-            "name": "msa-manifest",
-            "buildsystem": "cmake",
-            "build-options": {
-                "config-opts": [
-                    "-DENABLE_MSA_QT_UI=ON",
-                    "-DMSA_UI_PATH_DEV=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext"
-                ]
-            },
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "e830ebefc90006d459210ac8c0b9726402fead2e"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
-                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
-                    "dest-filename": "nlohmann_json_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir nlohmann_json_ext",
-                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "mcpelauncher-versiondb",
             "buildsystem": "simple",
             "build-commands": [
@@ -137,7 +95,7 @@
                 "arch": {
                     "x86_64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     },
                     "arm": {
                         "cflags": "-DNDEBUG",
@@ -145,17 +103,17 @@
                     },
                     "aarch64": {
                         "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
-                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG -DGOOGLEPLAYDOWNLOADER_USEQT"
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
                     }
                 },
                 "config-opts": [
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
-                    "-DLAUNCHER_DISABLE_DEV_MODE=ON",
-                    "-DLAUNCHER_VERSION_NAME=v0.3.0",
-                    "-DLAUNCHER_VERSION_CODE=32",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Anti piracy update, starting 1.17.40+ currently requires an internet connection</p><p>I forget what exactly I have changed during the last months</p>",
+                    "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
+                    "-DLAUNCHER_VERSION_NAME=v0.4.0-flatpak-amd64-qt6-testbuild",
+                    "-DLAUNCHER_VERSION_CODE=37",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Migrate to Qt6</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
                 ]
             },
@@ -163,7 +121,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8cba5f30206d79573dfcf9c6d9e79b946f49227c"
+                    "commit": "6b1313fc728461480c6946fd37cc48066e396b3a"
                 }
             ]
         },
@@ -196,14 +154,12 @@
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=GLFW",
                     "-DENABLE_DEV_PATHS=OFF",
-                    "-DBUILD_FAKE_JNI_TESTS=OFF",
-                    "-DBUILD_FAKE_JNI_EXAMPLES=OFF",
-                    "-DBUILD_BARON_EXAMPLES=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DJNI_USE_JNIVM=ON",
-                    "-DQt5QuickCompiler_FOUND=OFF"
-                ]
+                    "-DJNI_USE_JNIVM=ON"
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
             },
             "only-arches": [
                 "i386",
@@ -215,12 +171,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "50fd0e2d92f872178eb37e78390d5cb72749ac61"
+                    "commit": "4966312e813d274e98e7e3a052943ae67c475f15"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "3bd4cc88bea9db7821c19257f1600362666b1e31",
+                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
                     "dest": "gamecontrollerdb"
                 },
                 {
@@ -249,6 +205,12 @@
                         "mkdir nlohmann_json_ext",
                         "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
                     ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
+                    ]
                 }
             ]
         },
@@ -262,9 +224,9 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-proprietary.git",
-                    "commit": "f532839395ee2935f635ea9d356439bcf3b3ab2f"
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-ui-qt/0b956a0fc816d900d5b3f2883c6a401330c50fab/Resources/mcpelauncher-icon.svg",
+                    "sha512": "308fe0985bb1b61e908fe82f07b1a49bf7785dadd9539532f83b2ab2221d38c2d92f20be28e9511cbae347ba560540c5190641d3e2268d5d35fffb2e6a0cf6ee"
                 },
                 {
                     "type": "file",
