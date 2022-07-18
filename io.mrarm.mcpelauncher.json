@@ -121,7 +121,7 @@
                         "mkdir mcpelauncher-core",
                         "cd mcpelauncher-core && unzip ../core.zip",
                         "mv mcpelauncher-core/*/* mcpelauncher-core/",
-                        "sed -i -e \"s/syms;/syms;android_syms["mallinfo"] = (void*) abort;/g\" mcpelauncher-client/src/main.cpp",
+                        "sed -i -e \"s/syms;/syms;android_syms[\\\"mallinfo\\\"] = (void*) abort;/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i -e \"s/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\\\"Dummy\\\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
                     ]
