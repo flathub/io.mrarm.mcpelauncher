@@ -198,7 +198,8 @@
                         "mkdir mcpelauncher-core",
                         "cd mcpelauncher-core && unzip ../core.zip",
                         "mv mcpelauncher-core/*/* mcpelauncher-core/",
-                        "cat mcpelauncher-client/src/main.cpp | sed -e \"s/syms;/syms;$(cat main.cpp | grep \"struct ___data\" -A 23 | sed -e ':a' -e '$!{N;ba' -e '}' -e 's/[&/\\]/\\\\&/g; s/\\n/\\\\&/g')/g\" | sed -e 's/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\"Dummy\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g' > mcpelauncher-client/src/main.cpp"
+                        "cat mcpelauncher-client/src/main.cpp | sed -e \"s/syms;/syms;$(cat main.cpp | grep \"struct ___data\" -A 23 | sed -e ':a' -e '$!{N;ba' -e '}' -e 's/[&/\\]/\\\\&/g; s/\\n/\\\\&/g')/g\" | sed -e 's/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\"Dummy\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g' > mcpelauncher-client/src/main.cpp",
+                        "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
                     ]
                 },
                 {
