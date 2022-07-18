@@ -49,6 +49,118 @@
     ],
     "modules": [
         {
+            "name": "mcpelauncher-client",
+            "buildsystem": "cmake",
+            "build-options": {
+                "arch": {
+                    "x86_64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "arm": {
+                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
+                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
+                    },
+                    "i386": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "aarch64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    }
+                },
+                "env": {
+                    "CC": "clang",
+                    "CXX": "clang++"
+                },
+                "config-opts": [
+                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DENABLE_DEV_PATHS=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DJNI_USE_JNIVM=ON"
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
+            },
+            "only-arches": [
+                "i386",
+                "x86_64",
+                "arm",
+                "aarch64"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
+                    "commit": "4966312e813d274e98e7e3a052943ae67c475f15"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
+                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
+                    "dest": "gamecontrollerdb"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-core/archive/cc06087170a51e415f68f21985eb49c3070e5f97.zip",
+                    "sha512": "a503c28252414403b38ee4abe881e698ae339ca50a2d609b047d9ca8b4061df4208ccc35fb49336780d1d743ff82fabb5153c0628d5ce27783aa176af77d0d75",
+                    "dest-filename": "core.zip"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-client/3647bc533f4ff51cb44d0825f91e93cba9ce06c8/src/main.cpp",
+                    "sha512": "e8f6fcc71d0943264a3e11811133396f2508ed0bf4fb4b1ce299cf673ada577908e3e4bbf95c5047e51d39d7a4674a6c4e3d807b0c5754e86687237aa7aa8674",
+                    "dest-filename": "main.cpp"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "rm -rf mcpelauncher-core",
+                        "mkdir mcpelauncher-core",
+                        "cd mcpelauncher-core && unzip ../core.zip",
+                        "mv mcpelauncher-core/*/* mcpelauncher-core/",
+                        "cat mcpelauncher-client/src/main.cpp | sed -e \"s/syms;/syms;$(cat main.cpp | grep \"struct ___data\" -A 23 | sed -e \":a\" -e \"$\!{N;ba\" -e \"}\" -e \"s/[&/\\]/\\\\&/g; s/\\n/\\\\&/g\")/g\" | sed -e \"s/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\\\"Dummy\\\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g\" > mcpelauncher-client/src/main.cpp",
+                        "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/minecraft-linux/glfw/archive/37204ede828296f8b6fe068851f3c7841bf20161.zip",
+                    "sha512": "dcc083cd5b805d41fc7b4c59187977cd8e2f45dffcc35c47579170ec2433df66b91ba603eebef3f994c02058869b0bbb1aa18d79f61e66f3d83cbe6201fb29bc",
+                    "dest-filename": "glfw3_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir glfw3_ext",
+                        "cd glfw3_ext && unzip ../glfw3_ext.zip",
+                        "mv glfw3_ext/*/* glfw3_ext/"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
+                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
+                    "dest-filename": "nlohmann_json_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir nlohmann_json_ext",
+                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
+                    ]
+                }
+            ]
+        },
+                {
             "name": "protobuf",
             "sources": [
                 {
@@ -122,118 +234,6 @@
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
                     "commit": "6b1313fc728461480c6946fd37cc48066e396b3a"
-                }
-            ]
-        },
-        {
-            "name": "mcpelauncher-client",
-            "buildsystem": "cmake",
-            "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
-                "env": {
-                    "CC": "clang",
-                    "CXX": "clang++"
-                },
-                "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=GLFW",
-                    "-DENABLE_DEV_PATHS=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
-                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DJNI_USE_JNIVM=ON"
-                ],
-                "prepend-path": "/usr/lib/sdk/llvm12/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
-            },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "4966312e813d274e98e7e3a052943ae67c475f15"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
-                    "dest": "gamecontrollerdb"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-core/archive/cc06087170a51e415f68f21985eb49c3070e5f97.zip",
-                    "sha512": "a503c28252414403b38ee4abe881e698ae339ca50a2d609b047d9ca8b4061df4208ccc35fb49336780d1d743ff82fabb5153c0628d5ce27783aa176af77d0d75",
-                    "dest-filename": "core.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-client/3647bc533f4ff51cb44d0825f91e93cba9ce06c8/src/main.cpp",
-                    "sha512": "e8f6fcc71d0943264a3e11811133396f2508ed0bf4fb4b1ce299cf673ada577908e3e4bbf95c5047e51d39d7a4674a6c4e3d807b0c5754e86687237aa7aa8674",
-                    "dest-filename": "main.cpp"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "rm -rf mcpelauncher-core",
-                        "mkdir mcpelauncher-core",
-                        "cd mcpelauncher-core && unzip ../core.zip",
-                        "mv mcpelauncher-core/*/* mcpelauncher-core/",
-                        "cat mcpelauncher-client/src/main.cpp | sed -e \"s/syms;/syms;$(cat main.cpp | grep \"struct ___data\" -A 23 | sed -e ':a' -e '$!{N;ba' -e '}' -e 's/[&/\\]/\\\\&/g; s/\\n/\\\\&/g')/g\" | sed -e 's/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\"Dummy\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g' > mcpelauncher-client/src/main.cpp",
-                        "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
-                    ]
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/minecraft-linux/glfw/archive/37204ede828296f8b6fe068851f3c7841bf20161.zip",
-                    "sha512": "dcc083cd5b805d41fc7b4c59187977cd8e2f45dffcc35c47579170ec2433df66b91ba603eebef3f994c02058869b0bbb1aa18d79f61e66f3d83cbe6201fb29bc",
-                    "dest-filename": "glfw3_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir glfw3_ext",
-                        "cd glfw3_ext && unzip ../glfw3_ext.zip",
-                        "mv glfw3_ext/*/* glfw3_ext/"
-                    ]
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
-                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
-                    "dest-filename": "nlohmann_json_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir nlohmann_json_ext",
-                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
-                    ]
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
-                    ]
                 }
             ]
         },
