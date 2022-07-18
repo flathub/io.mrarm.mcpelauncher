@@ -111,10 +111,10 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.4.0-flatpak-amd64-qt6-testbuild",
-                    "-DLAUNCHER_VERSION_CODE=37",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Migrate to Qt6</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
+                    "-DLAUNCHER_VERSION_NAME=v0.5.0-flatpak-amd64-qt6-rd1",
+                    "-DLAUNCHER_VERSION_CODE=40",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Testing</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
                 ]
             },
             "sources": [
@@ -178,6 +178,28 @@
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
                     "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
                     "dest": "gamecontrollerdb"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-core/archive/cc06087170a51e415f68f21985eb49c3070e5f97.zip",
+                    "sha512": "a503c28252414403b38ee4abe881e698ae339ca50a2d609b047d9ca8b4061df4208ccc35fb49336780d1d743ff82fabb5153c0628d5ce27783aa176af77d0d75",
+                    "dest-filename": "core.zip"
+                },
+                {
+                    "type": "file",
+                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-client/3647bc533f4ff51cb44d0825f91e93cba9ce06c8/src/main.cpp",
+                    "sha512": "e8f6fcc71d0943264a3e11811133396f2508ed0bf4fb4b1ce299cf673ada577908e3e4bbf95c5047e51d39d7a4674a6c4e3d807b0c5754e86687237aa7aa8674",
+                    "dest-filename": "main.cpp"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "rm -rf mcpelauncher-core",
+                        "mkdir mcpelauncher-core",
+                        "cd mcpelauncher-core && unzip ../core.zip",
+                        "mv mcpelauncher-core/*/* mcpelauncher-core/",
+                        "cat mcpelauncher-client/src/main.cpp | sed -e \"s/syms;/syms;$(cat main.cpp | grep \"struct ___data\" -A 23 | sed -e ':a' -e '$!{N;ba' -e '}' -e 's/[&/\\]/\\\\&/g; s/\\n/\\\\&/g')/g\" | sed -e 's/FakeEGL::setProcAddrFunction/auto associatedWindow = GameWindowManager::getManager()->createWindow(\"Dummy\", options.windowWidth, options.windowHeight, options.graphicsApi);FakeEGL::setProcAddrFunction/g' > mcpelauncher-client/src/main.cpp"
+                    ]
                 },
                 {
                     "type": "file",
