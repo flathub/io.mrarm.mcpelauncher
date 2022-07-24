@@ -49,6 +49,23 @@
     ],
     "modules": [
         {
+            "name": "mcpelauncher-versiondb",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -Dm644 versions.armeabi-v7a.json.min /app/share/versiondb/versions.armeabi-v7a.json.min",
+                "install -Dm644 versions.x86.json.min /app/share/versiondb/versions.x86.json.min",
+                "install -Dm644 versions.arm64-v8a.json.min /app/share/versiondb/versions.arm64-v8a.json.min",
+                "install -Dm644 versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
+                    "commit": "159e7a8502867764a4c2afdfe2900ecb78ca0e89"
+                }
+            ]
+        },
+        {
             "name": "mcpelauncher-client",
             "buildsystem": "cmake",
             "build-options": {
@@ -127,7 +144,7 @@
                         "cd mcpelauncher-client && unzip ../client.zip",
                         "mv mcpelauncher-client/*/* mcpelauncher-client/",
                         "sed -i -e \"s/.*setupGLES2Symbols.*//g\" mcpelauncher-client/src/main.cpp",
-                        "sed -i -e \"s/.*modloader.*;.*/MinecraftUtils::setupGLES2Symbols(fake_egl::eglGetProcAddress);\\\\0/g\" mcpelauncher-client/src/main.cpp",
+                        "sed -i -e \"s/.*modLoader;.*/MinecraftUtils::setupGLES2Symbols(fake_egl::eglGetProcAddress);\\\\0/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i -e \"s/.*syms;.*/\\\\0    struct ___data {\\\\n          size_t arena; \\\\n             \\\\n            size_t ordblks; \\\\n             \\\\n            size_t smblks; \\\\n             \\\\n            size_t hblks; \\\\n             \\\\n            size_t hblkhd; \\\\n             \\\\n            size_t usmblks; \\\\n             \\\\n            size_t fsmblks; \\\\n             \\\\n            size_t uordblks; \\\\n             \\\\n            size_t fordblks; \\\\n             \\\\n            size_t keepcost;\\\\n                };\\\\n    android_syms[\\\"mallinfo\\\"] = (void*)+[](void*) -> ___data {\\\\n        return { .ordblks = 8000000, .usmblks= 8000000, .fordblks= 8000000 };\\\\n    };/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i \"48,57d\" mcpelauncher-client/src/fake_looper.cpp",
                         "sed -i -e \"s/.*ALooper_prepare.*/Log::info(\\\"Launcher\\\", \\\"Loading gamepad mappings\\\");\\\\n    WindowCallbacks::loadGamepadMappings();\\\\n#ifdef MCPELAUNCHER_ENABLE_ERROR_WINDOW\\\\n    GameWindowManager::getManager()->setErrorHandler(std::make_shared<ErrorWindow>());\\\\n#endif\\\\n\\\\n    Log::info(\\\"Launcher\\\", \\\"Creating window\\\");\\\\n    static auto associatedWindow = GameWindowManager::getManager()->createWindow(\\\"Minecraft\\\",\\\\n            options.windowWidth, options.windowHeight, options.graphicsApi);\\\\0/g\" mcpelauncher-client/src/fake_looper.cpp",
@@ -190,23 +207,6 @@
                     "url": "https://github.com/nih-at/libzip.git",
                     "tag": "v1.7.1",
                     "commit": "dcd9a0bfe1ac2893d7f62bafb19f0a4d7b08c0f7"
-                }
-            ]
-        },
-        {
-            "name": "mcpelauncher-versiondb",
-            "buildsystem": "simple",
-            "build-commands": [
-                "install -Dm644 versions.armeabi-v7a.json.min /app/share/versiondb/versions.armeabi-v7a.json.min",
-                "install -Dm644 versions.x86.json.min /app/share/versiondb/versions.x86.json.min",
-                "install -Dm644 versions.arm64-v8a.json.min /app/share/versiondb/versions.arm64-v8a.json.min",
-                "install -Dm644 versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "96319e20a23c5e48aa3a2898fe5eda728f94eebc"
                 }
             ]
         },
