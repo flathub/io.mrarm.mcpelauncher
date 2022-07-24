@@ -126,8 +126,8 @@
                         "cd mcpelauncher-client && unzip ../client.zip",
                         "mv mcpelauncher-client/*/* mcpelauncher-client/",
                         "sed -i -e \"s/syms;/syms;android_syms[\\\"mallinfo\\\"] = (void*) abort;/g\" mcpelauncher-client/src/main.cpp",
-                        "sed -i \"s/.*ALooper_prepare.*/currentLooper = std::make_unique<FakeLooper>();\\ncurrentLooper->prepare();\\0/g\" src/fake_looper.cpp",
-                        "sed -i \"s/.*Looper already.*/return (ALooper *) (void *) currentLooper.get();/g\" src/fake_looper.cpp",
+                        "sed -i \"s/.*ALooper_prepare.*/currentLooper = std::make_unique<FakeLooper>();\\ncurrentLooper->prepare();\\0/g\" mcpelauncher-client/src/fake_looper.cpp",
+                        "sed -i \"s/.*Looper already.*/return (ALooper *) (void *) currentLooper.get();/g\" mcpelauncher-client/src/fake_looper.cpp",
                         "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
                     ]
                 },
