@@ -144,7 +144,7 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
                     "-DLAUNCHER_VERSION_NAME=v0.4.0-flatpak",
                     "-DLAUNCHER_VERSION_CODE=40",
-                    "-DLAUNCHER_CHANGE_LOG=<p>New icon and logo</p><p>Fix Launcher loading bug</p><p>Fix internal storage of 1.18.10 and later</p><p>Fix xbox live achievements page</p>",
+                    "-DLAUNCHER_CHANGE_LOG=<p>TEST</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
                 ]
             },
