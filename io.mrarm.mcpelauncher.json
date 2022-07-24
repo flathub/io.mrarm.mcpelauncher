@@ -126,7 +126,7 @@
                         "mkdir mcpelauncher-client",
                         "cd mcpelauncher-client && unzip ../client.zip",
                         "mv mcpelauncher-client/*/* mcpelauncher-client/",
-                        "sed -i -e \"s/.*setupGLES2Symbols.*//g\" mcpelauncher-client/src/main.cpp"
+                        "sed -i -e \"s/.*setupGLES2Symbols.*//g\" mcpelauncher-client/src/main.cpp",
                         "sed -i -e \"s/.*modloader.*;.*/MinecraftUtils::setupGLES2Symbols(fake_egl::eglGetProcAddress);\\\\0/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i -e \"s/.*syms;.*/\\\\0    struct ___data {\\\\n          size_t arena; \\\\n             \\\\n            size_t ordblks; \\\\n             \\\\n            size_t smblks; \\\\n             \\\\n            size_t hblks; \\\\n             \\\\n            size_t hblkhd; \\\\n             \\\\n            size_t usmblks; \\\\n             \\\\n            size_t fsmblks; \\\\n             \\\\n            size_t uordblks; \\\\n             \\\\n            size_t fordblks; \\\\n             \\\\n            size_t keepcost;\\\\n                };\\\\n    android_syms[\\\"mallinfo\\\"] = (void*)+[](void*) -> ___data {\\\\n        return { .ordblks = 8000000, .usmblks= 8000000, .fordblks= 8000000 };\\\\n    };/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i \"48,57d\" mcpelauncher-client/src/fake_looper.cpp",
