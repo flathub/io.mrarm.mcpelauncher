@@ -110,9 +110,9 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-client/3647bc533f4ff51cb44d0825f91e93cba9ce06c8/src/main.cpp",
-                    "sha512": "e8f6fcc71d0943264a3e11811133396f2508ed0bf4fb4b1ce299cf673ada577908e3e4bbf95c5047e51d39d7a4674a6c4e3d807b0c5754e86687237aa7aa8674",
-                    "dest-filename": "main.cpp"
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-client/archive/c521350d71f43feefc876074fe7991866c4edd45.zip",
+                    "sha512": "127b023ad2de4e15d38e39aaabad5815fd10c7f7efb72bf78d36d3220d54f4ebd463dc7c72761f21c71cbe59341ca36e3f45a077294b36eab5f2094446223ce6",
+                    "dest-filename": "client.zip"
                 },
                 {
                     "type": "shell",
@@ -121,6 +121,10 @@
                         "mkdir mcpelauncher-core",
                         "cd mcpelauncher-core && unzip ../core.zip",
                         "mv mcpelauncher-core/*/* mcpelauncher-core/",
+                        "rm -rf mcpelauncher-client",
+                        "mkdir mcpelauncher-client",
+                        "cd mcpelauncher-client && unzip ../client.zip",
+                        "mv mcpelauncher-client/*/* mcpelauncher-client/",
                         "sed -i -e \"s/syms;/syms;android_syms[\\\"mallinfo\\\"] = (void*) abort;/g\" mcpelauncher-client/src/main.cpp",
                         "sed -i \"s/.*ALooper_prepare.*/currentLooper = std::make_unique<FakeLooper>();\ncurrentLooper->prepare();\\0/g\" src/fake_looper.cpp",
                         "sed -i \"s/.*Looper already.*/return (ALooper *) (void *) currentLooper.get();/g\" src/fake_looper.cpp",
