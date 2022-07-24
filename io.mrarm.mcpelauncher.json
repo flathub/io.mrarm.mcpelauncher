@@ -111,7 +111,7 @@
                 {
                     "type": "file",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-client/archive/c521350d71f43feefc876074fe7991866c4edd45.zip",
-                    "sha512": "127b023ad2de4e15d38e39aaabad5815fd10c7f7efb72bf78d36d3220d54f4ebd463dc7c72761f21c71cbe59341ca36e3f45a077294b36eab5f2094446223ce6",
+                    "sha512": "f42bc1b0edbdc25fa335b5cdba9dfd34a5df4e22525a30378264f67b58efebf31189ec56935cdc00a444663a1902b0deb6ef8bb1f61e9d7859a592edc3355ce0",
                     "dest-filename": "client.zip"
                 },
                 {
