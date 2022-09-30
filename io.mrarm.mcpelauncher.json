@@ -1,11 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.2",
+    "runtime-version": "6.3",
     "sdk": "org.kde.Sdk",
     "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.2",
+    "base-version": "6.3",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -61,7 +61,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "159e7a8502867764a4c2afdfe2900ecb78ca0e89"
+                    "commit": "ddc410247f2a4a29db0e31a689554669d3a51b85"
                 }
             ]
         },
@@ -111,7 +111,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "4966312e813d274e98e7e3a052943ae67c475f15",
+                    "commit": "73f8ad3b8c2dcad2cdedf53177dce126005fcbe9",
                     "disable-shallow-clone": true
                 },
                 {
@@ -119,38 +119,6 @@
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
                     "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
                     "dest": "gamecontrollerdb"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-core/archive/cc06087170a51e415f68f21985eb49c3070e5f97.zip",
-                    "sha512": "a503c28252414403b38ee4abe881e698ae339ca50a2d609b047d9ca8b4061df4208ccc35fb49336780d1d743ff82fabb5153c0628d5ce27783aa176af77d0d75",
-                    "dest-filename": "core.zip"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-client/archive/c521350d71f43feefc876074fe7991866c4edd45.zip",
-                    "sha512": "f42bc1b0edbdc25fa335b5cdba9dfd34a5df4e22525a30378264f67b58efebf31189ec56935cdc00a444663a1902b0deb6ef8bb1f61e9d7859a592edc3355ce0",
-                    "dest-filename": "client.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "rm -rf mcpelauncher-core",
-                        "mkdir mcpelauncher-core",
-                        "cd mcpelauncher-core && unzip ../core.zip",
-                        "mv mcpelauncher-core/*/* mcpelauncher-core/",
-                        "rm -rf mcpelauncher-client",
-                        "mkdir mcpelauncher-client",
-                        "cd mcpelauncher-client && unzip ../client.zip",
-                        "mv mcpelauncher-client/*/* mcpelauncher-client/",
-                        "sed -i -e \"s/.*setupGLES2Symbols.*//g\" mcpelauncher-client/src/main.cpp",
-                        "sed -i -e \"s/.*modLoader;.*/MinecraftUtils::setupGLES2Symbols(fake_egl::eglGetProcAddress);\\\\0/g\" mcpelauncher-client/src/main.cpp",
-                        "sed -i -e \"s/.*syms;.*/\\\\0    struct ___data {\\\\n          size_t arena; \\\\n             \\\\n            size_t ordblks; \\\\n             \\\\n            size_t smblks; \\\\n             \\\\n            size_t hblks; \\\\n             \\\\n            size_t hblkhd; \\\\n             \\\\n            size_t usmblks; \\\\n             \\\\n            size_t fsmblks; \\\\n             \\\\n            size_t uordblks; \\\\n             \\\\n            size_t fordblks; \\\\n             \\\\n            size_t keepcost;\\\\n                };\\\\n    android_syms[\\\"mallinfo\\\"] = (void*)+[](void*) -> ___data {\\\\n        return { .ordblks = 8000000, .usmblks= 8000000, .fordblks= 8000000 };\\\\n    };/g\" mcpelauncher-client/src/main.cpp",
-                        "sed -i \"48,57d\" mcpelauncher-client/src/fake_looper.cpp",
-                        "sed -i -e \"s/.*ALooper_prepare.*/Log::info(\\\"Launcher\\\", \\\"Loading gamepad mappings\\\");\\\\n    WindowCallbacks::loadGamepadMappings();\\\\n#ifdef MCPELAUNCHER_ENABLE_ERROR_WINDOW\\\\n    GameWindowManager::getManager()->setErrorHandler(std::make_shared<ErrorWindow>());\\\\n#endif\\\\n\\\\n    Log::info(\\\"Launcher\\\", \\\"Creating window\\\");\\\\n    static auto associatedWindow = GameWindowManager::getManager()->createWindow(\\\"Minecraft\\\",\\\\n            options.windowWidth, options.windowHeight, options.graphicsApi);\\\\0/g\" mcpelauncher-client/src/fake_looper.cpp",
-                        "sed -i \"s/.*currentLooper =.*/\\\\0currentLooper->associatedWindow = associatedWindow;associatedWindow->makeCurrent(false);/g\" mcpelauncher-client/src/fake_looper.cpp",
-                        "sed -i -e \"s/useDirectKeyboardInput =.*/useDirectKeyboardInput = false;/g\" mcpelauncher-client/src/window_callbacks.cpp"
-                    ]
                 },
                 {
                     "type": "file",
@@ -177,12 +145,6 @@
                     "commands": [
                         "mkdir nlohmann_json_ext",
                         "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
-                    ]
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i '1i #include <limits>' mcpelauncher-linker/core/libziparchive/zip_archive_stream_entry.cc"
                     ]
                 }
             ]
@@ -233,9 +195,9 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.5.0-flatpak-amd64-qt6-rd1",
-                    "-DLAUNCHER_VERSION_CODE=40",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Testing</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.5.0-flatpak-qt6-rd2",
+                    "-DLAUNCHER_VERSION_CODE=50",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Added 1.19.30 support</p><p>Allow sign in with your own Webbrowser</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
                 ]
             },
@@ -243,7 +205,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "6b1313fc728461480c6946fd37cc48066e396b3a"
+                    "commit": "acd23b4bcb0f21f56dea8fd83e09d7e5d50e0472"
                 }
             ]
         },
