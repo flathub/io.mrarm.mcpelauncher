@@ -45,7 +45,9 @@
         "--device=dri",
         "--socket=pulseaudio",
         "--device=all",
-        "--env=ALSA_CONFIG_PATH="
+        "--env=ALSA_CONFIG_PATH=",
+        "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
+        "--env=QML_IMPORT_PATH=/app/qml/"
     ],
     "modules": [
         {
