@@ -115,7 +115,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "62b2661758db127f21e2ec80336b45f56a6256d1"
+                    "commit": "8de4069db08403f86a22d4d558295e83a0ebfcfa"
                 }
             ]
         },
@@ -142,10 +142,10 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.4.0-flatpak",
-                    "-DLAUNCHER_VERSION_CODE=40",
-                    "-DLAUNCHER_CHANGE_LOG=<p>New icon and logo</p><p>Fix Launcher loading bug</p><p>Fix internal storage of 1.18.10 and later</p><p>Fix xbox live achievements page</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.3.0"
+                    "-DLAUNCHER_VERSION_NAME=v0.5.0-flatpak",
+                    "-DLAUNCHER_VERSION_CODE=49",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Updated to be able to launch 1.18.30 to 1.19.30</p><p>1.18.30 - 1.19.30 may stop responding while showing a progress of 56%-58%, just close and reopen the game again this issue is not planned to be fixed</p><p>1.18.30 - 1.19.30 the game doesn't allow to select any skins, choose game version 1.16.201 to fix this</p><p>1.18.30 - 1.19.30 will crash very frequently, this is not planned to be fixed</p><p>Realms might work again for some time, but don't rely beeing able to access them due to incompatible game updates</p><p>Credits for fixing access to the new world screens go to GitHub user reedacartwright</p><p>Credits for 1.19.40 beta patches go to GitHub user 0xCatPKG</p><p>Cross Play with macOS is current not possible for game version 1.18.30 and newer, choose an older game version on linux to match the macOS Launcher</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.5.x"
                 ]
             },
             "sources": [
@@ -206,12 +206,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "21b959eb01179a6c0101b5d5e2b049b9e8250e11"
+                    "commit": "4c7dadf29df543856db9b73f8a7b220e65d489a2"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
+                    "commit": "ff26eb04d0fe18356985d968119429d6012e7d75",
                     "dest": "gamecontrollerdb"
                 },
                 {
