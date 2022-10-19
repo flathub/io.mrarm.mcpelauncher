@@ -114,7 +114,7 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
                     "-DLAUNCHER_VERSION_NAME=v0.5.1-flatpak-qt6",
                     "-DLAUNCHER_VERSION_CODE=51",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p>",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p><p>Update qt5 framework to qt6</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/0.5.x"
                 ]
             },
