@@ -1,11 +1,11 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "6.3",
     "sdk": "org.kde.Sdk",
     "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "5.15-21.08",
+    "base-version": "6.3",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -44,7 +44,9 @@
         "--share=network",
         "--socket=pulseaudio",
         "--device=all",
-        "--env=ALSA_CONFIG_PATH="
+        "--env=ALSA_CONFIG_PATH=",
+        "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
+        "--env=QML_IMPORT_PATH=/app/qml/"
     ],
     "modules": [
         {
@@ -71,37 +73,6 @@
             ]
         },
         {
-            "name": "msa-manifest",
-            "buildsystem": "cmake",
-            "build-options": {
-                "config-opts": [
-                    "-DENABLE_MSA_QT_UI=ON",
-                    "-DMSA_UI_PATH_DEV=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext"
-                ]
-            },
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/msa-manifest.git",
-                    "commit": "e830ebefc90006d459210ac8c0b9726402fead2e"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
-                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
-                    "dest-filename": "nlohmann_json_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir nlohmann_json_ext",
-                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
-                    ]
-                }
-            ]
-        },
-        {
             "name": "mcpelauncher-versiondb",
             "buildsystem": "simple",
             "build-commands": [
@@ -114,7 +85,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "8de4069db08403f86a22d4d558295e83a0ebfcfa"
+                    "commit": "ddc410247f2a4a29db0e31a689554669d3a51b85"
                 }
             ]
         },
@@ -141,17 +112,17 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.5.0-flatpak",
-                    "-DLAUNCHER_VERSION_CODE=49",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Updated to be able to launch 1.18.30 to 1.19.30</p><p>1.18.30 - 1.19.30 may stop responding while showing a progress of 56%-58%, just close and reopen the game again this issue is not planned to be fixed</p><p>1.18.30 - 1.19.30 the game doesn't allow to select any skins, choose game version 1.16.201 to fix this</p><p>1.18.30 - 1.19.30 will crash very frequently, this is not planned to be fixed</p><p>Realms might work again for some time, but don't rely beeing able to access them due to incompatible game updates</p><p>Credits for fixing access to the new world screens go to GitHub user reedacartwright</p><p>Credits for 1.19.40 beta patches go to GitHub user 0xCatPKG</p><p>Cross Play with macOS is current not possible for game version 1.18.30 and newer, choose an older game version on linux to match the macOS Launcher</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.5.x"
+                    "-DLAUNCHER_VERSION_NAME=v0.5.1-flatpak-qt6",
+                    "-DLAUNCHER_VERSION_CODE=51",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "0da9956a953fdfcf928e00a5b24e86faaa0eaed2"
+                    "commit": "485df2e65790bea348cf9397e4ad49b3002dbe8d"
                 }
             ]
         },
@@ -184,13 +155,9 @@
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=GLFW",
                     "-DENABLE_DEV_PATHS=OFF",
-                    "-DBUILD_FAKE_JNI_TESTS=OFF",
-                    "-DBUILD_FAKE_JNI_EXAMPLES=OFF",
-                    "-DBUILD_BARON_EXAMPLES=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DJNI_USE_JNIVM=ON",
-                    "-DQt5QuickCompiler_FOUND=OFF"
+                    "-DJNI_USE_JNIVM=ON"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm12/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
@@ -205,12 +172,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "4c7dadf29df543856db9b73f8a7b220e65d489a2"
+                    "commit": "73f8ad3b8c2dcad2cdedf53177dce126005fcbe9",
+                    "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "ff26eb04d0fe18356985d968119429d6012e7d75",
+                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
                     "dest": "gamecontrollerdb"
                 },
                 {
