@@ -49,7 +49,7 @@
     <releases>
         <release version="v0.5.1" date="2022-10-19">
             <description>
-                <p>Currently able to launch 1.13.0 to 1.19.30</p><p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p>
+                <p>Currently able to launch 1.13.0 to 1.19.30</p><p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p><p>Update qt5 framework to qt6</p>
             </description>
         </release>
         <release version="v0.5.0" date="2022-10-01">
