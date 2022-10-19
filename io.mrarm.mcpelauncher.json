@@ -85,7 +85,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "ddc410247f2a4a29db0e31a689554669d3a51b85"
+                    "commit": "8de4069db08403f86a22d4d558295e83a0ebfcfa"
                 }
             ]
         },
@@ -115,7 +115,7 @@
                     "-DLAUNCHER_VERSION_NAME=v0.5.1-flatpak-qt6",
                     "-DLAUNCHER_VERSION_CODE=51",
                     "-DLAUNCHER_CHANGE_LOG=<p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/0.5.x"
                 ]
             },
             "sources": [
