@@ -87,7 +87,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "8de4069db08403f86a22d4d558295e83a0ebfcfa"
+                    "commit": "cb793d1415414b4c71d72cbc05fb17bad46b258e"
                 }
             ]
         },
