@@ -41,6 +41,7 @@
     ],
     "finish-args": [
         "--socket=x11",
+        "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
         "--device=all",
@@ -155,6 +156,7 @@
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DGLFW_BUILD_WAYLAND=ON",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
@@ -183,18 +185,10 @@
                     "dest": "gamecontrollerdb"
                 },
                 {
-                    "type": "file",
-                    "url": "https://github.com/minecraft-linux/glfw/archive/37204ede828296f8b6fe068851f3c7841bf20161.zip",
-                    "sha512": "dcc083cd5b805d41fc7b4c59187977cd8e2f45dffcc35c47579170ec2433df66b91ba603eebef3f994c02058869b0bbb1aa18d79f61e66f3d83cbe6201fb29bc",
-                    "dest-filename": "glfw3_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir glfw3_ext",
-                        "cd glfw3_ext && unzip ../glfw3_ext.zip",
-                        "mv glfw3_ext/*/* glfw3_ext/"
-                    ]
+                    "type": "git",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "7482de6071d21db77a7236155da44c172a7f6c9e",
+                    "dest": "glfw3_ext"
                 },
                 {
                     "type": "file",
