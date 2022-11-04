@@ -40,7 +40,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
@@ -187,7 +187,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/glfw/glfw",
-                    "commit": "7482de6071d21db77a7236155da44c172a7f6c9e",
+                    "commit": "dd8a678a66f1967372e5a5e3deac41ebf65ee127",
                     "dest": "glfw3_ext"
                 },
                 {
