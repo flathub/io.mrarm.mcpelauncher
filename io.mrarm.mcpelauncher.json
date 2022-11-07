@@ -156,7 +156,6 @@
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=GLFW",
-                    "-DGLFW_BUILD_WAYLAND=ON",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
@@ -187,7 +186,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/glfw/glfw",
-                    "commit": "dd8a678a66f1967372e5a5e3deac41ebf65ee127",
+                    "commit": "7482de6071d21db77a7236155da44c172a7f6c9e",
                     "dest": "glfw3_ext"
                 },
                 {
