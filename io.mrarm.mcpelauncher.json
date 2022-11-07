@@ -40,7 +40,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
-        "--socket=fallback-x11",
+        "--socket=x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
