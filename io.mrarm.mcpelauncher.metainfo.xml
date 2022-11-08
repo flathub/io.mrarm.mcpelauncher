@@ -47,6 +47,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.5.3" date="2022-11-07">
+            <description>
+                <p>Currently able to launch 1.13.0 to 1.19.40</p><p>downgrade glfw 3.3</p><p>rollback wayland support</p>
+            </description>
+        </release>
         <release version="v0.5.2" date="2022-11-03">
             <description>
                 <p>Currently able to launch 1.13.0 to 1.19.40</p><p>Fix game version 1.19.40 not showing even if it is compatible</p><p>fix crash when QT_QUICK_CONTROLS_STYLE is set</p><p>update glfw</p><p>enable wayland support, without running xwayland</p>
