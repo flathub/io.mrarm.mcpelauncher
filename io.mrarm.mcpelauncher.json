@@ -87,7 +87,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "cb793d1415414b4c71d72cbc05fb17bad46b258e"
+                    "commit": "5c1fed21848ca77281190957d9d88248ddb9ec23"
                 }
             ]
         },
@@ -114,10 +114,10 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.5.3-flatpak-qt6",
-                    "-DLAUNCHER_VERSION_CODE=53",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Currently able to launch 1.13.0 to 1.19.40</p><p>downgrade glfw 3.3</p><p>rollback wayland support</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://github.com/minecraft-linux/mcpelauncher-versiondb/raw/v0.5.x"
+                    "-DLAUNCHER_VERSION_NAME=v0.6.0-flatpak-qt6",
+                    "-DLAUNCHER_VERSION_CODE=54",
+                    "-DLAUNCHER_CHANGE_LOG=<p>You can play up to Minecraft 1.19.60.23</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://github.com/minecraft-linux/mcpelauncher-versiondb/raw/v0.6.x"
                 ]
             },
             "sources": [
@@ -159,7 +159,87 @@
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DJNI_USE_JNIVM=ON"
+                    "-DJNI_USE_JNIVM=ON",
+                    "-DBUILD_UI=OFF",
+                    "-DBUILD_CLIENT=ON"
+                ],
+                "prepend-path": "/usr/lib/sdk/llvm12/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
+            },
+            "only-arches": [
+                "i386",
+                "x86_64",
+                "arm",
+                "aarch64"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
+                    "commit": "68ac25317725cfd1d5c1112c27acee211ddd4640",
+                    "disable-shallow-clone": true
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
+                    "commit": "b9ce60f3293659d34d035350fddb6eac19470108",
+                    "dest": "gamecontrollerdb"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "7482de6071d21db77a7236155da44c172a7f6c9e",
+                    "dest": "glfw3_ext"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
+                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
+                    "dest-filename": "nlohmann_json_ext.zip"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir nlohmann_json_ext",
+                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "mcpelauncher-client-ui",
+            "buildsystem": "cmake",
+            "build-options": {
+                "arch": {
+                    "x86_64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "arm": {
+                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
+                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
+                    },
+                    "i386": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "aarch64": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    }
+                },
+                "env": {
+                    "CC": "clang",
+                    "CXX": "clang++"
+                },
+                "config-opts": [
+                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DENABLE_DEV_PATHS=OFF",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DJNI_USE_JNIVM=ON",
+                    "-DBUILD_UI=ON",
+                    "-DBUILD_CLIENT=OFF"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm12/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
@@ -180,7 +260,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c4d3b5c59552700f6cb4395434a2f4de9ed927af",
+                    "commit": "b9ce60f3293659d34d035350fddb6eac19470108",
                     "dest": "gamecontrollerdb"
                 },
                 {
