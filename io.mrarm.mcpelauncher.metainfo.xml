@@ -47,6 +47,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.6.0" date="2022-12-31">
+            <description>
+                <p>You can play up to Minecraft 1.19.60.23</p>
+            </description>
+        </release>
         <release version="v0.5.3" date="2022-11-07">
             <description>
                 <p>Currently able to launch 1.13.0 to 1.19.40</p><p>downgrade glfw 3.3</p><p>rollback wayland support</p>
