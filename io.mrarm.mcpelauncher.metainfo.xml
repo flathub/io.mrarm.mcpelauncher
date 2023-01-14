@@ -23,15 +23,23 @@
     <screenshots>
         <screenshot type="default">
             <caption>Changelog page of the Launcher</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/changelogscreen.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/changelogscreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Main screen of the Launcher</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/homescreen.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/homescreen.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Profile Editor of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/profileeditor.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Settings of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/settings.png</image>
         </screenshot>
         <screenshot>
             <caption>Main screen of the Game</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/ChristopherHX-patch-1/gamescreen.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/gamescreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Ingame ancient Nether Portal</caption>
@@ -47,6 +55,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.8.0" date="2023-01-14">
+            <description>
+                <p>You can play up to Minecraft 1.19.60.26</p>
+            </description>
+        </release>
         <release version="v0.6.0" date="2022-12-31">
             <description>
                 <p>You can play up to Minecraft 1.19.60.23</p>
@@ -131,6 +144,9 @@
     </releases>
     <url type="homepage">https://mcpelauncher.readthedocs.io</url>
     <url type="bugtracker">https://github.com/flathub/io.mrarm.mcpelauncher/issues</url>
-    <url type="faq">https://mcpelauncher.readthedocs.io/en/latest/faq.html</url>
+    <url type="faq">https://mcpelauncher.readthedocs.io/en/latest/faq</url>
+    <url type="help">https://mcpelauncher.readthedocs.io/en/latest/troubleshooting</url>
+    <url type="contact">https://discord.gg/TaUNBXr</url>
+    <url type="vcs-browser">https://github.com/minecraft-linux/mcpelauncher-manifest</url>
     <project_group>minecraft-linux</project_group>
 </component>
