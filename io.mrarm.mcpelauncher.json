@@ -114,9 +114,9 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.8.0-flatpak-qt6",
-                    "-DLAUNCHER_VERSION_CODE=55",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Fix 1.19.51.01 (arm64) by @0xCatPKG in https://github.com/minecraft-linux/mcpelauncher-manifest/pull/755</p><p>Fix viewing marketplace (1.16.210+) and using skin editor (1.18.30+)</p><p>Fix for 1.19.60.26 by @ChristopherHX in https://github.com/minecraft-linux/mcpelauncher-manifest/pull/759</p><p>Make xbox http client async by @ChristopherHX in #752</p><p>1.19.60.25 symbols by @0xCatPKG #752</p><p>Fix minecraft logo aspect ratio in old qt5 versions</p><p>Fix undefined behavior http 405</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.8.1-flatpak-qt6",
+                    "-DLAUNCHER_VERSION_CODE=56",
+                    "-DLAUNCHER_CHANGE_LOG=You can play up to Minecraft 1.19.70.20<br/>* reorder nativecallbacks: This fixes the random loading freeze on 56% during loading the game by @ChristopherHX <br/>* Set isChromebook to true: Makes the game more optimized for computer by default (Classic UI by default, smaller GUI scale, outline selection on by default) by @GameParrot<br/>* Fix white mob / leaf glitch macOS by @GameParrot<br/>* increase stability: synchonize x11 client library access, since 1.18.30+ no longer render in the main thread by @ChristopherHX <br/>* allow building with snmalloc by @ChristopherHX<br/>Fixed an issue while pressing add new profile and the versions combobox has been empty",
                     "-DLAUNCHER_VERSIONDB_URL=https://github.com/minecraft-linux/mcpelauncher-versiondb/raw/v0.8.x"
                 ]
             },
@@ -124,7 +124,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "29b38b17181552beb9a6678a09532c46fcfa4ddf"
+                    "commit": "d27da18ca159b1e962f0c47b25827db5f3f5bd0c"
                 }
             ]
         },
@@ -160,7 +160,7 @@
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
-                    "-DBUILD_UI=OFF",
+                    "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm12/bin",
@@ -176,7 +176,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "773cb503df4f47650fb84af7addac8fa2f86d463",
+                    "commit": "3b3cb81e8867521da18539f99aacb85e8216442a",
                     "disable-shallow-clone": true
                 },
                 {
@@ -189,84 +189,6 @@
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/glfw",
                     "commit": "37204ede828296f8b6fe068851f3c7841bf20161",
-                    "dest": "glfw3_ext"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
-                    "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
-                    "dest-filename": "nlohmann_json_ext.zip"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "mkdir nlohmann_json_ext",
-                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "mcpelauncher-client-ui",
-            "buildsystem": "cmake",
-            "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
-                "env": {
-                    "CC": "clang",
-                    "CXX": "clang++"
-                },
-                "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=GLFW",
-                    "-DENABLE_DEV_PATHS=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
-                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DJNI_USE_JNIVM=ON",
-                    "-DBUILD_UI=ON",
-                    "-DBUILD_CLIENT=OFF"
-                ],
-                "prepend-path": "/usr/lib/sdk/llvm12/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
-            },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "73f8ad3b8c2dcad2cdedf53177dce126005fcbe9",
-                    "disable-shallow-clone": true
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "b9ce60f3293659d34d035350fddb6eac19470108",
-                    "dest": "gamecontrollerdb"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "7482de6071d21db77a7236155da44c172a7f6c9e",
                     "dest": "glfw3_ext"
                 },
                 {
