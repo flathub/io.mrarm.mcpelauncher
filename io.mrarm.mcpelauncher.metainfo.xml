@@ -27,15 +27,15 @@
         </screenshot>
         <screenshot>
             <caption>Main screen of the Launcher</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/homescreen.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/homescreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Profile Editor of the Launcher</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/profileeditor.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/profileeditor.png</image>
         </screenshot>
         <screenshot>
             <caption>Settings of the Launcher</caption>
-            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/v0.8.0/settings.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/settings.png</image>
         </screenshot>
         <screenshot>
             <caption>Main screen of the Game</caption>
@@ -55,6 +55,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.8.1" date="2023-02-04">
+            <description>
+                <p>You can play up to Minecraft 1.19.70.20</p><p>* reorder nativecallbacks: This fixes the random loading freeze on 56% during loading the game by @ChristopherHX </p><p>* Set isChromebook to true: Makes the game more optimized for computer by default (Classic UI by default, smaller GUI scale, outline selection on by default) by @GameParrot</p><p>* Fix white mob / leaf glitch macOS by @GameParrot</p><p>* increase stability: synchonize x11 client library access, since 1.18.30+ no longer render in the main thread by @ChristopherHX </p><p>* allow building with snmalloc by @ChristopherHX</p><p>Fixed an issue while pressing add new profile and the versions combobox has been empty</p>
+            </description>
+        </release>
         <release version="v0.8.0" date="2023-01-14">
             <description>
                 <p>You can play up to Minecraft 1.19.60.26</p>
