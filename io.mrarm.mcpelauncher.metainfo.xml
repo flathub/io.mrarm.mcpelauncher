@@ -60,10 +60,7 @@
                 <p>Fix music not loading in Minecraft 1.19.60</p>
                 <p>Fix marketplace content download</p>
                 <p>file-picker set default savefile name</p>
-                <p>Implement share</p>
-                <p>Implement launchUri</p>
-                <p>Improved version string</p>
-                <p>Temporary fix for high CPU</p>
+                <p>Implement share and launchUri</p>
                 <p>Revert a change, which caused a crash on a intelhd3000 GPU</p>
                 <p>Add setClipboard</p>
                 <p>Support for openFile and saveFile</p>
