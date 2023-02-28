@@ -55,9 +55,20 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.8.4" date="2023-02-28">
+            <description>
+                <p>Test the release process</p>
+            </description>
+        </release>
         <release version="v0.8.1" date="2023-02-04">
             <description>
-                <p>You can play up to Minecraft 1.19.70.20</p><p>* reorder nativecallbacks: This fixes the random loading freeze on 56% during loading the game by @ChristopherHX </p><p>* Set isChromebook to true: Makes the game more optimized for computer by default (Classic UI by default, smaller GUI scale, outline selection on by default) by @GameParrot</p><p>* Fix white mob / leaf glitch macOS by @GameParrot</p><p>* increase stability: synchonize x11 client library access, since 1.18.30+ no longer render in the main thread by @ChristopherHX </p><p>* allow building with snmalloc by @ChristopherHX</p><p>Fixed an issue while pressing add new profile and the versions combobox has been empty</p>
+                <p>You can play up to Minecraft 1.19.70.20</p>
+                <p>* reorder nativecallbacks: This fixes the random loading freeze on 56% during loading the game by @ChristopherHX </p>
+                <p>* Set isChromebook to true: Makes the game more optimized for computer by default (Classic UI by default, smaller GUI scale, outline selection on by default) by @GameParrot</p>
+                <p>* Fix white mob / leaf glitch macOS by @GameParrot</p>
+                <p>* increase stability: synchonize x11 client library access, since 1.18.30+ no longer render in the main thread by @ChristopherHX </p>
+                <p>* allow building with snmalloc by @ChristopherHX</p>
+                <p>Fixed an issue while pressing add new profile and the versions combobox has been empty</p>
             </description>
         </release>
         <release version="v0.8.0" date="2023-01-14">
@@ -72,22 +83,37 @@
         </release>
         <release version="v0.5.3" date="2022-11-07">
             <description>
-                <p>Currently able to launch 1.13.0 to 1.19.40</p><p>downgrade glfw 3.3</p><p>rollback wayland support</p>
+                <p>Currently able to launch 1.13.0 to 1.19.40</p>
+                <p>downgrade glfw 3.3</p>
+                <p>rollback wayland support</p>
             </description>
         </release>
         <release version="v0.5.2" date="2022-11-03">
             <description>
-                <p>Currently able to launch 1.13.0 to 1.19.40</p><p>Fix game version 1.19.40 not showing even if it is compatible</p><p>fix crash when QT_QUICK_CONTROLS_STYLE is set</p><p>update glfw</p><p>enable wayland support, without running xwayland</p>
+                <p>Currently able to launch 1.13.0 to 1.19.40</p>
+                <p>Fix game version 1.19.40 not showing even if it is compatible</p>
+                <p>fix crash when QT_QUICK_CONTROLS_STYLE is set</p>
+                <p>update glfw</p>
+                <p>enable wayland support, without running xwayland</p>
             </description>
         </release>
         <release version="v0.5.1" date="2022-10-19">
             <description>
-                <p>Currently able to launch 1.13.0 to 1.19.30</p><p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p><p>Update qt5 framework to qt6</p>
+                <p>Currently able to launch 1.13.0 to 1.19.30</p>
+                <p>Avoid download errors due to small tmp size with devices of 4GB of RAM or lower</p>
+                <p>Update qt5 framework to qt6</p>
             </description>
         </release>
         <release version="v0.5.0" date="2022-10-01">
             <description>
-                <p>Updated to be able to launch 1.18.30 to 1.19.30</p><p>1.18.30 - 1.19.30 may stop responding while showing a progress of 56%-58%, just close and reopen the game again this issue is not planned to be fixed</p><p>1.18.30 - 1.19.30 the game doesn't allow to select any skins, choose game version 1.16.201 to fix this</p><p>1.18.30 - 1.19.30 will crash very frequently, this is not planned to be fixed</p><p>Realms might work again for some time, but don't rely beeing able to access them due to incompatible game updates</p><p>Credits for fixing access to the new world screens go to GitHub user reedacartwright</p><p>Credits for 1.19.40 beta patches go to GitHub user 0xCatPKG</p><p>Cross Play with macOS is current not possible for game version 1.18.30 and newer, choose an older game version on linux to match the macOS Launcher</p>
+                <p>Updated to be able to launch 1.18.30 to 1.19.30</p>
+                <p>1.18.30 - 1.19.30 may stop responding while showing a progress of 56%-58%, just close and reopen the game again this issue is not planned to be fixed</p>
+                <p>1.18.30 - 1.19.30 the game doesn't allow to select any skins, choose game version 1.16.201 to fix this</p>
+                <p>1.18.30 - 1.19.30 will crash very frequently, this is not planned to be fixed</p>
+                <p>Realms might work again for some time, but don't rely beeing able to access them due to incompatible game updates</p>
+                <p>Credits for fixing access to the new world screens go to GitHub user reedacartwright</p>
+                <p>Credits for 1.19.40 beta patches go to GitHub user 0xCatPKG</p>
+                <p>Cross Play with macOS is current not possible for game version 1.18.30 and newer, choose an older game version on linux to match the macOS Launcher</p>
             </description>
         </release>
         <release version="v0.4.0" date="2022-06-29">
