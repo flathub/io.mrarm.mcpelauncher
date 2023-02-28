@@ -3,7 +3,9 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "6.3",
     "sdk": "org.kde.Sdk",
-    "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.llvm12" ],
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.llvm12"
+    ],
     "base": "io.qt.qtwebengine.BaseApp",
     "base-version": "6.3",
     "command": "mcpelauncher-ui-qt",
@@ -87,7 +89,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "2d6a94a84089137ad370758dad07095c05efa253"
+                    "commit": "4de1343bce231cf6bae0184569c6574d5e890c41"
                 }
             ]
         },
@@ -114,17 +116,17 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.8.1-flatpak-qt6",
-                    "-DLAUNCHER_VERSION_CODE=56",
-                    "-DLAUNCHER_CHANGE_LOG=You can play up to Minecraft 1.19.70.20<br/>* reorder nativecallbacks: This fixes the random loading freeze on 56% during loading the game by @ChristopherHX <br/>* Set isChromebook to true: Makes the game more optimized for computer by default (Classic UI by default, smaller GUI scale, outline selection on by default) by @GameParrot<br/>* Fix white mob / leaf glitch macOS by @GameParrot<br/>* increase stability: synchonize x11 client library access, since 1.18.30+ no longer render in the main thread by @ChristopherHX <br/>* allow building with snmalloc by @ChristopherHX<br/>Fixed an issue while pressing add new profile and the versions combobox has been empty",
-                    "-DLAUNCHER_VERSIONDB_URL=https://github.com/minecraft-linux/mcpelauncher-versiondb/raw/v0.8.x"
+                    "-DLAUNCHER_VERSION_NAME=v0.8.5",
+                    "-DLAUNCHER_VERSION_CODE=61",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fix music not loading in Minecraft 1.19.60</p><p>Fix marketplace content download</p><p>file-picker set default savefile name</p><p>Implement share</p><p>Implement launchUri</p><p>Improved version string</p><p>Temporary fix for high CPU</p><p>Revert a change, which caused a crash on a intelhd3000 GPU</p><p>Add setClipboard</p><p>Support for openFile and saveFile</p><p>refactor event handling to fix gamepad input under Minecraft 1.19.60 or higher</p><p>Fix keyboard on 1.19.70.22</p><p>Revert a change, which caused a stack corruption error on arm64 AppImage</p><p>Add angle-backend option for macOS to opt in to use the metal backend</p><p>Fix troubleshooter has shown SSSE3 issues instead of the actual error</p><p>google play api include more details in http errors</p><p>Updated outdated links to old issues in the UI</p><p>Fix desktop file not working under fedora</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.8.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "d27da18ca159b1e962f0c47b25827db5f3f5bd0c"
+                    "commit": "56ec3e6f679da6e0603747566601f74acdae5256"
                 }
             ]
         },
@@ -176,7 +178,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "a64aa73507287a76ac5f70e0cd2459cc51d35789",
+                    "commit": "2f8c3edb15ee166b5e72af0723a7a183705ed0ef",
                     "disable-shallow-clone": true
                 },
                 {
