@@ -165,8 +165,8 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm12/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm12/lib"
+                "prepend-path": "/usr/lib/sdk/llvm15/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
             },
             "only-arches": [
                 "i386",
