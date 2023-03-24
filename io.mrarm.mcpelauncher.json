@@ -164,7 +164,8 @@
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
-                    "-DOWN_CURL_SOURCE_DIR=curl_ext"
+                    "-DOWN_CURL_SOURCE_DIR=curl_ext",
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
