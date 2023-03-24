@@ -163,7 +163,8 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
-                    "-DBUILD_CLIENT=ON"
+                    "-DBUILD_CLIENT=ON",
+                    "-DUSE_OWN_CURL=ON"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
@@ -192,6 +193,12 @@
                     "url": "https://github.com/minecraft-linux/glfw",
                     "commit": "37204ede828296f8b6fe068851f3c7841bf20161",
                     "dest": "glfw3_ext"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/curl/curl",
+                    "commit": "b16d1fa8ee567b52c09a0f89940b07d8491b881d",
+                    "dest": "curl_ext-prefix/src/curl_ext"
                 },
                 {
                     "type": "file",
