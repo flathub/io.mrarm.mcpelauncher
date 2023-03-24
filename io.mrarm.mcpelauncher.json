@@ -164,7 +164,7 @@
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
-                    "-DUSE_OWN_CURL=ON"
+                    "-DOWN_CURL_SOURCE_DIR=curl_ext"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
@@ -179,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "3e41fb0f2fb570faba62767ce95d35555b0d5306",
+                    "commit": "6c30bafb9e907fc7b65837570bddd851ef2b0467",
                     "disable-shallow-clone": true
                 },
                 {
@@ -198,7 +198,7 @@
                     "type": "git",
                     "url": "https://github.com/curl/curl",
                     "commit": "b16d1fa8ee567b52c09a0f89940b07d8491b881d",
-                    "dest": "curl_ext-prefix/src/curl_ext"
+                    "dest": "curl_ext"
                 },
                 {
                     "type": "file",
