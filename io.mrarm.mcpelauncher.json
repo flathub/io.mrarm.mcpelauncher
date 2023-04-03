@@ -89,7 +89,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "4de1343bce231cf6bae0184569c6574d5e890c41"
+                    "commit": "05dba188948421978a20bab40517fc4e3e1eacfb"
                 }
             ]
         },
@@ -116,17 +116,17 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.8.5",
-                    "-DLAUNCHER_VERSION_CODE=61",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Fix music not loading in Minecraft 1.19.60</p><p>Fix marketplace content download</p><p>file-picker set default savefile name</p><p>Implement share</p><p>Implement launchUri</p><p>Improved version string</p><p>Temporary fix for high CPU</p><p>Revert a change, which caused a crash on a intelhd3000 GPU</p><p>Add setClipboard</p><p>Support for openFile and saveFile</p><p>refactor event handling to fix gamepad input under Minecraft 1.19.60 or higher</p><p>Fix keyboard on 1.19.70.22</p><p>Revert a change, which caused a stack corruption error on arm64 AppImage</p><p>Add angle-backend option for macOS to opt in to use the metal backend</p><p>Fix troubleshooter has shown SSSE3 issues instead of the actual error</p><p>google play api include more details in http errors</p><p>Updated outdated links to old issues in the UI</p><p>Fix desktop file not working under fedora</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.8.x"
+                    "-DLAUNCHER_VERSION_NAME=v0.9.0",
+                    "-DLAUNCHER_VERSION_CODE=62",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Initial 1.19.8x support with rollforward, no longer waiting for every Minecraft patch release to be tested</p><p>Implement xbox live websockets to fix joining xbox live friends</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "56ec3e6f679da6e0603747566601f74acdae5256"
+                    "commit": "65a1283df2e530a9f44f6c94dc5df67899d00ddd"
                 }
             ]
         },
@@ -180,19 +180,19 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "f1b72bdbad7caab3cfb2dc89fb546ad8e5f135cd",
+                    "commit": "e7556b0373088561aa515b9d6d1c58ce9970573e",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "e3f82ebcead31fc5b28695c5fd8b677ebabb6e22",
+                    "commit": "c2164bfdc1ba92b2a14d691fbbeb38f469fce431",
                     "dest": "gamecontrollerdb"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/glfw",
-                    "commit": "37204ede828296f8b6fe068851f3c7841bf20161",
+                    "commit": "fce9121962bc0a21c39e2d6f8e08bad30c566c72",
                     "dest": "glfw3_ext"
                 },
                 {
