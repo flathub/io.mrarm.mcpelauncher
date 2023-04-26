@@ -215,9 +215,9 @@
                 {
                     "type": "shell",
                     "commands": [
-                        "rm -r linux-gamepad",
+                        "rm -r linux-gamepad"
                     ]
-                }
+                },
                 {
                     "type": "git",
                     "url": "https://github.com/ChristopherHX/linux-gamepad",
