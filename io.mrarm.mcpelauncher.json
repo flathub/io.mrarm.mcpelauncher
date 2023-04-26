@@ -54,6 +54,17 @@
     ],
     "modules": [
         {
+            "name": "libevdev",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/libevdev/libevdev.git",
+                    "tag": "libevdev-1.13.0",
+                    "commit": "ff4276398c9474f04bb1b8cb9f27e6163c5e040e"
+                }
+            ]
+        },
+        {
             "name": "protobuf",
             "sources": [
                 {
@@ -157,7 +168,7 @@
                     "CXX": "clang++"
                 },
                 "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DGAMEWINDOW_SYSTEM=EGLUT",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
@@ -200,6 +211,12 @@
                     "url": "https://github.com/curl/curl",
                     "commit": "b16d1fa8ee567b52c09a0f89940b07d8491b881d",
                     "dest": "curl_ext"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/ChristopherHX/linux-gamepad",
+                    "commit": "f1f53c11ead86c89ac9c6f5df3554e4e1a391b6b",
+                    "dest": "linux-gamepad"
                 },
                 {
                     "type": "file",
