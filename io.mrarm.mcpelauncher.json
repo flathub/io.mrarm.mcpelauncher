@@ -213,6 +213,12 @@
                     "dest": "curl_ext"
                 },
                 {
+                    "type": "shell",
+                    "commands": [
+                        "rm -r linux-gamepad",
+                    ]
+                }
+                {
                     "type": "git",
                     "url": "https://github.com/ChristopherHX/linux-gamepad",
                     "commit": "f1f53c11ead86c89ac9c6f5df3554e4e1a391b6b",
