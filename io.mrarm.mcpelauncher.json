@@ -221,7 +221,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ChristopherHX/linux-gamepad",
-                    "commit": "f1f53c11ead86c89ac9c6f5df3554e4e1a391b6b",
+                    "commit": "edddfbaec59e6f2a198f7cae1c7962643c249fa9",
                     "dest": "linux-gamepad"
                 },
                 {
