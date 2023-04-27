@@ -169,6 +169,7 @@
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=EGLUT",
+                    "-DLINUX_GAMEPAD_INOTIFY=ON",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
