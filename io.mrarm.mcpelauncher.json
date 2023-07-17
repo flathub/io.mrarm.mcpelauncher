@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.3",
+    "runtime-version": "6.5",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.llvm15"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.3",
+    "base-version": "6.5",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
