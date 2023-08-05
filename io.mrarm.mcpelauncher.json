@@ -126,14 +126,14 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
-                    "dest": "glfw3_ext"
+                    "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
+                    "commit": "e52a436daae1801910b8c9ee2266695badfec6ba"
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "e52a436daae1801910b8c9ee2266695badfec6ba"
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "dest": "glfw3_ext"
                 }
             ]
         },
