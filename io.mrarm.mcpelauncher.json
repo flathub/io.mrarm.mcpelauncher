@@ -42,7 +42,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
@@ -119,7 +119,8 @@
                     "-DLAUNCHER_VERSION_NAME=v0.10.0",
                     "-DLAUNCHER_VERSION_CODE=64",
                     "-DLAUNCHER_CHANGE_LOG=<p>Port game launcher to macOS/arm64</p><p>Fix issues with 1.20.0 and 1.20.10.21</p><p>File picking on linux, this does not work on macOS yet</p><p>Fix a crash while using xbox live multiplayer</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.10.x"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.10.x",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext"
                 ]
             },
             "sources": [
@@ -127,6 +128,12 @@
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
                     "commit": "e52a436daae1801910b8c9ee2266695badfec6ba"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "dest": "glfw3_ext"
                 }
             ]
         },
@@ -158,6 +165,7 @@
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DGLFW_BUILD_WAYLAND=ON",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
@@ -191,8 +199,8 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/minecraft-linux/glfw",
-                    "commit": "fce9121962bc0a21c39e2d6f8e08bad30c566c72",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
                     "dest": "glfw3_ext"
                 },
                 {
