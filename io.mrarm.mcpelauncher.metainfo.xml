@@ -56,7 +56,7 @@
     </content_rating>
     <releases>
         <release version="v0.11.2" date="2023-08-18">
-            <description>- Resolve google login problems (error Login failed) of v0.10.0 and older due to missing accountIdentifier caused by server side changes from Google<br />- Resolve compatibility problems with 1.20.20 and 1.20.30<br />- Basic Gamepad Navigation via dpad (l/r =&gt; backtab/tab, up/down scroll up/down) and a/b<br />- Gamepad configuration tool and notification about missing gamepad Mappings (notifications can be hidden via a new setting)</description>
+            <description><p>Resolve google login problems (error Login failed) of v0.10.0 and older due to missing accountIdentifier caused by server side changes from Google</p><p>Resolve compatibility problems with 1.20.20 and 1.20.30</p><p>Basic Gamepad Navigation via dpad (l/r =&gt; backtab/tab, up/down scroll up/down) and a/b</p><p>Gamepad configuration tool and notification about missing gamepad Mappings (notifications can be hidden via a new setting)</p></description>
         </release>
         <release version="v0.10.0" date="2023-06-07">
             <description>
