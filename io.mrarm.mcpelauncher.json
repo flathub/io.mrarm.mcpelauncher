@@ -127,7 +127,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "b5238fb1ebd0edc06c909657da9fd6331731cf6d"
+                    "commit": "b5238fb1ebd0edc06c909657da9fd6331731cf6d",
+                    "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
