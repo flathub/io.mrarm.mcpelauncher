@@ -54,6 +54,18 @@
     ],
     "modules": [
         {
+            "name": "libdecor",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/libdecor/libdecor.git",
+                    "tag": "0.1.1",
+                    "commit": "4db201134ab51950a1c673d77d7c4f2f7c7b48fd"
+                }
+            ]
+        },
+        {
             "name": "protobuf",
             "sources": [
                 {
