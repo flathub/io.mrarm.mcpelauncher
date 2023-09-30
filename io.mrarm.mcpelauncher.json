@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.3",
+    "runtime-version": "6.5",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
         "org.freedesktop.Sdk.Extension.llvm15"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.3",
+    "base-version": "6.5",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -42,7 +42,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "finish-args": [
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
         "--socket=pulseaudio",
@@ -61,6 +61,17 @@
                     "url": "https://gitlab.freedesktop.org/libevdev/libevdev.git",
                     "tag": "libevdev-1.13.0",
                     "commit": "ff4276398c9474f04bb1b8cb9f27e6163c5e040e"
+                }
+            ]
+        },
+        {
+            "name": "libdecor",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/libdecor/libdecor.git",
+                    "commit": "ca6e6b68a3ecc4cff2da975580dbe1ae07caf18e"
                 }
             ]
         },
@@ -100,7 +111,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "6a149a2048f27656d46686f037605f2277ea809c"
+                    "commit": "cb3b59d7f1343a2d9b88395b1efa97264abee063"
                 }
             ]
         },
@@ -127,17 +138,25 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
-                    "-DLAUNCHER_VERSION_NAME=v0.9.0",
-                    "-DLAUNCHER_VERSION_CODE=63",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Initial 1.19.8x support with rollforward, no longer waiting for every Minecraft patch release to be tested</p><p>Implement xbox live websockets to fix joining xbox live friends</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.9.x"
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DLAUNCHER_VERSION_NAME=v0.11.3",
+                    "-DLAUNCHER_VERSION_CODE=70",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Sorry I do not remember what has changed</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.11.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "65a1283df2e530a9f44f6c94dc5df67899d00ddd"
+                    "commit": "a40ddb042d7dfcd8f6f7b480ca0404d8dc452b2d",
+                    "disable-shallow-clone": true
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "dest": "glfw3_ext"
                 }
             ]
         },
@@ -168,8 +187,8 @@
                     "CXX": "clang++"
                 },
                 "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=EGLUT",
-                    "-DLINUX_GAMEPAD_INOTIFY=ON",
+                    "-DGAMEWINDOW_SYSTEM=GLFW",
+                    "-DGLFW_BUILD_WAYLAND=ON",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
@@ -177,7 +196,9 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DGAMEWINDOW_SYSTEM_FALLBACK=EGLUT",
+                    "-DLINUX_GAMEPAD_INOTIFY=ON"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
@@ -192,19 +213,19 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "e7556b0373088561aa515b9d6d1c58ce9970573e",
+                    "commit": "62732508615a499d2c1167a19e80441d13ed234f",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c2164bfdc1ba92b2a14d691fbbeb38f469fce431",
+                    "commit": "f83dfc6e4925364f6489fc361627d435a125b50f",
                     "dest": "gamecontrollerdb"
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/minecraft-linux/glfw",
-                    "commit": "fce9121962bc0a21c39e2d6f8e08bad30c566c72",
+                    "url": "https://github.com/glfw/glfw",
+                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
                     "dest": "glfw3_ext"
                 },
                 {
