@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.5",
+    "runtime-version": "6.6",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm15"
+        "org.freedesktop.Sdk.Extension.llvm17"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.5",
+    "base-version": "6.6",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -143,8 +143,8 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "url": "https://github.com/minecraft-linux/glfw",
+                    "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
                 }
             ]
@@ -187,8 +187,8 @@
                     "-DOWN_CURL_SOURCE_DIR=curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm15/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
+                "prepend-path": "/usr/lib/sdk/llvm17/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
             },
             "only-arches": [
                 "i386",
@@ -211,8 +211,8 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "url": "https://github.com/minecraft-linux/glfw",
+                    "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
                 },
                 {
