@@ -143,8 +143,8 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "url": "https://github.com/minecraft-linux/glfw",
+                    "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
                 }
             ]
@@ -211,8 +211,8 @@
                 },
                 {
                     "type": "git",
-                    "url": "https://github.com/glfw/glfw",
-                    "commit": "3eaf1255b29fdf5c2895856c7be7d7185ef2b241",
+                    "url": "https://github.com/minecraft-linux/glfw",
+                    "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
                 },
                 {
