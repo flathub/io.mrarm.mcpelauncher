@@ -55,6 +55,13 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.12.0" date="2023-10-31">
+            <description>
+                <p>forked glfw/glfw of flatpak to add a workaround for common nvidia x11 driver issues (ChristopherHX)</p>
+                <p>Fix fake AAsset loader to work with 1.20.50.21 (ChristopherHX)</p>
+                <p>AInputQueue mouse input for breaking changes in 1.20.50.22 (GameParrot)</p>
+            </description>
+        </release>
         <release version="v0.11.4" date="2023-10-07">
             <description>
                 <p>apple m-series macs are unable to use intel builds of the game, due to the macOS 14 update you have to switch to arm64, which may need manual changes to profiles and older versions of the game may no longer work at all</p>
