@@ -100,7 +100,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "e5ce44c443841cd7b2eb20c822b9ae91ce0619ec"
+                    "commit": "aff20197970a3d35f1fc495d087bd224616edcf4"
                 }
             ]
         },
@@ -128,10 +128,10 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.11.4",
-                    "-DLAUNCHER_VERSION_CODE=71",
-                    "-DLAUNCHER_CHANGE_LOG=<p>apple m-series macs are unable to use intel builds of the game, due to the macOS 14 update you have to switch to arm64, which may need manual changes to profiles and older versions of the game may no longer work at all</p><p>apple m-series macs should now be enrolled to the experimental native arm64 game client you may have to disable all dev options you might have been using</p><p>Fixed stabilty issues of text input changes of the previous update</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.11.x"
+                    "-DLAUNCHER_VERSION_NAME=v0.12.0",
+                    "-DLAUNCHER_VERSION_CODE=72",
+                    "-DLAUNCHER_CHANGE_LOG=<p>forked glfw/glfw of flatpak to add a workaround for common nvidia x11 driver issues (ChristopherHX)</p><p>Fix fake AAsset loader to work with 1.20.50.21 (ChristopherHX)</p><p>AInputQueue mouse input for breaking changes in 1.20.50.22 (GameParrot)</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.12.x"
                 ]
             },
             "sources": [
@@ -200,13 +200,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "b4153480955ca1036b9850630919abeda8682774",
+                    "commit": "3a464db4ebcdeef9f8548a06169108ef89c012a5",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "55f1a1509f8f4a663c826ac8a572136ecfc13b53",
+                    "commit": "eb831f75abb5c796fb2f2843c3e055d2b8cba29b",
                     "dest": "gamecontrollerdb"
                 },
                 {
