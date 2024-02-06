@@ -10,14 +10,13 @@
             To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game. Otherwise you will get an license error while launching the google play apk.
         </p>
         <p>
-            For sound you will have to install pulseaudio on your host system, otherwise the game will be silent on arm based systems.
-        </p>
-        <p>
-            The project runs the native libraries from the Android version directly on your computer. This is accomplished by fixing the incompatibilities between the libc used on Android and the one used on desktop Linux or OS X (Android - Bionic; Linux - glibc). This is a simple compatibility layer which doesn’t impact performance in any significant way; it’s similar to Wine, but much more lightweight and simple. Aditionally, all Android-specific code has been rewritten to run on Linux (AppPlatform, Store, Xbox Live, etc.).
-        </p>
-        <p>
             This is an unofficial Linux launcher for the Minecraft Bedrock codebase. This project is not affiliated with Minecraft, Mojang or Microsoft.
         </p>
+        <p>Not available Features you may miss</p>
+        <ul>
+          <li>Xbox live friend joining - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
+          <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one and back</li>
+        </ul>
     </description>
     <launchable type="desktop-id">io.mrarm.mcpelauncher.desktop</launchable>
     <screenshots>
@@ -55,6 +54,18 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.13.0" date="2024-02-06">
+            <description>
+                <p>Xbox http client fixes for 1.20.60 by GameParrot</p>
+                <p>1.20.60 has been added to the allowed list of this update</p>
+                <p>Fix loading mods using libGLESv2.so as dependency like fps hud mod on macOS</p>
+                <p>Refactor Xbox Authentication Library support code</p>
+                <p>Experimental SDL3 GameWindow backend avalailable for building the launcher</p>
+                <p>Caution 1.20.70.21 (beta) seem to no longer work on macOS/arm64, macOS/x86_64 is still working on macOS 10.14</p>
+                <p>mcpelauncher-manifest-glfw packages for fedora should now prefer wayland over xwayland</p>
+                <p>Backport Manual Login to qt5 builds of the launcher</p>
+            </description>
+        </release>
         <release version="v0.12.0" date="2023-10-31">
             <description>
                 <p>forked glfw/glfw of flatpak to add a workaround for common nvidia x11 driver issues (ChristopherHX)</p>
@@ -235,4 +246,5 @@
     <url type="contact">https://discord.gg/TaUNBXr</url>
     <url type="vcs-browser">https://github.com/minecraft-linux/mcpelauncher-manifest</url>
     <project_group>minecraft-linux</project_group>
+    <developer_name>minecraft-linux</developer_name>
 </component>
