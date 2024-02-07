@@ -185,6 +185,8 @@
         {
             "name": "mcpelauncher-client",
             "buildsystem": "cmake",
+            "builddir": true,
+            "subdir": "build",
             "build-options": {
                 "arch": {
                     "x86_64": {
@@ -209,15 +211,13 @@
                     "CXX": "clang++"
                 },
                 "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=GLFW",
-                    "-DGLFW_BUILD_WAYLAND=ON",
+                    "-DGAMEWINDOW_SYSTEM=SDL3",
                     "-DENABLE_DEV_PATHS=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
-                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
-                    "-DOWN_CURL_SOURCE_DIR=curl_ext",
+                    "-DOWN_CURL_SOURCE_DIR=../curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
@@ -260,6 +260,13 @@
                     "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
                     "dest-filename": "nlohmann_json_ext.zip"
                 },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir nlohmann_json_ext",
+                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                    ]
+                }
                 {
                     "type": "shell",
                     "commands": [
