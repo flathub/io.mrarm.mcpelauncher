@@ -270,7 +270,7 @@
                 {
                     "type": "shell",
                     "commands": [
-                        "rm -r mcpelauncher-linux-bin/native",
+                        "rm -r mcpelauncher-linux-bin/lib/native",
                         "rm -r mcpelauncher-mac-bin/lib/native"
                     ]
                 }
