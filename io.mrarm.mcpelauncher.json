@@ -266,7 +266,7 @@
                         "mkdir nlohmann_json_ext",
                         "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
                     ]
-                }
+                },
                 {
                     "type": "shell",
                     "commands": [
