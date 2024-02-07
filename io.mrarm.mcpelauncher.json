@@ -270,8 +270,8 @@
                 {
                     "type": "shell",
                     "commands": [
-                        "mkdir nlohmann_json_ext",
-                        "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+                        "rm -r mcpelauncher-linux-bin/native",
+                        "rm -r mcpelauncher-mac-bin/lib/native"
                     ]
                 }
             ]
