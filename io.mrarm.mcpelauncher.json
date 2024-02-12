@@ -54,6 +54,17 @@
     ],
     "modules": [
         {
+            "name": "libevdev",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.freedesktop.org/libevdev/libevdev.git",
+                    "tag": "libevdev-1.13.0",
+                    "commit": "ff4276398c9474f04bb1b8cb9f27e6163c5e040e"
+                }
+            ]
+        },
+        {
             "name": "libdecor",
             "buildsystem": "meson",
             "sources": [
@@ -218,7 +229,9 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DGAMEWINDOW_SYSTEM_FALLBACK=EGLUT",
+                    "-DLINUX_GAMEPAD_INOTIFY=ON"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm15/bin",
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
@@ -253,6 +266,18 @@
                     "url": "https://github.com/curl/curl",
                     "commit": "b16d1fa8ee567b52c09a0f89940b07d8491b881d",
                     "dest": "curl_ext"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "rm -r linux-gamepad"
+                    ]
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/ChristopherHX/linux-gamepad",
+                    "commit": "edddfbaec59e6f2a198f7cae1c7962643c249fa9",
+                    "dest": "linux-gamepad"
                 },
                 {
                     "type": "file",
