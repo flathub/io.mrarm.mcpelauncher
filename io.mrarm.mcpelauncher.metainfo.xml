@@ -14,8 +14,8 @@
         </p>
         <p>Not available Features you may miss</p>
         <ul>
-          <li>Xbox live friend joining - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
-          <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one and back</li>
+            <li>Xbox live friend joining - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
+            <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one and back</li>
         </ul>
     </description>
     <launchable type="desktop-id">io.mrarm.mcpelauncher.desktop</launchable>
@@ -54,6 +54,18 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.14.0" date="2024-03-14">
+            <description>
+                <p>Fixup localtime function of Europe/Dublin glibc incompatibility with android</p>
+                <p>Fix loading android elf files using gnu hash</p>
+                <p>Added a menubar using imgui</p>
+                <p>Toogle fullscreen via the menubar</p>
+                <p>Change fullscreen resolution in flatpak/macOS releases</p>
+                <p>Ability to show an fps hud via the menubar</p>
+                <p>View opengl renderer/launcher version via menubar</p>
+                <p>Unblocked 1.20.71.01</p>
+            </description>
+        </release>
         <release version="v0.13.0" date="2024-02-06">
             <description>
                 <p>Xbox http client fixes for 1.20.60 by GameParrot</p>
