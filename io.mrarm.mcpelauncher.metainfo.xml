@@ -14,8 +14,8 @@
         </p>
         <p>Not available Features you may miss</p>
         <ul>
-            <li>Xbox live friend joining - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
-            <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one and back</li>
+            <li>Xbox live friend joining - Technically Working on Linux - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
+            <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one</li>
         </ul>
     </description>
     <launchable type="desktop-id">io.mrarm.mcpelauncher.desktop</launchable>
@@ -54,6 +54,14 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.14.2" date="2024-04-23">
+            <description>
+                <p>Revert changes to fix Xbox Login with Timezone Dublin in Winter Time, it causes Problems in several Timezones</p>
+                <p>Includes a lot of patches for freebsd support</p>
+                <p>Update flatpak runtime to 6.7</p>
+                <p>menubar enabled again on Intel and Google Drivers</p>
+            </description>
+        </release>
         <release version="v0.14.1" date="2024-03-16">
             <description>
                 <p>Disabled all features of menubar due to amd radeon driver problems</p>
