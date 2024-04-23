@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.5",
+    "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm15"
+        "org.freedesktop.Sdk.Extension.llvm17"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.5",
+    "base-version": "6.7",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -161,9 +161,9 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.14.1",
-                    "-DLAUNCHER_VERSION_CODE=76",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Disabled all features of menubar due to amd radeon driver problems</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.14.2",
+                    "-DLAUNCHER_VERSION_CODE=77",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Revert changes to fix Xbox Login with Timezone Dublin in Winter Time, it causes Problems in several Timezones</p><p>Includes a lot of patches for freebsd support</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.14.x"
                 ]
             },
@@ -220,8 +220,8 @@
                     "-DOWN_CURL_SOURCE_DIR=curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm15/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
+                "prepend-path": "/usr/lib/sdk/llvm17/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
             },
             "only-arches": [
                 "i386",
@@ -233,7 +233,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "4e3d9055a863b47af2f223d9a67f47c1b20f8d24",
+                    "commit": "e3c435a619d283322f7668b7872c5a3d9625d302",
                     "disable-shallow-clone": true
                 },
                 {
