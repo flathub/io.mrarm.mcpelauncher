@@ -233,7 +233,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "436d71e88bfbaf65fd5a26d46d8e8d885091d9bb",
+                    "commit": "e3c435a619d283322f7668b7872c5a3d9625d302",
                     "disable-shallow-clone": true
                 },
                 {
