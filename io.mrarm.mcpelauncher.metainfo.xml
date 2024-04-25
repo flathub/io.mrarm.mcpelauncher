@@ -54,6 +54,14 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.14.2" date="2024-04-25">
+            <description>
+                <p>Revert changes to fix Xbox Login with Timezone Dublin in Winter Time, it causes Problems in several Timezones</p>
+                <p>Includes a lot of patches for freebsd support</p>
+                <p>Update flatpak runtime to 6.7</p>
+                <p>menubar enabled again on Intel and Google Drivers</p>
+            </description>
+        </release>
         <release version="v0.14.2" date="2024-04-23">
             <description>
                 <p>Revert changes to fix Xbox Login with Timezone Dublin in Winter Time, it causes Problems in several Timezones</p>
