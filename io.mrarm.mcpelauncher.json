@@ -133,7 +133,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "2c84621e0895b5e020c4312bfde0d637a15da438"
+                    "commit": "803fef1667ca9393c8168ab2c38a3ff3e00f0471"
                 }
             ]
         },
@@ -161,9 +161,9 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.14.2",
-                    "-DLAUNCHER_VERSION_CODE=78",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Revert changes to fix Xbox Login with Timezone Dublin in Winter Time, it causes Problems in several Timezones</p>                 <p>Includes a lot of patches for freebsd support</p>                 <p>Update flatpak runtime to 6.7</p>                 <p>menubar enabled again on Intel and Google Drivers</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.15.0",
+                    "-DLAUNCHER_VERSION_CODE=79",
+                    "-DLAUNCHER_CHANGE_LOG=<p>New UI rewritten by devendrn, backported to qt5 and modified by christopherhx</p><p>Developer Settings mode are deprecated again for regular User, because they have been misused to break the Launcher without knowing it</p><p>webrtc patch from macOS now partially applied to linux</p><p>The gamelog window moved to sidebar</p><p>You can now encrypt your google credentials, to opt in logout and login again in settings</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.14.x"
                 ]
             },
@@ -171,7 +171,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "c1c20f46897f5233e7528e3885b6ab4e2377a4bf",
+                    "commit": "8ba3a057efac3deac9cf0ff11c45d429224ebf9f",
                     "disable-shallow-clone": true
                 },
                 {
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "e3c435a619d283322f7668b7872c5a3d9625d302",
+                    "commit": "9619a682d01672ccf121715141509071c2556fa9",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "5b4efa3a2015552cec4cb809169d29615202e9f2",
+                    "commit": "0b349b047c7b013a8b78f4f76df698ad62f92765",
                     "dest": "gamecontrollerdb"
                 },
                 {
