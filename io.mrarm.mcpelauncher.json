@@ -133,7 +133,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "803fef1667ca9393c8168ab2c38a3ff3e00f0471"
+                    "commit": "609545e16c93ac3258ebf24ddf7b8921beef0c46"
                 }
             ]
         },
@@ -161,9 +161,9 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.15.0",
-                    "-DLAUNCHER_VERSION_CODE=79",
-                    "-DLAUNCHER_CHANGE_LOG=<p>New UI rewritten by devendrn, backported to qt5 and modified by christopherhx</p><p>Developer Settings mode are deprecated again for regular User, because they have been misused to break the Launcher without knowing it</p><p>webrtc patch from macOS now partially applied to linux</p><p>The gamelog window moved to sidebar</p><p>You can now encrypt your google credentials, to opt in logout and login again in settings</p>",
+                    "-DLAUNCHER_VERSION_NAME=v0.15.2",
+                    "-DLAUNCHER_VERSION_CODE=80",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed ipv6 webrtc multiplayer problems by GameParrot</p><p>Custom Scaling of the menubar</p><p>Alt no longer focuses the menuabar by default, you would need to enable it yourself</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.14.x"
                 ]
             },
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "9619a682d01672ccf121715141509071c2556fa9",
+                    "commit": "9ca7ee8491835a539214cf6b9ac98d09f2f5cd7b",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "0b349b047c7b013a8b78f4f76df698ad62f92765",
+                    "commit": "b1759cf84028aab89caa1c395e198c340b8dfd89",
                     "dest": "gamecontrollerdb"
                 },
                 {
