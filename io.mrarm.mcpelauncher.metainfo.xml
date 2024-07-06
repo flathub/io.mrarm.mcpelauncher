@@ -54,6 +54,13 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v0.15.2" date="2024-07-06">
+            <description>
+                <p>Fixed ipv6 webrtc multiplayer problems by GameParrot</p>
+                <p>Custom Scaling of the menubar</p>
+                <p>Alt no longer focuses the menuabar by default, you would need to enable it yourself</p>
+            </description>
+        </release>
         <release version="v0.15.0" date="2024-06-06">
             <description>
                 <p>New UI rewritten by devendrn, backported to qt5 and modified by christopherhx</p>
