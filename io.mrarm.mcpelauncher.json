@@ -47,6 +47,7 @@
         "--share=network",
         "--socket=pulseaudio",
         "--device=all",
+        "--share=ipc",
         "--env=ALSA_CONFIG_PATH=",
         "--env=QT_QUICK_CONTROLS_STYLE=",
         "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
