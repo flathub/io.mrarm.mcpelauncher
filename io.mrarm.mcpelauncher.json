@@ -133,7 +133,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "609545e16c93ac3258ebf24ddf7b8921beef0c46"
+                    "commit": "e7fba57117e00664965123af1761f519e66835b5"
                 }
             ]
         },
@@ -161,17 +161,17 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.15.2",
-                    "-DLAUNCHER_VERSION_CODE=80",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed ipv6 webrtc multiplayer problems by GameParrot</p><p>Custom Scaling of the menubar</p><p>Alt no longer focuses the menuabar by default, you would need to enable it yourself</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.14.x"
+                    "-DLAUNCHER_VERSION_NAME=v1.0.0",
+                    "-DLAUNCHER_VERSION_CODE=82",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Removed (proprietary) fmod binaries, using the fmod for android instead bundled with the game</p><p>1.21.30 fmod fixes</p><p>WIP Mod list</p><p>Minecraft Trial and ChromeOS UI Support</p><p>A lot of minor changes</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.0.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8ba3a057efac3deac9cf0ff11c45d429224ebf9f",
+                    "commit": "beee82bc577e9cca169f365edafc270e3ea091b2",
                     "disable-shallow-clone": true
                 },
                 {
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "9ca7ee8491835a539214cf6b9ac98d09f2f5cd7b",
+                    "commit": "368e38b2be8e0396693e9e56c9ec6402b933b426",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "b1759cf84028aab89caa1c395e198c340b8dfd89",
+                    "commit": "075c1549075ef89a397fd7e0663d21e53a2485fd",
                     "dest": "gamecontrollerdb"
                 },
                 {

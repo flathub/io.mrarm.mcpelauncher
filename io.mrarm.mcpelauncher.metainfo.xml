@@ -54,6 +54,15 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.0.0" date="2024-08-18">
+            <description>
+                <p>Removed (proprietary) fmod binaries, using the fmod for android instead bundled with the game</p>
+                <p>1.21.30 fmod fixes</p>
+                <p>WIP Mod list</p>
+                <p>Minecraft Trial and ChromeOS UI Support</p>
+                <p>A lot of minor changes</p>
+            </description>
+        </release>
         <release version="v0.15.2" date="2024-07-06">
             <description>
                 <p>Fixed ipv6 webrtc multiplayer problems by GameParrot</p>
