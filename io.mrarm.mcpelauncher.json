@@ -186,6 +186,7 @@
         {
             "name": "mcpelauncher-client",
             "buildsystem": "cmake",
+            "builddir": true,
             "build-options": {
                 "arch": {
                     "x86_64": {
@@ -213,12 +214,12 @@
                     "-DGAMEWINDOW_SYSTEM=GLFW",
                     "-DGLFW_BUILD_WAYLAND=ON",
                     "-DENABLE_DEV_PATHS=OFF",
-                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
-                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=../glfw3_ext",
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
-                    "-DOWN_CURL_SOURCE_DIR=curl_ext",
+                    "-DOWN_CURL_SOURCE_DIR=../curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
                 "prepend-path": "/usr/lib/sdk/llvm17/bin",
