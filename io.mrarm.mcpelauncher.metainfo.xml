@@ -277,10 +277,10 @@
             </description>
         </release>
     </releases>
-    <url type="homepage">https://mcpelauncher.readthedocs.io</url>
+    <url type="homepage">https://mcpelauncher-linux.github.io</url>
     <url type="bugtracker">https://github.com/flathub/io.mrarm.mcpelauncher/issues</url>
-    <url type="faq">https://mcpelauncher.readthedocs.io/en/latest/faq</url>
-    <url type="help">https://mcpelauncher.readthedocs.io/en/latest/troubleshooting</url>
+    <url type="faq">https://mcpelauncher-linux.github.io/faq</url>
+    <url type="help">https://mcpelauncher-linux.github.io/troubleshooting</url>
     <url type="contact">https://discord.gg/TaUNBXr</url>
     <url type="vcs-browser">https://github.com/minecraft-linux/mcpelauncher-manifest</url>
     <project_group>minecraft-linux</project_group>
