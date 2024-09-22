@@ -277,7 +277,7 @@
             </description>
         </release>
     </releases>
-    <url type="homepage">https://mcpelauncher-linux.github.io</url>
+    <url type="homepage">https://minecraft-linux.github.io</url>
     <url type="bugtracker">https://github.com/flathub/io.mrarm.mcpelauncher/issues</url>
     <url type="faq">https://minecraft-linux.github.io/faq</url>
     <url type="help">https://minecraft-linux.github.io/troubleshooting</url>
