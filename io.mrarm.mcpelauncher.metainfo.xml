@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.1.0" date="2024-10-13">
+            <description>
+                <p>Updated to be able to run up to 1.21.50.22 beta</p>
+            </description>
+        </release>
         <release version="v1.0.0" date="2024-08-18">
             <description>
                 <p>Removed (proprietary) fmod binaries, using the fmod for android instead bundled with the game</p>
