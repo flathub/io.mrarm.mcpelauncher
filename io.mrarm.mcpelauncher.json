@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "e7fba57117e00664965123af1761f519e66835b5"
+                    "commit": "a5729c6f6a7ec0a934f18f767f076b814b71a0f8"
                 }
             ]
         },
@@ -162,17 +162,17 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v1.0.0",
-                    "-DLAUNCHER_VERSION_CODE=82",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Removed (proprietary) fmod binaries, using the fmod for android instead bundled with the game</p><p>1.21.30 fmod fixes</p><p>WIP Mod list</p><p>Minecraft Trial and ChromeOS UI Support</p><p>A lot of minor changes</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.0.x"
+                    "-DLAUNCHER_VERSION_NAME=v1.1.0",
+                    "-DLAUNCHER_VERSION_CODE=84",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Updated to be able to run up to 1.21.50.22 beta</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.1.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "beee82bc577e9cca169f365edafc270e3ea091b2",
+                    "commit": "992bc7b9b9c4113dc0861e0ca439bc7318db98ad",
                     "disable-shallow-clone": true
                 },
                 {
@@ -235,13 +235,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "368e38b2be8e0396693e9e56c9ec6402b933b426",
+                    "commit": "0dc9bffd78098db5ce1049180e520fd7f5dfffa3",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "075c1549075ef89a397fd7e0663d21e53a2485fd",
+                    "commit": "3999c30d432e0eb80d36e1ee06b7ce5351af3db3",
                     "dest": "gamecontrollerdb"
                 },
                 {
