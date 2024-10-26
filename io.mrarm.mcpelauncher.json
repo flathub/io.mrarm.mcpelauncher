@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.5",
+    "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm15"
+        "org.freedesktop.Sdk.Extension.llvm17"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.5",
+    "base-version": "6.7",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -47,6 +47,7 @@
         "--share=network",
         "--socket=pulseaudio",
         "--device=all",
+        "--share=ipc",
         "--env=ALSA_CONFIG_PATH=",
         "--env=QT_QUICK_CONTROLS_STYLE=",
         "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
@@ -133,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "2ff7359f5aac20d15c73f28c5fb467eff9f1430e"
+                    "commit": "755a2bb8e843f2d9e8c3e025bc31c73b0e10bd82"
                 }
             ]
         },
@@ -159,19 +160,19 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
-                    "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
+                    "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.13.0",
-                    "-DLAUNCHER_VERSION_CODE=74",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Xbox http client fixes for 1.20.60 by GameParrot</p> <p>1.20.60 has been added to the allowed list of this update</p> <p>Fix loading mods using libGLESv2.so as dependency like fps hud mod on macOS</p> <p>Refactor Xbox Authentication Library support code</p> <p>Experimental SDL3 GameWindow backend avalailable for building the launcher</p> <p>Caution 1.20.70.21 (beta) seem to no longer work on macOS/arm64, macOS/x86_64 is still working on macOS 10.14</p> <p>mcpelauncher-manifest-glfw packages for fedora should now prefer wayland over xwayland</p> <p>Backport Manual Login to qt5 builds of the launcher</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v0.13.x"
+                    "-DLAUNCHER_VERSION_NAME=v1.1.1",
+                    "-DLAUNCHER_VERSION_CODE=85",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Allow Minecraft 1.21.40 (ChromeOS Trial) to run</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.1.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "d56d29b6d290bd7aae0fbd08490f4f19dc80f7a9",
+                    "commit": "992bc7b9b9c4113dc0861e0ca439bc7318db98ad",
                     "disable-shallow-clone": true
                 },
                 {
@@ -213,14 +214,15 @@
                     "-DGAMEWINDOW_SYSTEM=SDL3",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
+
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm15/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib"
+                "prepend-path": "/usr/lib/sdk/llvm17/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
             },
             "only-arches": [
                 "i386",
@@ -232,13 +234,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "64a837466cd9bd7d9b1e9c3e821eb620e1be45fa",
+                    "commit": "32f62a082c3f677a5d574bc11cf9581e46759cf1",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "e15eac7b43d0527b475409b2a488681c5bbea1ea",
+                    "commit": "5cce4de6a93d62e5286ad4e1e93e25efe877842c",
                     "dest": "gamecontrollerdb"
                 },
                 {
