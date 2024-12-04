@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "755a2bb8e843f2d9e8c3e025bc31c73b0e10bd82"
+                    "commit": "6528e24b5db9b5532cff2f0dca1b739a292b14d3"
                 }
             ]
         },
@@ -162,9 +162,9 @@
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v1.1.1",
-                    "-DLAUNCHER_VERSION_CODE=85",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Allow Minecraft 1.21.40 (ChromeOS Trial) to run</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.1.2",
+                    "-DLAUNCHER_VERSION_CODE=86",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed new multiplayer problems on macOS / crash when someone else opens Minecraft in the local network of 1.21.40 - 1.21.60.21.</p><p>The game runs now on limited fps when V-Sync is broken (when it is enabled), now capped between 80-110fps before it where greater than 2000</p><p>Disabled Fullscreen support of Menubar and f11 shortcut due to causing more bugs than being useful, use the green button and hide the menubar</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.1.x"
                 ]
             },
@@ -172,7 +172,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "992bc7b9b9c4113dc0861e0ca439bc7318db98ad",
+                    "commit": "aca6cff39c91bfdb4ca30858c310d503bbc9c134",
                     "disable-shallow-clone": true
                 },
                 {
@@ -235,13 +235,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "32f62a082c3f677a5d574bc11cf9581e46759cf1",
+                    "commit": "a0b7aa22a553b8194044ac58f448115d0835e3d0",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "5cce4de6a93d62e5286ad4e1e93e25efe877842c",
+                    "commit": "7c6a57befe9137843558710c1787df363ded432a",
                     "dest": "gamecontrollerdb"
                 },
                 {
