@@ -54,6 +54,13 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.1.2" date="2024-12-04">
+            <description>
+                <p>Fixed new multiplayer problems on macOS / crash when someone else opens Minecraft in the local network of 1.21.40 - 1.21.60.21.</p>
+                <p>The game runs now on limited fps when V-Sync is broken (when it is enabled), now capped between 80-110fps before it where greater than 2000</p>
+                <p>Disabled Fullscreen support of Menubar and f11 shortcut due to causing more bugs than being useful, use the green button and hide the menubar</p>
+            </description>
+        </release>
         <release version="v1.1.1" date="2024-10-23">
             <description>
                 <p>Allow Minecraft 1.21.40 (ChromeOS Trial) to run</p>
