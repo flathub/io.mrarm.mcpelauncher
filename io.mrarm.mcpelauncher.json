@@ -211,11 +211,10 @@
                     "CXX": "clang++"
                 },
                 "config-opts": [
-                    "-DGAMEWINDOW_SYSTEM=GLFW",
-                    "-DGLFW_BUILD_WAYLAND=ON",
+                    "-DGAMEWINDOW_SYSTEM=SDL3",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
-                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=../glfw3_ext",
+
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
