@@ -54,6 +54,15 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.2.0" date="2025-02-15">
+            <description>
+                <p>Fixes crash on network error in 1.21.60.10</p>
+                <p>Removal of 1.21.60.10 from the supported version of the previous release soon</p>
+                <p>macOS arm64 metal backend updated to no longer freeze due to unimplemented features (which are still not implemented, bug still exists in the intel version)</p>
+                <p>Contributed modding api enhancements</p>
+                <p>Contributed drag'n drop for file import into the game</p>
+            </description>
+        </release>
         <release version="v1.1.2" date="2024-12-04">
             <description>
                 <p>Fixed new multiplayer problems on macOS / crash when someone else opens Minecraft in the local network of 1.21.40 - 1.21.60.21.</p>
