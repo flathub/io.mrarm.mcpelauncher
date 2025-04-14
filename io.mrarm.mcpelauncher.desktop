@@ -5,5 +5,5 @@ Exec=mcpelauncher-ui-qt %U
 Icon=io.mrarm.mcpelauncher
 MimeType=application/zip
 Type=Application
-Categories=Game;
+Categories=Game;PackageManager;
 Terminal=false
