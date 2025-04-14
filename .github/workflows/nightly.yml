@@ -4,6 +4,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: gh pr merge --auto 167
+    - run: gh pr merge --auto --squash 167
       env:
         GH_TOKEN: ${{ github.token }}
