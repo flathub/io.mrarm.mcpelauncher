@@ -79,6 +79,6 @@ jobs:
           git commit -m "Release ${{ github.run_id }} via Buildbot"
           git push origin HEAD:refs/heads/nightly/v0.0.${{ github.run_id }}
 
-      - run: gh pr create --fill --base beta --head nightly/v0.0.${{ github.run_id }} -l beta-update
+      - run: gh pr create --title "Nightly v0.0.14450246717" --body "Automated Update" --base beta --head nightly/v0.0.${{ github.run_id }} -l beta-update
         env:
           GH_TOKEN: ${{ github.token }}
