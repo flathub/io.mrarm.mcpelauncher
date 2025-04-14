@@ -1,13 +1,9 @@
-on: push
+name: Create Nightly PR
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
 jobs:
-  test-merge:
-    if: 'false'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - run: gh pr merge --squash 167
-      env:
-        GH_TOKEN: ${{ github.token }}
   build:
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +15,8 @@ jobs:
           # from https://github.com/orgs/community/discussions/26560
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
+          git fetch origin main
+          git reset --hard main
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
@@ -58,7 +56,7 @@ jobs:
                   UpdateSource(source, mcpeui, 'qt6')
                   if source['type'] == 'git' and source['url'] == mcpeui:
                       module['build-options']['config-opts'][:] = filterfalse(lambda x: x.startswith('-DLAUNCHER_VERSION_NAME=') or x.startswith('-DLAUNCHER_VERSION_CODE=') or x.startswith('-DLAUNCHER_CHANGE_LOG=') or x.startswith('-DLAUNCHER_VERSIONDB_URL='), module['build-options']['config-opts'])
-                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master']
+                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}-nightly', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master']
 
           json.dump(obj, open('io.mrarm.mcpelauncher.json', 'w'), indent=4)
 

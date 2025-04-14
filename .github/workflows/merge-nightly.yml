@@ -1,0 +1,19 @@
+name: Merge Nightly
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        type: string
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  check-comment:
+    if: github.event.issue.pull_request != null && contains(github.event.comment.body, 'flatpak install')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform action for "flatpak install" comment
+        run: |
+          gh pr merge --squash ${{ github.event.issue.pull_request.number || inputs.pr-number }}
