@@ -1,0 +1,23 @@
+name: Merge Nightly
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        type: string
+  issue_comment:
+    types:
+      - created
+
+run-name: ${{ (github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number) && format('Auto Merge PR {0}', github.event.issue.number || inputs.pr-number) || 'Ignore Comment - Skip Automerge' }}
+
+jobs:
+  check-comment:
+    if: github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform action for "flatpak install" comment
+        run: |
+          gh pr merge --squash ${{ github.event.issue.number || inputs.pr-number }}
+        env:
+          GH_TOKEN: ${{ github.token }}
