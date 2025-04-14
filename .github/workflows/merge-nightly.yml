@@ -16,6 +16,7 @@ jobs:
     if: github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.issue.labels.*.name, 'beta-update') && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Perform action for "flatpak install" comment
         run: |
           gh pr merge --squash ${{ github.event.issue.number || inputs.pr-number }}
