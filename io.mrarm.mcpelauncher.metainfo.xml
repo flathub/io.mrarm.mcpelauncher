@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.2.1" date="2025-04-14">
+            <description>
+                <p>Update User Interface</p>
+            </description>
+        </release>
         <release version="v1.2.0" date="2025-02-15">
             <description>
                 <p>Fixes crash on network error in 1.21.60.10</p>
