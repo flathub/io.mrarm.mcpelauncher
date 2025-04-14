@@ -10,24 +10,35 @@
             To use this launcher you have to own Minecraft: Bedrock Edition on google play store, you may be unable to play the latest update of the Game. Otherwise you will get an license error while launching the google play apk.
         </p>
         <p>
-            For sound you will have to install pulseaudio on your host system, otherwise the game will be silent on arm based systems.
-        </p>
-        <p>
-            The project runs the native libraries from the Android version directly on your computer. This is accomplished by fixing the incompatibilities between the libc used on Android and the one used on desktop Linux or OS X (Android - Bionic; Linux - glibc). This is a simple compatibility layer which doesn’t impact performance in any significant way; it’s similar to Wine, but much more lightweight and simple. Aditionally, all Android-specific code has been rewritten to run on Linux (AppPlatform, Store, Xbox Live, etc.).
-        </p>
-        <p>
             This is an unofficial Linux launcher for the Minecraft Bedrock codebase. This project is not affiliated with Minecraft, Mojang or Microsoft.
         </p>
+        <p>Not available Features you may miss</p>
+        <ul>
+            <li>Xbox live friend joining - Technically Working on Linux - usually times out or crashs the game in both directions - consider using the offical server software <code>www.minecraft.net/en-us/download/server/bedrock</code> - connect all by ip as external server</li>
+            <li>Xbox live login - a lot of devices seem to get error code "drowned" without beeing asked for login - error code "drowned" has more meanings like you closed the webview window without sign in - try to change your timezone to a different one</li>
+        </ul>
     </description>
     <launchable type="desktop-id">io.mrarm.mcpelauncher.desktop</launchable>
     <screenshots>
         <screenshot type="default">
-            <caption>Welcome page of the Launcher</caption>
-            <image>https://user-images.githubusercontent.com/44845461/85148024-edccbd80-b24f-11ea-9a6a-0cc28dff4ff6.png</image>
+            <caption>Changelog page of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/changelogscreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Main screen of the Launcher</caption>
-            <image>https://user-images.githubusercontent.com/24195572/71060819-64f78c80-211b-11ea-8ea4-f1c2dabb9b54.png</image>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/homescreen.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Profile Editor of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/profileeditor.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Settings of the Launcher</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/settings.png</image>
+        </screenshot>
+        <screenshot>
+            <caption>Main screen of the Game</caption>
+            <image>https://raw.githubusercontent.com/flathub/io.mrarm.mcpelauncher/master/gamescreen.png</image>
         </screenshot>
         <screenshot>
             <caption>Ingame ancient Nether Portal</caption>
@@ -43,57 +54,16 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
-        <release version="v0.3.2" date="2021-12-12">
-            <description>
-                <p>This project may no longer provide latest version support. It may take more than 12 month for a new Version to be supported.</p>
-                <p>1.13.0 - 1.18.2 are now working inclusive offline mode</p>
-                <p>The Development Mode is no longer hidden</p>
-                <p>This version cannot launch Minecraft 1.18.10.22</p>
-                <p>No longer contains proprietary launcher extensions. This Project still contains the proprietary fmod library, the arm32 laucher loads binaries extracted from the android ndk built without sourcecode</p>
-            </description>
-        </release>
-        <release version="v0.3.0.1" date="2021-11-03">
-            <description>
-                <p>Update flatpak sdk to kde 5.15-21.08</p>
-                <p>revert workaround of the apk downloader required for kde 5.15</p>
-            </description>
-        </release>
-        <release version="v0.3.0" date="2021-10-22">
-            <description>
-                <p>Anti piracy update, starting 1.17.40+ currently requires an internet connection</p>
-                <p>I forget what exactly I have changed during the last months</p>
-            </description>
-        </release>
-        <release version="v0.2.6" date="2021-09-27">
-            <description>
-                <p>Update runtime to kde sdk to 5.15</p>
-                <p>Export playapi information as environment variables</p>
-            </description>
-        </release>
-        <release version="v0.2.3" date="2021-07-04">
-            <description>
-                <p>Use this very unstable launcher at your own risk, backup your worlds including realms.You may be banned by featured servers.</p>
-                <p>Allow to disable the texture patch</p>
-                <p>Added Game storage buttons in settings</p>
-                <p>Fix a startup crash on macOS 10.10-10.12 for 1.17</p>
-                <p>Fix a startup crash while gamepads are connected for 1.16.210 and later</p>
-                <p>Added a warning to google play sign in</p>
-                <p>Fixed an xbox sign in issue after creating an account</p>
-                <p>Fix some qt ui glitches</p>
-                <p>Version v0.2.2 skipped due to a bug</p>
-            </description>
-        </release>
-        <release version="v0.2.1" date="2021-05-03">
-            <description>
-                <p>Disable use .apk from launcher login</p>
-                <p>Add workaround for texture off by one 1.16.210-1.17.0.52 and beyond revision 2</p>
-                <p>Test a new 1.16.230+ workaround due to stack corruption</p>
-                <p>Add the two big bugs of 1.16.210 and later to titlescreen</p>
-            </description>
+        <release version="v0.0.14453060077" date="2025-04-14">
+            <description>Bump Launcher</description>
         </release>
     </releases>
-    <url type="homepage">https://mcpelauncher.readthedocs.io</url>
+    <url type="homepage">https://minecraft-linux.github.io</url>
     <url type="bugtracker">https://github.com/flathub/io.mrarm.mcpelauncher/issues</url>
-    <url type="faq">https://mcpelauncher.readthedocs.io/en/latest/faq.html</url>
+    <url type="faq">https://minecraft-linux.github.io/faq</url>
+    <url type="help">https://minecraft-linux.github.io/troubleshooting</url>
+    <url type="contact">https://discord.gg/TaUNBXr</url>
+    <url type="vcs-browser">https://github.com/minecraft-linux/mcpelauncher-manifest</url>
     <project_group>minecraft-linux</project_group>
+    <developer_name>minecraft-linux</developer_name>
 </component>
