@@ -9,13 +9,14 @@ on:
     types:
       - created
 
-run-name: ${{ (github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number) && format('Auto Merge PR {0}', github.event.issue.number || inputs.pr-number) || 'Ignore Comment - Skip Automerge' }}
+run-name: ${{ (github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.issue.labels.*.name, 'beta-update') && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number) && format('Auto Merge PR {0}', github.event.issue.number || inputs.pr-number) || 'Ignore Comment - Skip Automerge' }}
 
 jobs:
   check-comment:
-    if: github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number
+    if: github.sender == 'flathubbot' && github.event.issue.pull_request != null && contains(github.event.issue.labels.*.name, 'beta-update') && contains(github.event.comment.body, 'flatpak install') || inputs.pr-number
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Perform action for "flatpak install" comment
         run: |
           gh pr merge --squash ${{ github.event.issue.number || inputs.pr-number }}

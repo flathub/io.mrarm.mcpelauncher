@@ -160,12 +160,12 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_ENABLE_GOOGLE_PLAY_LICENCE_CHECK=ON",
-                    "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.14453060077-nightly",
-                    "-DLAUNCHER_VERSION_CODE=14453060077",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.14454298663-nightly",
+                    "-DLAUNCHER_VERSION_CODE=14454298663",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
+                    "-DLAUNCHER_DISABLE_DEV_MODE=OFF"
                 ]
             },
             "sources": [

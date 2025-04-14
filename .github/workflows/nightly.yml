@@ -53,8 +53,8 @@ jobs:
                   mcpeui = 'https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git'
                   UpdateSource(source, mcpeui, 'qt6')
                   if source['type'] == 'git' and source['url'] == mcpeui:
-                      module['build-options']['config-opts'][:] = filterfalse(lambda x: x.startswith('-DLAUNCHER_VERSION_NAME=') or x.startswith('-DLAUNCHER_VERSION_CODE=') or x.startswith('-DLAUNCHER_CHANGE_LOG=') or x.startswith('-DLAUNCHER_VERSIONDB_URL='), module['build-options']['config-opts'])
-                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}-nightly', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master']
+                      module['build-options']['config-opts'][:] = filterfalse(lambda x: x.startswith('-DLAUNCHER_VERSION_NAME=') or x.startswith('-DLAUNCHER_VERSION_CODE=') or x.startswith('-DLAUNCHER_CHANGE_LOG=') or x.startswith('-DLAUNCHER_VERSIONDB_URL=') or x.startswith('-DLAUNCHER_DISABLE_DEV_MODE='), module['build-options']['config-opts'])
+                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}-nightly', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master', '-DLAUNCHER_DISABLE_DEV_MODE=OFF']
 
           json.dump(obj, open('io.mrarm.mcpelauncher.json', 'w'), indent=4)
 
