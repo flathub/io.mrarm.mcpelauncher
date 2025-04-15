@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.2.2" date="2025-04-15">
+            <description>
+                <p>Fix gamepad input sdl3</p>
+            </description>
+        </release>
         <release version="v1.2.1" date="2025-04-14">
             <description>
                 <p>Update User Interface</p>
