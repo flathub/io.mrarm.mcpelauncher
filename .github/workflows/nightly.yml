@@ -5,6 +5,8 @@ on:
     - cron: "0 2 * * *"
 jobs:
   build:
+    # Do not run schedule on forks by default, otherwise opt in via repository variable ENABLE_NIGHTLY_PR
+    if: github.event_name == 'workflow_dispatch' || github.repository_owner == 'flathub' || vars.ENABLE_NIGHTLY_PR
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
