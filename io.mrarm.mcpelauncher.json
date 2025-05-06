@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "d40b99fe35fd05ed7626426ee63ccaccc4f883ab"
+                    "commit": "v1.3.x"
                 }
             ]
         },
@@ -161,17 +161,17 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v1.2.3",
-                    "-DLAUNCHER_VERSION_CODE=87",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Improve sdl3 code</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.2.x"
+                    "-DLAUNCHER_VERSION_NAME=v1.3.0",
+                    "-DLAUNCHER_VERSION_CODE=88",
+                    "-DLAUNCHER_CHANGE_LOG=<p>1.21.80 support by Gameparrot</p><p>Some other changes</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.3.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "843c875b18b501e9211d84f05cf4c45a231628ca",
+                    "commit": "1eaf570482161715a1d71a2a2541ca27087bc8ac",
                     "disable-shallow-clone": true
                 },
                 {
@@ -213,7 +213,6 @@
                     "-DGAMEWINDOW_SYSTEM=SDL3",
                     "-DENABLE_DEV_PATHS=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
-
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
@@ -233,13 +232,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "d3d73a24f1e93327932e361e2a65009d856ca607",
+                    "commit": "035b691c05aa3977d09afb4df7681016d2b2ee77",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "26f70da7756497b819282d4a4b16cf4779b5ffcf",
+                    "commit": "c9af9763c0860d503d7a9a40824f897ca8170980",
                     "dest": "gamecontrollerdb"
                 },
                 {
