@@ -54,6 +54,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.3.0" date="2025-05-06">
+            <description>
+                <p>1.21.80 support by Gameparrot</p>
+                <p>Some other changes</p>
+            </description>
+        </release>
         <release version="v1.2.3" date="2025-04-17">
             <description>
                 <p>Ignore unsupported gamepad keys</p>
