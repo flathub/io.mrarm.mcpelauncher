@@ -54,7 +54,7 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
-        <release version="v0.0.15359483901" date="2025-05-31">
+        <release version="v0.0.15370494064" date="2025-06-01">
             <description>Bump Launcher</description>
         </release>
     </releases>
