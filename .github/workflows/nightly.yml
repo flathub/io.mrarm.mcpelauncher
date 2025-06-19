@@ -55,8 +55,8 @@ jobs:
                   mcpeui = 'https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git'
                   UpdateSource(source, mcpeui, 'qt6')
                   if source['type'] == 'git' and source['url'] == mcpeui:
-                      module['build-options']['config-opts'][:] = filterfalse(lambda x: x.startswith('-DLAUNCHER_VERSION_NAME=') or x.startswith('-DLAUNCHER_VERSION_CODE=') or x.startswith('-DLAUNCHER_CHANGE_LOG=') or x.startswith('-DLAUNCHER_VERSIONDB_URL=') or x.startswith('-DLAUNCHER_DISABLE_DEV_MODE='), module['build-options']['config-opts'])
-                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}-nightly', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master', '-DLAUNCHER_DISABLE_DEV_MODE=OFF']
+                      module['build-options']['config-opts'][:] = filterfalse(lambda x: x.startswith('-DLAUNCHER_VERSION_NAME=') or x.startswith('-DLAUNCHER_VERSION_CODE=') or x.startswith('-DLAUNCHER_CHANGE_LOG=') or x.startswith('-DLAUNCHER_VERSIONDB_URL=') or x.startswith('-DLAUNCHER_DISABLE_DEV_MODE=') or x.startswith('-DLAUNCHER_FLATPAK_CONFIG_URL='), module['build-options']['config-opts'])
+                      module['build-options']['config-opts'] += ['-DLAUNCHER_VERSION_NAME=v0.0.${{ github.run_id }}-nightly', '-DLAUNCHER_VERSION_CODE=' + str(${{ github.run_id }}), "-DLAUNCHER_CHANGE_LOG=N/A", '-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master', '-DLAUNCHER_DISABLE_DEV_MODE=OFF', '-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/beta/io.mrarm.mcpelauncher.json']
 
           json.dump(obj, open('io.mrarm.mcpelauncher.json', 'w'), indent=4)
 
@@ -72,11 +72,18 @@ jobs:
           ET.indent(tree, space='    ')
           tree.write('io.mrarm.mcpelauncher.metainfo.xml', encoding='utf-8', xml_declaration=True)
       - name: linux-flatpak-push-commit
+        id: linux-flatpak-push-commit
         run: |
           git add .
-          git commit -m "Release ${{ github.run_id }} via Buildbot"
-          git push origin HEAD:refs/heads/nightly/v0.0.${{ github.run_id }}
+          if git diff --cached | grep -q "commit"; then
+            git commit -m "Release ${{ github.run_id }} via Buildbot"
+            git push origin HEAD:refs/heads/nightly/v0.0.${{ github.run_id }}
+            echo "pr=1" > $GITHUB_OUTPUT
+          else
+            echo "No code changes / No 'commit' found in the diff. Not pushing."
+          fi
 
       - run: gh pr create --title "Nightly v0.0.14450246717" --body "Automated Update" --base beta --head nightly/v0.0.${{ github.run_id }} -l beta-update
+        if: steps.linux-flatpak-push-commit.outputs.pr
         env:
           GH_TOKEN: ${{ github.token }}

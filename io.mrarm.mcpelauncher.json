@@ -163,6 +163,7 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_VERSION_NAME=v1.3.0",
                     "-DLAUNCHER_VERSION_CODE=88",
+                    "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DLAUNCHER_CHANGE_LOG=<p>1.21.80 support by Gameparrot</p><p>Some other changes</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.3.x"
                 ]
