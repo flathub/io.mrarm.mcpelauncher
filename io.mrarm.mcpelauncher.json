@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "f3e60a51b77392a864e1031ec5376e72b598c1b1"
+                    "commit": "26d0b660502bf0d6d5ae35f93ed0bf4b1f41966a"
                 }
             ]
         },
@@ -161,18 +161,18 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v1.3.0",
-                    "-DLAUNCHER_VERSION_CODE=88",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
-                    "-DLAUNCHER_CHANGE_LOG=<p>1.21.80 support by Gameparrot</p><p>Some other changes</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.3.x"
+                    "-DLAUNCHER_VERSION_NAME=v1.4.0",
+                    "-DLAUNCHER_VERSION_CODE=89",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Notify for further flatpak updates via in app notification</p><p>initial 1.21.90 support linux and macOS</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.4.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "1eaf570482161715a1d71a2a2541ca27087bc8ac",
+                    "commit": "217f5fe0709148057bccb066f71a81f5ab0f080e",
                     "disable-shallow-clone": true
                 },
                 {
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "035b691c05aa3977d09afb4df7681016d2b2ee77",
+                    "commit": "cfb5ca51a6a977df13661fd1aec839a3f040a11d",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c9af9763c0860d503d7a9a40824f897ca8170980",
+                    "commit": "79b8ea1035256740c22fb1686fa0c77d201fe45f",
                     "dest": "gamecontrollerdb"
                 },
                 {
