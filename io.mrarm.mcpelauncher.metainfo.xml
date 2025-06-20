@@ -54,6 +54,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.4.0" date="2025-06-20">
+            <description>
+                <p>Notify for further flatpak updates via in app notification</p>
+                <p>initial 1.21.90 support linux and macOS</p>
+            </description>
+        </release>
         <release version="v1.3.0" date="2025-05-06">
             <description>
                 <p>1.21.80 support by Gameparrot</p>
