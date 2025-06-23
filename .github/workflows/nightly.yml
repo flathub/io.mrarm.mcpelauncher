@@ -5,7 +5,7 @@ on:
     - cron: "0 2 * * *"
 jobs:
   build:
-    # Do not run schedule on forks by default, otherwise opt in via repository variable ENABLE_NIGHTLY_PR
+    # Skip this schedule job on forks by default, otherwise opt in via repository variable ENABLE_NIGHTLY_PR
     if: github.event_name == 'workflow_dispatch' || github.repository_owner == 'flathub' || vars.ENABLE_NIGHTLY_PR
     runs-on: ubuntu-latest
     steps:
@@ -17,10 +17,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git fetch origin beta
           git reset --soft origin/beta
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: '3.13'
       - name: Update jsons
         shell: python
         run: |
@@ -83,7 +83,7 @@ jobs:
             echo "No code changes / No 'commit' found in the diff. Not pushing."
           fi
 
-      - run: gh pr create --title "Nightly v0.0.14450246717" --body "Automated Update" --base beta --head nightly/v0.0.${{ github.run_id }} -l beta-update
+      - run: gh pr create --title "Nightly v0.0.${{ github.run_id }}" --body "Automated Update" --base beta --head nightly/v0.0.${{ github.run_id }} -l beta-update
         if: steps.linux-flatpak-push-commit.outputs.pr
         env:
           GH_TOKEN: ${{ github.token }}
