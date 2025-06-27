@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "26d0b660502bf0d6d5ae35f93ed0bf4b1f41966a"
+                    "commit": "233b2ef43f740c4aaa5ea13c42021678236f347d"
                 }
             ]
         },
@@ -160,8 +160,8 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.15840278814-nightly",
-                    "-DLAUNCHER_VERSION_CODE=15840278814",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.15917276885-nightly",
+                    "-DLAUNCHER_VERSION_CODE=15917276885",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -233,7 +233,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "cfb5ca51a6a977df13661fd1aec839a3f040a11d",
+                    "commit": "d0c28dbf4af3c020c1f745e32d1a521d6975154d",
                     "disable-shallow-clone": true
                 },
                 {
