@@ -162,9 +162,9 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
-                    "-DLAUNCHER_VERSION_NAME=v1.4.0",
-                    "-DLAUNCHER_VERSION_CODE=89",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Notify for further flatpak updates via in app notification</p><p>initial 1.21.90 support linux and macOS</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.4.1",
+                    "-DLAUNCHER_VERSION_CODE=90",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed a crash occurring due to the FPS limiter</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.4.x"
                 ]
             },
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "cfb5ca51a6a977df13661fd1aec839a3f040a11d",
+                    "commit": "bf944529e114fbe1d4f0ec265581f4a39fa33c5f",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "79b8ea1035256740c22fb1686fa0c77d201fe45f",
+                    "commit": "742a6ba670834180fad930f0852ee121f7085daf",
                     "dest": "gamecontrollerdb"
                 },
                 {
