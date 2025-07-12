@@ -160,8 +160,8 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.16211014743-nightly",
-                    "-DLAUNCHER_VERSION_CODE=16211014743",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.16233774333-nightly",
+                    "-DLAUNCHER_VERSION_CODE=16233774333",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -172,7 +172,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "0867ba7113dd59f3446bcb5bd0dabd0e7900d8e0",
+                    "commit": "8d9c8cceede8e89fc51e9c9557e00751adbb98b7",
                     "disable-shallow-clone": true
                 },
                 {
