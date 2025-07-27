@@ -68,7 +68,7 @@ jobs:
           releases.insert(0, rel)
           rel.set('version', 'v0.0.${{ github.run_id }}')
           rel.set('date', datetime.date.today().isoformat())
-          rel.append(ET.fromstring("<description>Bump Launcher</description>"))
+          rel.append(ET.fromstring("<description><p>Bump Launcher</p></description>"))
           ET.indent(tree, space='    ')
           tree.write('io.mrarm.mcpelauncher.metainfo.xml', encoding='utf-8', xml_declaration=True)
       - name: linux-flatpak-push-commit
