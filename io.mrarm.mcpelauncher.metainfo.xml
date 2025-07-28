@@ -54,8 +54,10 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
-        <release version="v0.0.16244845169" date="2025-07-13">
-            <description>Bump Launcher</description>
+        <release version="v0.0.16559310521" date="2025-07-28">
+            <description>
+                <p>Bump Launcher</p>
+            </description>
         </release>
     </releases>
     <url type="homepage">https://minecraft-linux.github.io</url>
