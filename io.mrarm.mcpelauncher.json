@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "37de58d84977470ceafb07cb782dba45e25a3c89"
+                    "commit": "7b71fffec6a075cb945ef4602bf067fb36d96c32"
                 }
             ]
         },
@@ -160,8 +160,8 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.16739789473-nightly",
-                    "-DLAUNCHER_VERSION_CODE=16739789473",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.16766774756-nightly",
+                    "-DLAUNCHER_VERSION_CODE=16766774756",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -172,7 +172,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8d9c8cceede8e89fc51e9c9557e00751adbb98b7",
+                    "commit": "d3b1d08917ce9abc2a91d0fca07794ce137d77e4",
                     "disable-shallow-clone": true
                 },
                 {
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "114debc422e4d999cb0b65d53dbeb87b55a69cab",
+                    "commit": "47ef719971ed968950e55a4bc096d3bba065ffc6",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "324b3587d904e419a5886dc30664746e8dd6e82a",
+                    "commit": "7543fc8af09232396f7d57e19c2342965c53e94f",
                     "dest": "gamecontrollerdb"
                 },
                 {
