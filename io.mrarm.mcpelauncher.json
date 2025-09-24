@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "21e491797ccdc761438e234196b5621df7ed0a86"
+                    "commit": "6f0ea6f87503ce185d43ca1476d81d68d1253d29"
                 }
             ]
         },
@@ -160,8 +160,8 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.17785103200-nightly",
-                    "-DLAUNCHER_VERSION_CODE=17785103200",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.17964867555-nightly",
+                    "-DLAUNCHER_VERSION_CODE=17964867555",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
