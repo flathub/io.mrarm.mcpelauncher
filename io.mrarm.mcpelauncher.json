@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm17"
+        "org.freedesktop.Sdk.Extension.llvm20"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.9",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -220,8 +220,8 @@
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
                     "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm17/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+                "prepend-path": "/usr/lib/sdk/llvm20/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
             },
             "only-arches": [
                 "i386",
