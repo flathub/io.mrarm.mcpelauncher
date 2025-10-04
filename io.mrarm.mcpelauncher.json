@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "26d0b660502bf0d6d5ae35f93ed0bf4b1f41966a"
+                    "commit": "9643b6f6051b7ef87132bf601ea245fd0ee6eaca"
                 }
             ]
         },
@@ -162,9 +162,9 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
-                    "-DLAUNCHER_VERSION_NAME=v1.4.1",
-                    "-DLAUNCHER_VERSION_CODE=90",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed a crash occurring due to the FPS limiter</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.4.2",
+                    "-DLAUNCHER_VERSION_CODE=91",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fix problems with Google Login</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.4.x"
                 ]
             },
@@ -172,7 +172,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "217f5fe0709148057bccb066f71a81f5ab0f080e",
+                    "commit": "46cdf2c3be27733d1d2ce1212e05a85699c09d9b",
                     "disable-shallow-clone": true
                 },
                 {
@@ -239,7 +239,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "742a6ba670834180fad930f0852ee121f7085daf",
+                    "commit": "38fc811c715365e963a6942092cae147eddddc90",
                     "dest": "gamecontrollerdb"
                 },
                 {

@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.4.2" date="2025-10-04">
+            <description>
+                <p>Fix problems with Google Login</p>
+            </description>
+        </release>
         <release version="v1.4.1" date="2025-07-02">
             <description>
                 <p>Fixed a crash occurring due to the FPS limiter</p>
