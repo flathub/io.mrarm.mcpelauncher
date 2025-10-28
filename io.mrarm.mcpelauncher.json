@@ -140,7 +140,7 @@
         },
         {
             "name": "mcpelauncher-ui-manifest",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "build-options": {
                 "arch": {
                     "x86_64": {
@@ -157,7 +157,6 @@
                     }
                 },
                 "config-opts": [
-                    "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_VERSION_NAME=v0.0.18828572455-nightly",
