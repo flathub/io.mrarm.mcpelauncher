@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm17"
+        "org.freedesktop.Sdk.Extension.llvm20"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.9",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -188,27 +188,11 @@
             "buildsystem": "cmake",
             "builddir": true,
             "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
                 "env": {
                     "CC": "clang",
-                    "CXX": "clang++"
+                    "CXX": "clang++",
+                    "CFLAGS": "",
+                    "CXXFLAGS": ""
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=SDL3",
@@ -218,17 +202,14 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_C_FLAGS=-DNDEBUG",
+                    "-DCMAKE_CXX_FLAGS=-DNDEBUG"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm17/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+                "prepend-path": "/usr/lib/sdk/llvm20/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
             },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
             "sources": [
                 {
                     "type": "git",
