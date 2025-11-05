@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm17"
+        "org.freedesktop.Sdk.Extension.llvm20"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.9",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "61e955e9cbd14fe8d4abbb9d25248b5032a028ba"
+                    "commit": "81ea6a7002768c492c8ae0c31d42d6135d302b37"
                 }
             ]
         },
@@ -160,8 +160,8 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.19006472478-nightly",
-                    "-DLAUNCHER_VERSION_CODE=19006472478",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.19089898224-nightly",
+                    "-DLAUNCHER_VERSION_CODE=19089898224",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -188,27 +188,11 @@
             "buildsystem": "cmake",
             "builddir": true,
             "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
                 "env": {
                     "CC": "clang",
-                    "CXX": "clang++"
+                    "CXX": "clang++",
+                    "CFLAGS": "",
+                    "CXXFLAGS": ""
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=SDL3",
@@ -218,28 +202,25 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_C_FLAGS=-DNDEBUG",
+                    "-DCMAKE_CXX_FLAGS=-DNDEBUG"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm17/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+                "prepend-path": "/usr/lib/sdk/llvm20/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
             },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "7859ee537301253194246c5a8029bd7d5444e8d1",
+                    "commit": "bbd5700b95fa024584d4fe7087cdd262903cff3a",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "e40b8910f859cd988124def50dcdb63b2f2ff48b",
+                    "commit": "958e252520ece96cd1b03d5ff0d835db2f048991",
                     "dest": "gamecontrollerdb"
                 },
                 {
