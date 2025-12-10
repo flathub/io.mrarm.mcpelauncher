@@ -162,9 +162,9 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
-                    "-DLAUNCHER_VERSION_NAME=v1.5.4",
-                    "-DLAUNCHER_VERSION_CODE=98",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Support installing mods manually to allow selected games after 1.21.120 using development features</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.5.5",
+                    "-DLAUNCHER_VERSION_CODE=99",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Prepare 1.21.130 x86_64 mod support</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -172,7 +172,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "ff8944fa1ff403da09fb843f65cade43f2468600",
+                    "commit": "d9d22e64275a70c0b4220cfbc857dc1693c702a4",
                     "disable-shallow-clone": true
                 },
                 {
@@ -233,13 +233,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "419b46fde8614daa1aca4f478f4b37e82e57084b",
+                    "commit": "cebd86479920f087579908c2c6e86687e4c100f2",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "2b71fffae463ecaa08391c86cfd8a9f1842389af",
+                    "commit": "ff1dc973268613a6fcc4b5017f5537c845e0bfe8",
                     "dest": "gamecontrollerdb"
                 },
                 {
