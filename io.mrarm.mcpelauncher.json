@@ -150,7 +150,9 @@
                 "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml",
                 "ccache -C",
                 "cmake -B build -S . -DQt5QuickCompiler_FOUND=OFF -DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb -DLAUNCHER_DISABLE_DEV_MODE=ON -DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext -DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json -DLAUNCHER_VERSION_NAME=v1.6.0.111 -DLAUNCHER_VERSION_CODE=100 -DLAUNCHER_CHANGE_LOG='<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>' -DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x -DCMAKE_INSTALL_PREFIX=/app",
-                "cmake --build build --target install -j$(nproc)"
+                "cmake --build build --target install -j$(nproc)",
+                "sha512sum /app/bin/mcpelauncher-client",
+                "sha512sum /app/bin/mcpelauncher-ui-qt"
             ],
             "sources": [
                 {
