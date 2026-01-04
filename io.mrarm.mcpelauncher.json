@@ -172,14 +172,22 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8c49ba77296fca2d7141c25b331039551168a4e0",
-                    "disable-shallow-clone": true
+                    "commit": "8c49ba77296fca2d7141c25b331039551168a4e0"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/glfw",
                     "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "git show",
+                        "git status",
+                        "git -C mcpelauncher-ui-qt show",
+                        "git -C mcpelauncher-ui-qt status"
+                    ]
                 }
             ]
         },
