@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm17"
+        "org.freedesktop.Sdk.Extension.llvm20"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.9",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -145,14 +145,14 @@
                 "git show",
                 "git status",
                 "git -C mcpelauncher-ui-qt show",
-                "git -C mcpelauncher-ui-qt status",
-                "cat mcpelauncher-ui-qt/qml/SettingsDevSection.qml",
-                "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml",
-                "ccache -C",
+                        "git -C mcpelauncher-ui-qt status",
+                    "cat mcpelauncher-ui-qt/qml/SettingsDevSection.qml",
+                        "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml",
+                        "ccache -C",
                 "cmake -B build -S . -DQt5QuickCompiler_FOUND=OFF -DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb -DLAUNCHER_DISABLE_DEV_MODE=ON -DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext -DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json -DLAUNCHER_VERSION_NAME=v1.6.0.111 -DLAUNCHER_VERSION_CODE=100 -DLAUNCHER_CHANGE_LOG='<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>' -DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x -DCMAKE_INSTALL_PREFIX=/app",
                 "cmake --build build --target install -j$(nproc)",
                 "sha512sum /app/bin/mcpelauncher-ui-qt"
-            ],
+                ],
             "sources": [
                 {
                     "type": "git",
@@ -183,27 +183,11 @@
             "buildsystem": "cmake",
             "builddir": true,
             "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
                 "env": {
                     "CC": "clang",
-                    "CXX": "clang++"
+                    "CXX": "clang++",
+                    "CFLAGS": "",
+                    "CXXFLAGS": ""
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=SDL3",
@@ -213,28 +197,25 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_C_FLAGS=-DNDEBUG",
+                    "-DCMAKE_CXX_FLAGS=-DNDEBUG"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm17/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+                "prepend-path": "/usr/lib/sdk/llvm20/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm20/lib"
             },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "17c5109b49d7d939c06b40fc2b7ac3c60f65f121",
+                    "commit": "0e78bf8dc9b2f9645074498035f57bf83f439179",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "01de5cf46ff3679b5378ec7dae365791e632b76a",
+                    "commit": "38fc811c715365e963a6942092cae147eddddc90",
                     "dest": "gamecontrollerdb"
                 },
                 {
