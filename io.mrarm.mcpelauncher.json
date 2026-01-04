@@ -186,7 +186,9 @@
                         "git show",
                         "git status",
                         "git -C mcpelauncher-ui-qt show",
-                        "git -C mcpelauncher-ui-qt status"
+                        "git -C mcpelauncher-ui-qt status",
+                        "cat mcpelauncher-ui-qt/qml/SettingsDevSection.qml",
+                        "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml"
                     ]
                 }
             ]
