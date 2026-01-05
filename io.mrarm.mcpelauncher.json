@@ -171,7 +171,8 @@
                     "-DLAUNCHER_VERSION_NAME=v1.6.1",
                     "-DLAUNCHER_VERSION_CODE=100",
                     "-DLAUNCHER_CHANGE_LOG=<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                 ]
             },
             "sources": [
