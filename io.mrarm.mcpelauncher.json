@@ -146,19 +146,34 @@
         },
         {
             "name": "mcpelauncher-ui-manifest",
-            "buildsystem": "simple",
-            "build-commands": [
-                "git show",
-                "git status",
-                "git -C mcpelauncher-ui-qt show",
-                        "git -C mcpelauncher-ui-qt status",
-                    "cat mcpelauncher-ui-qt/qml/SettingsDevSection.qml",
-                        "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml",
-                        "ccache -C",
-                "cmake -B build -S . -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DQt5QuickCompiler_FOUND=OFF -DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb -DLAUNCHER_DISABLE_DEV_MODE=ON -DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext -DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json -DLAUNCHER_VERSION_NAME=v1.6.0.111 -DLAUNCHER_VERSION_CODE=100 -DLAUNCHER_CHANGE_LOG='<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>' -DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x -DCMAKE_INSTALL_PREFIX=/app",
-                "cmake --build build --target install -j$(nproc)",
-                "sha512sum /app/bin/mcpelauncher-ui-qt"
-                ],
+            "buildsystem": "cmake",
+            "build-options": {
+                "arch": {
+                    "x86_64": {
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+                    },
+                    "arm": {
+                        "cflags": "-DNDEBUG",
+                        "cxxflags": "-DNDEBUG"
+                    },
+                    "aarch64": {
+                        "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+                        "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+                    }
+                },
+                "config-opts": [
+                    "-DQt5QuickCompiler_FOUND=OFF",
+                    "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
+                    "-DLAUNCHER_DISABLE_DEV_MODE=ON",
+                    "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+                    "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
+                    "-DLAUNCHER_VERSION_NAME=v1.6.1",
+                    "-DLAUNCHER_VERSION_CODE=100",
+                    "-DLAUNCHER_CHANGE_LOG=<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
+                ]
+            },
             "sources": [
                 {
                     "type": "git",
@@ -170,17 +185,6 @@
                     "url": "https://github.com/minecraft-linux/glfw",
                     "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
                     "dest": "glfw3_ext"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "git show",
-                        "git status",
-                        "git -C mcpelauncher-ui-qt show",
-                        "git -C mcpelauncher-ui-qt status",
-                        "cat mcpelauncher-ui-qt/qml/SettingsDevSection.qml",
-                        "git -C mcpelauncher-ui-qt diff qml/SettingsDevSection.qml"
-                    ]
                 }
             ]
         },
@@ -216,13 +220,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "0e78bf8dc9b2f9645074498035f57bf83f439179",
+                    "commit": "17c5109b49d7d939c06b40fc2b7ac3c60f65f121",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "38fc811c715365e963a6942092cae147eddddc90",
+                    "commit": "01de5cf46ff3679b5378ec7dae365791e632b76a",
                     "dest": "gamecontrollerdb"
                 },
                 {
