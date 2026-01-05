@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.6.0" date="2026-01-04">
+            <description>
+                <p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>
+            </description>
+        </release>
         <release version="v1.5.5" date="2025-12-10">
             <description>
                 <p>Prepare 1.21.130 x86_64 mod support</p>
