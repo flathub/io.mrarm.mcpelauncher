@@ -1,13 +1,13 @@
 {
     "id": "io.mrarm.mcpelauncher",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.10",
     "sdk": "org.kde.Sdk",
     "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.llvm17"
+        "org.freedesktop.Sdk.Extension.llvm21"
     ],
     "base": "io.qt.qtwebengine.BaseApp",
-    "base-version": "6.7",
+    "base-version": "6.10",
     "command": "mcpelauncher-ui-qt",
     "cleanup": [
         "*.a",
@@ -78,6 +78,11 @@
         },
         {
             "name": "libzip",
+            "build-options": {
+                "config-opts": [
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                ]
+            },
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
@@ -96,7 +101,8 @@
                     "-DENABLE_MSA_QT_UI=ON",
                     "-DMSA_UI_PATH_DEV=OFF",
                     "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=nlohmann_json_ext",
-                    "-DQT_VERSION=6"
+                    "-DQT_VERSION=6",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                 ]
             },
             "sources": [
@@ -160,8 +166,9 @@
                     "-DQt5QuickCompiler_FOUND=OFF",
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.20683418768-nightly",
-                    "-DLAUNCHER_VERSION_CODE=20683418768",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.20736850192-nightly",
+                    "-DLAUNCHER_VERSION_CODE=20736850192",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -172,8 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8c49ba77296fca2d7141c25b331039551168a4e0",
-                    "disable-shallow-clone": true
+                    "commit": "8184f43b33f640bc653c7ffead5361bd453aafc8"
                 },
                 {
                     "type": "git",
@@ -188,27 +194,11 @@
             "buildsystem": "cmake",
             "builddir": true,
             "build-options": {
-                "arch": {
-                    "x86_64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "arm": {
-                        "cflags": "-DNDEBUG -march=armv7 -mfpu=neon",
-                        "cxxflags": "-DNDEBUG -march=armv7 -mfpu=neon"
-                    },
-                    "i386": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    },
-                    "aarch64": {
-                        "cflags": "-DNDEBUG",
-                        "cxxflags": "-DNDEBUG"
-                    }
-                },
                 "env": {
                     "CC": "clang",
-                    "CXX": "clang++"
+                    "CXX": "clang++",
+                    "CFLAGS": "",
+                    "CXXFLAGS": ""
                 },
                 "config-opts": [
                     "-DGAMEWINDOW_SYSTEM=SDL3",
@@ -218,17 +208,15 @@
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
                     "-DOWN_CURL_SOURCE_DIR=../curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF"
+                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_C_FLAGS=-DNDEBUG",
+                    "-DCMAKE_CXX_FLAGS=-DNDEBUG",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                 ],
-                "prepend-path": "/usr/lib/sdk/llvm17/bin",
-                "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+                "prepend-path": "/usr/lib/sdk/llvm21/bin",
+                "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
             },
-            "only-arches": [
-                "i386",
-                "x86_64",
-                "arm",
-                "aarch64"
-            ],
             "sources": [
                 {
                     "type": "git",
