@@ -54,6 +54,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.6.2" date="2026-01-24">
+            <description>
+                <p>Flatpak/qt6 prefer system sdl3</p>
+                <p>Might resolves some wayland input window not responding problems</p>
+            </description>
+        </release>
         <release version="v1.6.0" date="2026-01-04">
             <description>
                 <p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>

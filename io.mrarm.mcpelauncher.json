@@ -168,18 +168,18 @@
                     "-DLAUNCHER_DISABLE_DEV_MODE=ON",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
-                    "-DLAUNCHER_VERSION_NAME=v1.6.1",
-                    "-DLAUNCHER_VERSION_CODE=100",
-                    "-DLAUNCHER_CHANGE_LOG=<p>After deleting all mods and leaving dev mode and trial/chromeOS mode, installing mcpelauncher-updates is just one click to show a compatible version of 1.21.13x</p>",
-                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x",
-                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                    "-DLAUNCHER_VERSION_NAME=v1.6.2",
+                    "-DLAUNCHER_VERSION_CODE=102",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Flatpak/qt6 prefer system sdl3</p><p>Might resolves some wayland input window not responding problems</p>",
+                    "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8184f43b33f640bc653c7ffead5361bd453aafc8"
+                    "commit": "da8a1b1d2c375aed04ede88702070d93e9ce498e"
                 },
                 {
                     "type": "git",
@@ -221,13 +221,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "17c5109b49d7d939c06b40fc2b7ac3c60f65f121",
+                    "commit": "72028e1b5a42a5059ace02dab5fa4aec04b55eb1",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "01de5cf46ff3679b5378ec7dae365791e632b76a",
+                    "commit": "07a5c6b80262a208200573186eb5d5ac2518e89d",
                     "dest": "gamecontrollerdb"
                 },
                 {
