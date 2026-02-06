@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.6.3" date="2026-02-06">
+            <description>
+                <p>Assign Droidguard Result to null during sign in</p>
+            </description>
+        </release>
         <release version="v1.6.2" date="2026-01-24">
             <description>
                 <p>Flatpak/qt6 prefer system sdl3</p>
