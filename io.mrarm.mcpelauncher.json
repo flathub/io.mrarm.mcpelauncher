@@ -169,9 +169,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.6.2",
-                    "-DLAUNCHER_VERSION_CODE=102",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Flatpak/qt6 prefer system sdl3</p><p>Might resolves some wayland input window not responding problems</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.6.3",
+                    "-DLAUNCHER_VERSION_CODE=103",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Assign Droidguard Result to null during sign in</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -179,7 +179,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "da8a1b1d2c375aed04ede88702070d93e9ce498e"
+                    "commit": "2b772e6ddaf43ee0d62798a830200c49f131070f"
                 },
                 {
                     "type": "git",
@@ -227,7 +227,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "07a5c6b80262a208200573186eb5d5ac2518e89d",
+                    "commit": "95a35c7e65f7d71a3cc7d8e4d2dd9ffdac2bee28",
                     "dest": "gamecontrollerdb"
                 },
                 {
