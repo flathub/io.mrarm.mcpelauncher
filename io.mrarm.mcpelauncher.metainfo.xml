@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.6.4" date="2026-02-13">
+            <description>
+                <p>Includes a 1.26.0.2 x86_64 crash workaround</p>
+            </description>
+        </release>
         <release version="v1.6.3" date="2026-02-06">
             <description>
                 <p>Assign Droidguard Result to null during sign in</p>
