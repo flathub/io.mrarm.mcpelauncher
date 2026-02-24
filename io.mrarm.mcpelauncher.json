@@ -55,17 +55,6 @@
     ],
     "modules": [
         {
-            "name": "libdecor",
-            "buildsystem": "meson",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/libdecor/libdecor.git",
-                    "commit": "ca6e6b68a3ecc4cff2da975580dbe1ae07caf18e"
-                }
-            ]
-        },
-        {
             "name": "protobuf",
             "sources": [
                 {
@@ -167,8 +156,8 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.22292613210-nightly",
-                    "-DLAUNCHER_VERSION_CODE=22292613210",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.22336155362-nightly",
+                    "-DLAUNCHER_VERSION_CODE=22336155362",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -207,8 +196,7 @@
                     "-DJNI_USE_JNIVM=ON",
                     "-DBUILD_UI=ON",
                     "-DBUILD_CLIENT=ON",
-                    "-DOWN_CURL_SOURCE_DIR=../curl_ext",
-                    "-DCURL_EXT_EXTRA_OPTIONS=-DCURL_USE_LIBPSL=OFF",
+                    "-DUSE_OWN_CURL=OFF",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_C_FLAGS=-DNDEBUG",
                     "-DCMAKE_CXX_FLAGS=-DNDEBUG",
@@ -229,18 +217,6 @@
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
                     "commit": "a050623bb0e35e3e0ba635c48faddecf42ff225c",
                     "dest": "gamecontrollerdb"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/minecraft-linux/glfw",
-                    "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
-                    "dest": "glfw3_ext"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/curl/curl",
-                    "commit": "b16d1fa8ee567b52c09a0f89940b07d8491b881d",
-                    "dest": "curl_ext"
                 },
                 {
                     "type": "file",
