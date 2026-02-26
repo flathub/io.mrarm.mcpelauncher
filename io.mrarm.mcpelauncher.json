@@ -129,7 +129,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "d25abf9a7c1d905d88bd833dbd6c16992711727a"
+                    "commit": "8f2c56dbece5e53c06d15b221c02b70582534d31"
                 }
             ]
         },
@@ -156,8 +156,8 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.22381747904-nightly",
-                    "-DLAUNCHER_VERSION_CODE=22381747904",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.22427328259-nightly",
+                    "-DLAUNCHER_VERSION_CODE=22427328259",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -215,7 +215,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "a050623bb0e35e3e0ba635c48faddecf42ff225c",
+                    "commit": "9cc9325b050f84808fcc77a868f1ee934555346f",
                     "dest": "gamecontrollerdb"
                 },
                 {
