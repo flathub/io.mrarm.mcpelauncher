@@ -158,9 +158,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.6.5",
-                    "-DLAUNCHER_VERSION_CODE=105",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Log Stacktrace and add safe mode in case of a UI crash</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.7.1",
+                    "-DLAUNCHER_VERSION_CODE=107",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Remove 30s delay for DRM update check now really</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -168,7 +168,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "9d8ae5b53196504e1abf3f794756e37e79857e22"
+                    "commit": "fc8185401f5c78a3e87361dd392aea6f84292888"
                 },
                 {
                     "type": "git",
@@ -209,13 +209,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "4a28b03fceeff87fef1f1e8d2a80b70c40cb2376",
+                    "commit": "c869c03e1d00907a7c4963222a3ca972658f80ad",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "a050623bb0e35e3e0ba635c48faddecf42ff225c",
+                    "commit": "7c3baed7e78f4b85c12df22089b2b97410edec15",
                     "dest": "gamecontrollerdb"
                 },
                 {
