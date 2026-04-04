@@ -54,6 +54,14 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.7.2" date="2026-04-04">
+            <description>
+                <p>Disable Vibrant Visuals on game start for macOS</p>
+                <p>Disable volumetric fog on game start nvidia</p>
+                <p>Improve Download Apk UI</p>
+                <p>Fix Request Google Credentials Approve Layout</p>
+            </description>
+        </release>
         <release version="v1.7.1" date="2026-03-25">
             <description>
                 <p>Remove 30s delay for DRM update check now really</p>
