@@ -158,9 +158,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.7.1",
-                    "-DLAUNCHER_VERSION_CODE=107",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Remove 30s delay for DRM update check now really</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.7.2",
+                    "-DLAUNCHER_VERSION_CODE=108",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Disable Vibrant Visuals on game start for macOS</p><p>Disable volumetric fog on game start nvidia</p><p>Improve Download Apk UI</p><p>Fix Request Google Credentials Approve Layout</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -168,7 +168,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "fc8185401f5c78a3e87361dd392aea6f84292888"
+                    "commit": "8b1e0f1231f1d86426da7d57306b51bdb92f993c"
                 },
                 {
                     "type": "git",
@@ -209,13 +209,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "c869c03e1d00907a7c4963222a3ca972658f80ad",
+                    "commit": "8e8dff1871c4a0434a27b808f6a3e1d50fac09df",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "7c3baed7e78f4b85c12df22089b2b97410edec15",
+                    "commit": "202d0070d75e51cdf2fc6e9c4d4662d87226d5c6",
                     "dest": "gamecontrollerdb"
                 },
                 {
