@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.7.3" date="2026-04-07">
+            <description>
+                <p>Fix a problem of v1.7.2 where WASD being mapped to invalid values</p>
+            </description>
+        </release>
         <release version="v1.7.2" date="2026-04-04">
             <description>
                 <p>Disable Vibrant Visuals on game start for macOS</p>
