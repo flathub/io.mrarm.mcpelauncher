@@ -54,6 +54,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.7.4" date="2026-04-10">
+            <description>
+                <p>Show if selected version is ChromeOS or Android in ChromeOS mode</p>
+                <p>Fix latest compatible version for ChromeOS mode</p>
+            </description>
+        </release>
         <release version="v1.7.3" date="2026-04-07">
             <description>
                 <p>Fix a problem of v1.7.2 where WASD being mapped to invalid values</p>
