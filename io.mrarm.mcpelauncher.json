@@ -158,9 +158,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.7.3",
-                    "-DLAUNCHER_VERSION_CODE=109",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Fix a problem of v1.7.2 where WASD being mapped to invalid values</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.7.4",
+                    "-DLAUNCHER_VERSION_CODE=110",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Show if selected version is ChromeOS or Android in ChromeOS mode</p><p>Fix latest compatible version for ChromeOS mode</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -168,7 +168,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "8b1e0f1231f1d86426da7d57306b51bdb92f993c"
+                    "commit": "e0001414ffcbd6dc6b4e929a09c161004262116d"
                 },
                 {
                     "type": "git",
@@ -209,13 +209,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "ea7ba48ba19169e5d9e9a448aaa5b6ffa625e06c",
+                    "commit": "06d038a3159c5667b5a63786fe22bba5214ec76a",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "c692e6e6a7070ee10ba58178fcbed2d815a4417b",
+                    "commit": "bd4ef5de42d50480c5be6bd54de164140a62f384",
                     "dest": "gamecontrollerdb"
                 },
                 {
