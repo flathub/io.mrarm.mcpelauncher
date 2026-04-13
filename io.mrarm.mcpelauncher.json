@@ -52,7 +52,8 @@
         "--env=QT_QUICK_CONTROLS_STYLE=",
         "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
         "--env=QML_IMPORT_PATH=/app/qml/",
-        "--env=QML_DISABLE_DISK_CACHE=1"
+        "--env=QML_DISABLE_DISK_CACHE=1",
+        "--env=QT_QPA_PLATFORMTHEME=gtk3"
     ],
     "modules": [
         {
