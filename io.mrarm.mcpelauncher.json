@@ -52,7 +52,8 @@
         "--env=QT_QUICK_CONTROLS_STYLE=",
         "--env=QT_QUICK_CONTROLS_HOVER_ENABLED=1",
         "--env=QML_IMPORT_PATH=/app/qml/",
-        "--env=QML_DISABLE_DISK_CACHE=1"
+        "--env=QML_DISABLE_DISK_CACHE=1",
+        "--env=QT_QPA_PLATFORMTHEME=gtk3"
     ],
     "modules": [
         {
@@ -130,7 +131,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
-                    "commit": "970c224709aab91dbd23430fcc1798b5892588fa"
+                    "commit": "853761cf0a6475079cbdb154926d35f49ed9a452"
                 }
             ]
         },
@@ -157,8 +158,8 @@
                     "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v0.0.24326158140-nightly",
-                    "-DLAUNCHER_VERSION_CODE=24326158140",
+                    "-DLAUNCHER_VERSION_NAME=v0.0.24436601554-nightly",
+                    "-DLAUNCHER_VERSION_CODE=24436601554",
                     "-DLAUNCHER_CHANGE_LOG=N/A",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/master",
                     "-DLAUNCHER_DISABLE_DEV_MODE=OFF",
@@ -216,7 +217,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "e6f9f10b2616badca4849e2d8ac1fa175114d854",
+                    "commit": "6cfee3036b6ea6e4398496462afc3077ec884a91",
                     "dest": "gamecontrollerdb"
                 },
                 {
