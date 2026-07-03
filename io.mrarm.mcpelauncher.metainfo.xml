@@ -54,6 +54,13 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.7.6" date="2026-06-25">
+            <description>
+                <p>Previous release didn't contain the right code this should fix that</p>
+                <p>Some prebuilds cannot host xbox live multiplayer due to outdated libcurl 8.0.1</p>
+                <p>This release updates some macOS and linux binaries to current libcurl 8.21.0</p>
+            </description>
+        </release>
         <release version="v1.7.4" date="2026-04-10">
             <description>
                 <p>Show if selected version is ChromeOS or Android in ChromeOS mode</p>

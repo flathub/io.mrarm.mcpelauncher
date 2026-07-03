@@ -160,9 +160,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.7.4",
-                    "-DLAUNCHER_VERSION_CODE=110",
-                    "-DLAUNCHER_CHANGE_LOG=<p>Show if selected version is ChromeOS or Android in ChromeOS mode</p><p>Fix latest compatible version for ChromeOS mode</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.7.6",
+                    "-DLAUNCHER_VERSION_CODE=113",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Previous release didn't contain the right code this should fix that</p><p>Some prebuilds cannot host xbox live multiplayer due to outdated libcurl 8.0.1</p><p>This release updates some macOS and linux binaries to current libcurl 8.21.0</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -170,7 +170,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "e0001414ffcbd6dc6b4e929a09c161004262116d"
+                    "commit": "87544a4854363da781b973f3e2f54891b5894ada"
                 },
                 {
                     "type": "git",
@@ -211,13 +211,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
-                    "commit": "06d038a3159c5667b5a63786fe22bba5214ec76a",
+                    "commit": "e58666afb578cd937870c5b9ae85a9a689ba917f",
                     "disable-shallow-clone": true
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/gabomdq/SDL_GameControllerDB",
-                    "commit": "bd4ef5de42d50480c5be6bd54de164140a62f384",
+                    "commit": "4d233a8491ac2c50b4cd218a8a9811b8dbaba160",
                     "dest": "gamecontrollerdb"
                 },
                 {
