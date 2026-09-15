@@ -54,6 +54,14 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.8.1" date="2026-09-15">
+            <description>
+                <p>qt6 builds now support launching 26.50</p>
+                <p>several textinput changes</p>
+                <p>gameactivity rewrite</p>
+                <p>Fix a bug in the linux release</p>
+            </description>
+        </release>
         <release version="v1.7.6" date="2026-06-25">
             <description>
                 <p>Previous release didn't contain the right code this should fix that</p>
