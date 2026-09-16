@@ -160,9 +160,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.8.1",
-                    "-DLAUNCHER_VERSION_CODE=115",
-                    "-DLAUNCHER_CHANGE_LOG=<p>qt6 builds now support launching 26.50</p><p>several textinput changes</p><p>gameactivity rewrite</p><p>Fix a bug in the linux release</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.8.3",
+                    "-DLAUNCHER_VERSION_CODE=116",
+                    "-DLAUNCHER_CHANGE_LOG=<p>fixed a bug in the User interface for update detection</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -170,7 +170,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "67dbdb6e7be109e1b9a3b59f3a8455fd6ca4b282"
+                    "commit": "93e156714f79c63f4cbf366116c0ba0f12d127dd"
                 },
                 {
                     "type": "git",
