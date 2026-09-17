@@ -54,6 +54,11 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.8.4" date="2026-09-17">
+            <description>
+                <p>Fixed Google Login Error missing Email</p>
+            </description>
+        </release>
         <release version="v1.8.3" date="2026-09-16">
             <description>
                 <p>fixed a bug in the User interface for update detection</p>
