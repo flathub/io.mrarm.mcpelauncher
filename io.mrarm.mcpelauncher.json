@@ -160,9 +160,9 @@
                     "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
                     "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-                    "-DLAUNCHER_VERSION_NAME=v1.8.3",
-                    "-DLAUNCHER_VERSION_CODE=116",
-                    "-DLAUNCHER_CHANGE_LOG=<p>fixed a bug in the User interface for update detection</p>",
+                    "-DLAUNCHER_VERSION_NAME=v1.8.4",
+                    "-DLAUNCHER_VERSION_CODE=117",
+                    "-DLAUNCHER_CHANGE_LOG=<p>Fixed Google Login Error missing Email</p>",
                     "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
                 ]
             },
@@ -170,7 +170,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
-                    "commit": "93e156714f79c63f4cbf366116c0ba0f12d127dd"
+                    "commit": "779d057d9d729e492c403d4e0927006342da1dfe"
                 },
                 {
                     "type": "git",
