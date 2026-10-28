@@ -54,6 +54,12 @@
         <content_attribute id="money-purchasing">intense</content_attribute>
     </content_rating>
     <releases>
+        <release version="v1.8.6" date="2026-10-28">
+            <description>
+                <p>Fix Minecraft 26.60 not launching, possible last minor android version supported until you need the msstore license</p>
+                <p>Remove mapping of resolve due to compat issues with old linux</p>
+            </description>
+        </release>
         <release version="v1.8.5" date="2026-10-28">
             <description>
                 <p>Fix Minecraft 26.60 not launching, possible last minor android version supported until you need the msstore license</p>
