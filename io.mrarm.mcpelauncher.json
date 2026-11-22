@@ -63,15 +63,24 @@
                     "type": "git",
                     "url": "https://github.com/protocolbuffers/protobuf.git",
                     "tag": "v3.12.3",
-                    "commit": "31ebe2ac71400344a5db91ffc13c4ddfb7589f92"
+                    "commit": "31ebe2ac71400344a5db91ffc13c4ddfb7589f92",
+                    "disable-submodules": true
                 }
+            ],
+            "buildsystem": "cmake-ninja",
+            "subdir": "cmake",
+            "config-opts": [
+                "-Dprotobuf_BUILD_TESTS=OFF",
+                "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
             ]
         },
         {
             "name": "libzip",
             "build-options": {
                 "config-opts": [
-                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                    "-DCMAKE_INSTALL_LIBDIR=lib"
                 ]
             },
             "buildsystem": "cmake-ninja",
